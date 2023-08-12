@@ -6,7 +6,7 @@ export default function Home() {
       <div 
         className=""
       >
-        <div className="flex text-5xl sm:text-7xl flex-col justify-center max-w-fit mx-6 mt-20">  
+        <div className="flex text-5xl sm:text-7xl flex-col justify-center mx-8">  
         We are revolutionizing scientific funding
         </div>
       </div>
