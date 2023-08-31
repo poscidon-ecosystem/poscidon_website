@@ -1,29 +1,28 @@
-import './globals.css'
+import './globals.css';
 import localFont from '@next/font/local';
-import NavBar from "./components/NavBar.tsx";
+import NavBar from './components/NavBar.tsx';
 
 const proximaNova = localFont({
   src: [
     {
-    path: '../../public/ProximaNova/Proxima Nova Reg.otf'
-  }],
-  variable: '--font-proximaNova'
-})
+      path: '../../public/ProximaNova/Proxima Nova Reg.otf',
+    },
+  ],
+  variable: '--font-proximaNova',
+});
 
 export const metadata = {
   title: 'PoSciDon',
   description: 'PoSciDon DAO Website',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html 
-    className="h-[100vh]"
-    lang="en">
+    <html className="h-full max-h-full w-full max-w-full" lang="en">
       <head>
         <link
           rel="android-chrome-192x192"
@@ -53,10 +52,10 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
       </head>
-      <body className={`${proximaNova.variable} font-sans`}>
-        <NavBar/>
+      <body className={`w-full max-h-full ${proximaNova.variable} font-sans`}>
+        <NavBar />
         {children}
       </body>
     </html>
-  )
+  );
 }
