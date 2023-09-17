@@ -1,6 +1,7 @@
 import './globals.css';
 import localFont from '@next/font/local';
 import NavBar from './components/NavBar.tsx';
+import Head from 'next/head';
 
 const proximaNova = localFont({
   src: [
@@ -23,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html className="h-full max-h-full w-full max-w-full" lang="en">
-      <head>
+      <Head>
         <link
           rel="android-chrome-192x192"
           sizes="192x192"
@@ -51,8 +52,14 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-      </head>
-      <body className={`w-full max-h-full ${proximaNova.variable} font-sans`}>
+      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" ></script>
+      </Head>
+      <body
+            className={` 
+            ${proximaNova.variable} 
+            font-sans
+             `}
+          >
         <NavBar />
         {children}
       </body>

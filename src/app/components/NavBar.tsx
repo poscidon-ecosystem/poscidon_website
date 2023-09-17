@@ -13,6 +13,7 @@ export default function NavBar() {
   return (
     <nav
       className="
+        fixed
         max-w-full
         w-full
         top-0
@@ -40,11 +41,9 @@ export default function NavBar() {
         />
       </Link>
       <div className="flex items-center">
-        <div className="sm:text-l hidden items-center font-black sm:hidden sm:gap-8 sm:pt-[0.26rem] md:flex lg:flex">
-          <Content />
-        </div>
 
-        <div className="ml-10 flex sm:flex md:hidden lg:hidden">
+
+        <div className="ml-10 flex">
           <button
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
             onClick={() => setIsOpen(!isOpen)}
@@ -85,7 +84,7 @@ export default function NavBar() {
                     max-w-full
                     flex-col 
                     items-center
-                    justify-center gap-8 bg-white p-4 md:hidden lg:hidden
+                    justify-center gap-8 bg-white p-4
                     "
           >
             <Content />
