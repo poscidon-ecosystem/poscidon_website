@@ -1,22 +1,32 @@
 'use client'
 
 import Image from 'next/image';
-import Twitter  from './components/Twitter';
+import Link from 'next/link';
+import Footer from './components/Footer';
 
 export default function Home() {
   //https://discord.gg/TXZZV5KXmn
 
   //          bg-[url('../../public/WebsiteHero.webp')] bg-cover bg-no-repeat bg-bottom
   return (
-    <div className="flex flex-col h-full w-full max-w-full items-center justify-center">     
+    <div className="
+    flex 
+    flex-col 
+    h-full 
+    w-full 
+    max-w-full 
+    items-center 
+    justify-center
+    mt-16
+    sm:mt-18
+    ">     
       <div className="
           flex 
           justify-center 
           items-center 
-          w-screen
-          h-[35rem] 
+          w-full 
           max-w-full 
-          px-16
+          px-4
           py-8
           ">
         <div className="
@@ -25,14 +35,18 @@ export default function Home() {
         justify-center 
         items-center 
         max-w-full
-        w-[70rem] 
+        w-full
+        sm:w-[100%]
+        md:w-[100%]
+        lg:w-[100%]
+        xl:w-[60%] 
         gap-4
         bg-white
         bg-opacity-90
         p-6
         rounded-3xl
         ">
-          <div className='
+          <div className={`
           lg:text-6xl 
           md:text-5xl
           sm:text-5xl 
@@ -43,10 +57,11 @@ export default function Home() {
           text-center
           justify-center
           items-center
-          '>
+          font-proximaSemiBold
+          `}>
             Revolutionizing Personalized Medicine Research Funding
           </div>
-          <div className="
+          <div className={`
           flex 
           items-center 
           justify-center 
@@ -54,26 +69,27 @@ export default function Home() {
           text-base 
           py-4
           text-center
-          ">
+          
+          `}>
             PoSciDon Decentralized Autonomous Organisation (DAO) focuses on funding personalized medicine research targeting various life-altering diseases including cancer and Alzheimer's disease. Together with your help we can change the lives of people affected by these diseases.  
           </div>
             <a 
               className='
                 flex
                 w-[10rem]
-                sm:w-[14rem]
+                lg:w-[14rem]
                 items-center
                 justify-center
                 rounded-[8rem]
                 border-2 
                 border-seaBlue-700
                 bg-seaBlue-700
-                px-4 
+                px-2 
                 py-2
-                sm:px-8
-                sm:py-4  
                 text-base
-                sm:text-xl
+                lg:px-4
+                lg:py-4
+                lg:text-xl
                 text-seaBlue-50 
                 hover:border-2
                 hover:border-seaBlue-700 
@@ -93,27 +109,37 @@ export default function Home() {
         flex
         md:flex-row
         flex-col 
-        items-center
-        justify-center 
+        items-start
+        justify-start 
         max-w-full
+        w-full
+        pt-4
+        sm:pt-2
+        gap-10
         '>
         <div className="
           flex 
           flex-col
           items-center
           justify-start
-          w-[30rem]
-          h-[30rem]
+          w-full
+          h-full
           max-w-full 
           ">
           <Image
             className='
-            rounded-3xl 
-            w-[80%] 
-            h-[45%] 
-            max-w-full
+            flex
+            justify-start
+            items-start
+            rounded-3xl
+            max-w-full 
+            w-[70%] 
+            h-full  
+            md:w-[80%] 
+            md:h-[35%] 
             lg:w-[90%]
-            lg:h-[65%]
+            lg:h-[50%]
+            xl:h-[60%]
             '
             width={300}
             height={300}
@@ -126,10 +152,11 @@ export default function Home() {
           justify-start 
           items-start 
           max-w-full 
-          w-[75%] 
+          w-[70%]
+          lg:w-[90%]  
           whitespace-pre-line
           '>
-            <div className='text-2xl pt-2'>
+            <div className='text-2xl pt-2 font-proximaSemiBold'>
               Support scientists
             </div>
             <p
@@ -138,12 +165,12 @@ export default function Home() {
               Interact with personalized medicine researchers and receive 
               funding for your project
             </p>
-            <a 
-            className="flex pb-2 text-seaBlue-700"
+            <Link 
+            className="flex pb-2 text-seaBlue-700 font-proximaItalic"
             href=""
             >
             Get your project funded {'>'}
-            </a>
+            </Link>
           </div>
         </div>
         <div className="
@@ -151,18 +178,23 @@ export default function Home() {
           flex-col
           items-center
           justify-start
-          w-[30rem]
-          h-[30rem]
+          w-full
           max-w-full 
           ">
           <Image
             className='
-            rounded-3xl 
-            w-[80%] 
-            h-[45%] 
-            max-w-full
+            flex
+            justify-start
+            items-start
+            rounded-3xl
+            max-w-full 
+            w-[70%] 
+            h-full   
+            md:w-[80%] 
+            md:h-[35%] 
             lg:w-[90%]
-            lg:h-[65%]
+            lg:h-[50%]
+            xl:h-[60%]
             '
             width={300}
             height={300}
@@ -175,10 +207,11 @@ export default function Home() {
           justify-start 
           items-start 
           max-w-full 
-          w-[75%] 
+          w-[70%]
+          lg:w-[90%]  
           whitespace-pre-line
           '>
-            <div className='text-2xl pt-2'>
+            <div className='text-2xl pt-2 font-proximaSemiBold'>
               Become part of the community
             </div>
             <p
@@ -187,63 +220,74 @@ export default function Home() {
             Leverage you knowledge and skills to innovate personalized medicine research. 
             PoSciDon is built by people like you. 
             </p>
-            <a 
-            className="flex pb-2 text-seaBlue-700"
+            <Link 
+            className="flex pb-2 text-seaBlue-700 font-proximaItalic"
             href=""
             >
             Become a contributor {'>'}
-            </a>
-            </div>
+            </Link>
           </div>
+        </div>
         <div className="
           flex 
           flex-col
           items-center
           justify-start
-          w-[30rem]
-          h-[30rem]
+          w-full
+          h-full
           max-w-full 
           ">
-          <Image
-            className='
-            rounded-3xl 
-            w-[80%] 
-            h-[45%] 
-            max-w-full
-            lg:w-[90%]
-            lg:h-[65%]
-            '
-            width={300}
-            height={300}
-            alt="tokens"
-            src='/tokens.jpeg'
-          />
+              <Image
+              className='
+              flex
+              justify-start
+              items-start
+              rounded-3xl
+              max-w-full 
+              relative
+              w-[70%] 
+              h-[13.5rem]
+              sm:h-[19rem]  
+              md:w-[80%] 
+              md:h-[10rem] 
+              lg:w-[90%]
+              lg:h-[14.5rem]
+              2xl:h-[25rem]
+              '
+              width={300}
+              height={300}
+              alt="tokens"
+              src='/tokens.jpeg'
+            />
+
           <div className='          
             flex 
             flex-col 
             justify-start 
             items-start 
             max-w-full 
-            w-[75%] 
+            w-[70%]
+            lg:w-[90%]  
             whitespace-pre-line
             '>
-            <div className='text-2xl pt-2'>
+            <div className='text-2xl pt-2 font-proximaSemiBold'>
               Our Multi-Token Model
             </div>
             <p
             className="py-2"
             >
-              Everything you need to know about the tokens that power our ecosystem
+              Everything you need to know about the tokens that drive our ecosystem
             </p>
-            <a 
-            className="flex pb-2 text-seaBlue-700"
-            href=""
+            <Link 
+            className="flex pb-2 text-seaBlue-700 font-proximaItalic"
+            href="/tokens"
             >
             Discover our tokens {'>'}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
+    <Footer/>
     </div>
   );
 }

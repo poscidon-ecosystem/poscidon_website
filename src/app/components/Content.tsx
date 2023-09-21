@@ -4,16 +4,16 @@ export default function Content() {
   return (
     <>
       <Link
-        href="/community"
+        href="/tokens"
         className="hover:text-seaBlue-700 whitespace-nowrap"
       >
-        Community
+        Tokens
       </Link>
-      <Link href="/buy" className="hover:text-seaBlue-700">
+      <Link href="https://test.poscidon.com/" className="hover:text-seaBlue-700">
         Vote
       </Link>
       <Link href="https://test.poscidon.com" className="hover:text-seaBlue-700">
-        SCI Token
+        Become a contributor
       </Link>
         <a 
           className='

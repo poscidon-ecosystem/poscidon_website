@@ -9,7 +9,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-proximaNova)'],
+        proxima: ['var(--font-proximaNova)'],
+        proximaBold: ['var(--font-proximaNovaBold)'],
+        proximaSemiBold: ['var(--font-proximaNovaSemiBold)'],
+        proximaItalic: ['var(--font-proximaNovaItalic)']
       },
       screens: {
         'md+': '896px',

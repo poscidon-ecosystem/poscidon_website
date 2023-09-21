@@ -4,12 +4,22 @@ import NavBar from './components/NavBar.tsx';
 import Head from 'next/head';
 
 const proximaNova = localFont({
-  src: [
-    {
-      path: '../../public/ProximaNova/Proxima Nova Reg.otf',
-    },
-  ],
+  src: './ProximaNovaRegular.otf',
   variable: '--font-proximaNova',
+});
+
+const proximaNovaExtraBold = localFont({
+  src: './ProximaNovaExtrabold.otf',
+  variable: '--font-proximaNovaBold',
+});
+const proximaNovaSemiBold = localFont({
+  src: './ProximaNovaSemibold.otf',
+  variable: '--font-proximaNovaSemiBold',
+});
+
+const proximaNovaItalic = localFont({
+  src: './ProximaNovaRegularItalic.otf',
+  variable: '--font-proximaNovaItalic',
 });
 
 export const metadata = {
@@ -23,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="h-full max-h-full w-full max-w-full" lang="en">
+    <html className="h-full max-h-full w-full max-w-full bg-[#FDFDFD]" lang="en">
       <Head>
         <link
           rel="android-chrome-192x192"
@@ -56,8 +66,11 @@ export default function RootLayout({
       </Head>
       <body
             className={` 
-            ${proximaNova.variable} 
-            font-sans
+            ${proximaNova.variable}  
+            ${proximaNovaExtraBold.variable}  
+            ${proximaNovaSemiBold.variable}  
+            ${proximaNovaItalic.variable}  
+            font-proxima
              `}
           >
         <NavBar />
