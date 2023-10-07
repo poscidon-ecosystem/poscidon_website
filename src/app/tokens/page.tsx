@@ -20,9 +20,10 @@ export default function Tokens() {
             flex 
             flex-col 
             items-center 
-            justify-center 
-            lg:w-[60%] 
-            sm:w-[75%]
+            justify-center
+            lg+:w-[60%] 
+            md:w-[70%] 
+            sm:w-[80%]
             px-4
             py-8
             text-xl
@@ -39,7 +40,9 @@ export default function Tokens() {
                     </div>
                     <div className="py-4 flex flex-col">
                         <p>
-                        PO, SCI and DON are the tokens powering our ecosystem.
+                        SCI and PO are the tokens powering our ecosystem. 
+                        Incentivizing scientists, donors and investors to
+                        become part of the decentralized science revolution.
                         </p>              
                     </div>
                 </div>
@@ -101,11 +104,11 @@ export default function Tokens() {
                 SCI Token Distribution
                 </div>
                 <Image
-                    className='flex justify-center items-center place-content-center w-[38rem] h-[24rem]'
-                    src={'/token\ distribution.svg'}
+                    className='flex m-4 justify-center items-center place-content-center w-[38rem] h-[24rem]'
+                    src={'/TokenAllocation.svg'}
                     alt=''
-                    width={300}
-                    height={300}
+                    width={1000}
+                    height={1000}
                     />  
             </div>
             <Footer/>
