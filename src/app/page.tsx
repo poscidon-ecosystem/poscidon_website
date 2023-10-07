@@ -1,10 +1,15 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from './components/Footer';
+import { useState } from 'react';
 
 export default function Home() {
+  const [resSrc, setResSrc] = useState('/ResearchWhite.webp');
+  const [comSrc, setComSrc] = useState('/CommunityWhite.webp');
+  const [tokSrc, setTokSrc] = useState('/TokensWhite.webp');
+  // const [resSrc, setResSrc] = useState('./../home/buy-blue.svg');
   //https://discord.gg/TXZZV5KXmn
 
   //          bg-[url('../../public/WebsiteHero.webp')] bg-cover bg-no-repeat bg-bottom
@@ -58,6 +63,7 @@ export default function Home() {
           justify-center
           items-center
           font-proximaSemiBold
+          text-seaBlue-700
           `}>
             Revolutionizing Personalized Medicine Research Funding
           </div>
@@ -71,8 +77,13 @@ export default function Home() {
           text-center
           
           `}>
-            PoSciDon Decentralized Autonomous Organisation (DAO) focuses on funding personalized medicine research targeting various life-altering diseases including cancer and Alzheimer's disease. Together with your help we can change the lives of people affected by these diseases.  
+            PoSciDon Decentralized Autonomous Organisation (DAO) 
+            focuses on funding research projects that develop personalized treatments 
+            for patients affected by life-altering diseases such as cancer 
+            and Alzheimer's disease. Together with your help we can 
+            change the lives of people affected by these diseases.  
           </div>
+          <div className='flex gap-4'>
             <a 
               className='
                 flex
@@ -103,6 +114,31 @@ export default function Home() {
               >
               Become a donor
             </a>      
+            <a 
+              className='
+                flex
+                w-[10rem]
+                lg:w-[14rem]
+                items-center
+                justify-center
+                text-seaBlue-700
+                rounded-[8rem]
+                px-2 
+                py-2
+                text-base
+                lg:px-4
+                lg:py-4
+                lg:text-xl
+                underline
+                active:bg-seaBlue-300
+                active:text-white
+                '
+              href='https://test.poscidon.com/donation'
+              target='_blank'
+              >
+              Become an investor
+            </a>
+          </div>      
         </div>
       </div>
       <div className='
@@ -126,26 +162,46 @@ export default function Home() {
           h-full
           max-w-full 
           ">
-          <Image
+          <Link 
+            href="/research"
             className='
-            flex
-            justify-start
-            items-start
-            rounded-3xl
-            max-w-full 
-            w-[70%] 
-            h-full  
-            md:w-[80%] 
-            md:h-[35%] 
-            lg:w-[90%]
-            lg:h-[50%]
-            xl:h-[60%]
-            '
-            width={300}
-            height={300}
-            alt="stock"
-            src='/scientists.jpeg'
-          />
+              flex
+              justify-center
+              items-center
+              rounded-3xl
+              w-full
+              h-full
+              '
+            >          
+            <Image
+              onMouseEnter={() => {
+                setResSrc('/ResearchBlue.webp');
+              }}
+              onMouseLeave={() => {
+                setResSrc('/ResearchWhite.webp');
+              }}
+              className='
+              flex
+              justify-start
+              items-start
+              rounded-3xl
+              max-w-full 
+              w-[70%] 
+              h-full  
+              md:w-[80%] 
+              md:h-[35%] 
+              lg:w-[90%]
+              lg:h-[50%]
+              xl:h-[60%]
+              border-2
+              border-seaBlue-700
+              '
+              width={1000}
+              height={1000}
+              alt="stock"
+              src={`${resSrc}`}
+            />
+          </Link>
           <div className='          
           flex 
           flex-col 
@@ -181,26 +237,46 @@ export default function Home() {
           w-full
           max-w-full 
           ">
-          <Image
+          <Link 
+            href="/community"
             className='
-            flex
-            justify-start
-            items-start
-            rounded-3xl
-            max-w-full 
-            w-[70%] 
-            h-full   
-            md:w-[80%] 
-            md:h-[35%] 
-            lg:w-[90%]
-            lg:h-[50%]
-            xl:h-[60%]
-            '
-            width={300}
-            height={300}
-            alt="community"
-            src='/community.jpeg'
-          />
+              flex
+              justify-center
+              items-center
+              rounded-3xl
+              w-full
+              h-full
+              '
+            >          
+            <Image
+              onMouseEnter={() => {
+                setComSrc('/CommunityBlue.webp');
+              }}
+              onMouseLeave={() => {
+                setComSrc('/CommunityWhite.webp');
+              }}
+              className='
+              flex
+              justify-start
+              items-start
+              rounded-3xl
+              max-w-full 
+              w-[70%] 
+              h-full  
+              md:w-[80%] 
+              md:h-[35%] 
+              lg:w-[90%]
+              lg:h-[50%]
+              xl:h-[60%]
+              border-2
+              border-seaBlue-700
+              '
+              width={1000}
+              height={1000}
+              alt="stock"
+              src={`${comSrc}`}
+            />
+          </Link>
           <div className='
           flex 
           flex-col 
@@ -237,29 +313,46 @@ export default function Home() {
           h-full
           max-w-full 
           ">
-              <Image
+          <Link 
+            href="/tokens"
+            className='
+              flex
+              justify-center
+              items-center
+              rounded-3xl
+              w-full
+              h-full
+              '
+            >          
+            <Image
+              onMouseEnter={() => {
+                setTokSrc('/TokensBlue.webp');
+              }}
+              onMouseLeave={() => {
+                setTokSrc('/TokensWhite.webp');
+              }}
               className='
               flex
               justify-start
               items-start
               rounded-3xl
               max-w-full 
-              relative
               w-[70%] 
-              h-[13.5rem]
-              sm:h-[19rem]  
+              h-full  
               md:w-[80%] 
-              md:h-[10rem] 
+              md:h-[35%] 
               lg:w-[90%]
-              lg:h-[14.5rem]
-              2xl:h-[25rem]
+              lg:h-[50%]
+              xl:h-[60%]
+              border-2
+              border-seaBlue-700
               '
-              width={300}
-              height={300}
+              width={1000}
+              height={1000}
               alt="tokens"
-              src='/tokens.jpeg'
+              src={`${tokSrc}`}
             />
-
+          </Link>
           <div className='          
             flex 
             flex-col 
