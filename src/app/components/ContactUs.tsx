@@ -41,9 +41,7 @@ export default function ContactUs() {
     return isValid;
   };
 
-  //   const [form, setForm] = useState(false);
-
-  const handleSubmit = async (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     let isValidForm = handleValidation();
@@ -51,19 +49,19 @@ export default function ContactUs() {
     if (isValidForm) {
       setButtonText("Sending");
       const res = await fetch("/api/sendgrid", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           email: email,
           fullname: fullname,
           subject: subject,
           message: message,
         }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
       });
 
-      const { error } = await res.json();
+      const { error }  = await res.json();
       if (error) {
         console.log(error);
         setShowSuccessMessage(false);
@@ -71,10 +69,10 @@ export default function ContactUs() {
         setButtonText("Send");
 
         // Reset form fields
-        setFullname("");
-        setEmail("");
-        setMessage("");
-        setSubject("");
+        // setFullname("");
+        // setEmail("");
+        // setMessage("");
+        // setSubject("");
         return;
       }
       setShowSuccessMessage(true);
@@ -203,7 +201,7 @@ export default function ContactUs() {
           </p>
         </div>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={sendEmail}
           className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
         >
           <h1 className="text-2xl font-bold dark:text-gray-50">
