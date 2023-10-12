@@ -3,7 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from './components/Footer';
+import ContactUs from "./components/ContactUs";
 import { useState } from 'react';
+import Button from './components/Button';
 
 export default function Home() {
   const [resSrc, setResSrc] = useState('/ResearchWhite.webp');
@@ -84,60 +86,60 @@ export default function Home() {
             change the lives of people affected by these diseases.  
           </div>
           <div className='flex gap-4'>
-            <a 
-              className='
-                flex
-                w-[10rem]
-                lg:w-[14rem]
-                items-center
-                justify-center
-                rounded-[8rem]
-                border-2 
-                border-seaBlue-700
-                bg-seaBlue-700
-                px-2 
-                py-2
-                text-base
-                lg:px-4
-                lg:py-4
-                lg:text-xl
-                text-seaBlue-50 
-                hover:border-2
-                hover:border-seaBlue-700 
-                hover:bg-seaBlue-50 
-                hover:text-seaBlue-700
-                active:bg-seaBlue-300
-                active:text-white
-                '
-              href='https://test.poscidon.com/donation'
-              target='_blank'
-              >
-              Become a donor
-            </a>      
-            <a 
-              className='
-                flex
-                w-[10rem]
-                lg:w-[14rem]
-                items-center
-                justify-center
-                text-seaBlue-700
-                rounded-[8rem]
-                px-2 
-                py-2
-                text-base
-                lg:px-4
-                lg:py-4
-                lg:text-xl
-                underline
-                active:bg-seaBlue-300
-                active:text-white
-                '
-              href='https://test.poscidon.com/donation'
-              target='_blank'
-              >
-              Become an investor
-            </a>
+            <Button
+            link={true}
+            onClick={null}
+            text={`Become a donor`}
+            href={'https://test.poscidon.com/donation'}
+            style={`
+            flex
+            w-[10rem]
+            lg:w-[14rem]
+            items-center
+            justify-center
+            rounded-[8rem]
+            border-2 
+            border-seaBlue-700
+            bg-seaBlue-700
+            px-2 
+            py-2
+            text-base
+            lg:px-4
+            lg:py-4
+            lg:text-xl
+            text-seaBlue-50 
+            hover:border-2
+            hover:border-seaBlue-700 
+            hover:bg-seaBlue-50 
+            hover:text-seaBlue-700
+            active:bg-seaBlue-300
+            active:text-white
+            `}
+            />      
+            {/* <Button
+            link={false}
+            onClick={null}
+            text={`Become an investor`}
+            href={'/'}
+            style={`
+            flex
+            w-[10rem]
+            lg:w-[14rem]
+            items-center
+            justify-center
+            text-seaBlue-700
+            rounded-[8rem]
+            px-2 
+            py-2
+            text-base
+            lg:px-4
+            lg:py-4
+            lg:text-xl
+            underline
+            active:bg-seaBlue-300
+            active:text-white
+            `}
+            />       */}
           </div>      
         </div>
       </div>
@@ -380,6 +382,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ContactUs/>
     <Footer/>
     </div>
   );

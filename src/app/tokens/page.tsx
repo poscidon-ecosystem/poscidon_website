@@ -95,9 +95,10 @@ export default function Tokens() {
                         active:bg-seaBlue-300
                         active:text-white
                         '
-                    target='_blank'
+                    href='/Whitepaper.pdf'
+                    download={'PoSciDon_Whitepaper'}
                     >
-                        Read our whitepaper
+                        Download whitepaper
                     </a>
                 </div>
                 <div className='flex font-proximaSemiBold text-2xl pt-8'>
