@@ -13,18 +13,16 @@ export default function NavBar() {
   return (
     <nav
       className="
-        fixed
-        max-w-full
-        w-full
-        top-0
-        flex
-        h-20
-        items-center
-        justify-between
-        border-b-2
-        border-seaBlue-700
-        bg-white
-        px-4
+      top-0
+      flex
+      h-20
+      w-full
+      items-center
+      justify-between
+      border-b-2
+      border-seaBlue-700
+      bg-white
+      px-4
         "
     >
       <Link
@@ -79,11 +77,11 @@ export default function NavBar() {
                     top-20
                     z-10
                     flex 
-                    h-[20rem] 
                     w-full 
                     max-w-full
                     flex-col 
-                    items-center
+                    items-end
+                    sm:items-center
                     justify-center gap-8 bg-white p-4
                     "
           >

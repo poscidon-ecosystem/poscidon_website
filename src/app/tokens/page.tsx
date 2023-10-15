@@ -104,14 +104,14 @@ export default function Tokens() {
                 <div className='flex font-proximaSemiBold text-2xl pt-8'>
                 SCI Token Distribution
                 </div>
-                <Image
-                    className='flex m-4 justify-center items-center place-content-center w-[38rem] h-[24rem]'
-                    src={'/TokenAllocation.svg'}
-                    alt=''
-                    width={1000}
-                    height={1000}
-                    />  
-            </div>
+                    <Image
+                        className='flex m-4 justify-center items-center place-content-center w-[38rem] h-[24rem]'
+                        src={'/TokenAllocation.svg'}
+                        alt=''
+                        width={1000}
+                        height={1000}
+                        />  
+                </div>
             <Footer/>
         </div>
     );

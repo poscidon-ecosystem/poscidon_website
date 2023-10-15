@@ -2,6 +2,9 @@ import './globals.css';
 import localFont from '@next/font/local';
 import NavBar from './components/NavBar.tsx';
 import Head from 'next/head';
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const proximaNova = localFont({
   src: './ProximaNovaRegular.otf',
@@ -33,7 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="h-full max-h-full w-full max-w-full bg-[#FDFDFD]" lang="en">
+    <html className="            
+    bg-[#FDFDFD]" 
+    lang="en">
       <Head>
         <link
           rel="android-chrome-192x192"
@@ -62,10 +67,14 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" ></script>
+<script src="https://kit.fontawesome.com/bfd0659090.js" crossOrigin="anonymous"></script>
       </Head>
       <body
-            className={` 
+            className={`
+            flex
+            flex-col
+            items-center
+            justify-center
             ${proximaNova.variable}  
             ${proximaNovaExtraBold.variable}  
             ${proximaNovaSemiBold.variable}  
