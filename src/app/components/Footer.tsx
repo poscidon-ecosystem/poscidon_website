@@ -76,7 +76,7 @@ export default function Footer() {
             >Become a donor</Link>
             <Link 
             className="hover:text-seaBlue-700" 
-            href={'/'}>Become a contributor</Link>
+            href="https://forms.gle/hY52XW7inek4ynrR6" target='_blank'>Become a contributor</Link>
             <Link 
             className="hover:text-seaBlue-700" 
             href="https://discord.gg/TXZZV5KXmn" target="_blank">Join our discord</Link>
@@ -94,20 +94,6 @@ export default function Footer() {
         </div>
       </div>
       <Socials/>
-      <div className="flex w-full pt-2 flex-col">
-        <hr className="border-b-1 w-full border-gray-200"></hr>
-        <div
-          className=" 
-        flex 
-        h-20
-        items-center
-        justify-center
-        text-gray-400
-        "
-        >
-          © PoSciDon DAO. All rights reserved.
-        </div>
-      </div>
     </div>
   );
 }

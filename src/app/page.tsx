@@ -7,7 +7,7 @@ import ContactUs from "./components/ContactUs";
 import { useState } from 'react';
 import Button from './components/Button';
 import Twitter from './components/Twitter';
-
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export default function Home() {
   const [resSrc, setResSrc] = useState('/ResearchWhite.webp');
@@ -184,7 +184,7 @@ export default function Home() {
               '
               width={1000}
               height={1000}
-              alt="stock"
+              alt="research with genetic code background"
               src={`${resSrc}`}
             />
           </Link>
@@ -222,7 +222,8 @@ export default function Home() {
           max-w-full 
           ">
           <Link 
-            href="/community"
+            href="https://forms.gle/hY52XW7inek4ynrR6"
+            target='_blank'
             className='
               flex
               justify-center
@@ -251,7 +252,7 @@ export default function Home() {
               '
               width={1000}
               height={1000}
-              alt="stock"
+              alt="community with genetic code background"
               src={`${comSrc}`}
             />
           </Link>
@@ -275,7 +276,8 @@ export default function Home() {
             </p>
             <Link 
             className="flex pb-2 text-seaBlue-700 font-proximaItalic"
-            href=""
+            href="https://forms.gle/hY52XW7inek4ynrR6"
+            target='_blank'
             >
             Become a contributor {'>'}
             </Link>
@@ -320,7 +322,7 @@ export default function Home() {
               '
               width={1000}
               height={1000}
-              alt="tokens"
+              alt="tokens with genetic code background"
               src={`${tokSrc}`}
             />
           </Link>
@@ -349,16 +351,34 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='grid justify-center items-center md:grid-cols-2 grid-cols-1 pt-8 w-full gap-4 h-full'>
+      <div className='grid justify-center items-start md:grid-cols-2 grid-cols-1 pt-8 w-full gap-4 h-full'>
         <div className='px-8 w-full py-8'>
           <ContactUs/>
         </div>
-        <div className='px-8 w-full h-[30rem]'>
-          <Twitter/>
+        <div className='px-8 w-full py-8'>
+        <TwitterTimelineEmbed 
+          sourceType="profile"
+          screenName='poscidondao' 
+          options={{height: 400}} 
+        />
         </div>
       </div>
       <hr className="border-b-1 w-full border-gray-200"></hr>
-    <Footer/>
+      <Footer/>
+      <div className="flex w-full pt-2 flex-col">
+        <hr className="border-b-1 w-full border-gray-200"></hr>
+        <div
+          className=" 
+        flex 
+        h-20
+        items-center
+        justify-center
+        text-gray-400
+        "
+        >
+          © PoSciDon DAO. All rights reserved.
+        </div>
+      </div>
     </div>
   );
 }
