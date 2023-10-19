@@ -147,7 +147,6 @@ export default function Tokens() {
             ">
               <li>The total supply of $SCI is 18,910,000 tokens.</li>
               <br></br>
-              <br></br>
               <li>
                 At genesis, 10% of the total $SCI supply will be offered through{' '}
                 <a
@@ -159,7 +158,6 @@ export default function Tokens() {
                 liquidity bootstrap batch auction.
               </li>
               <br></br>
-              <br></br>
               <li>Additionally, 5% of the tokens will be offered to contributors,
               also known as Crew members.</li>
             </ul>
@@ -167,7 +165,7 @@ export default function Tokens() {
           <Image
             className="
                     rounded-xl
-                    my-8
+                    sm:my-8
                     "
             src={'/TokenAllocation.svg'}
             alt=""
@@ -228,9 +226,6 @@ export default function Tokens() {
                 />
                 .
                 </li>
-
-
-                <br></br>
                 <br></br>
                 <li>Once staked, you will gain voting power allowing you to vote on
                 DAO proposals.</li>
@@ -245,7 +240,7 @@ export default function Tokens() {
             className="
             sm:hidden
             flex
-            py-8
+            sm:py-8
             w-full
             "
             src={'/poStaking.png'}
@@ -256,7 +251,7 @@ export default function Tokens() {
 
           <div
             className="
-                py-4
+                pt-4
                 "
           >
             <div className="flex w-full justify-start">
@@ -285,16 +280,15 @@ export default function Tokens() {
             list-image-[url(/listArrow.svg)]">
               <li>30% of the revenue will be used to buy $SCI from the market.</li>
               <br></br>
-              <br></br>
               <li>Those $SCI tokens will then be burned.</li>
-              <br></br>
               <br></br>
               <li>Lower token supply leads to higher value per $SCI token, given the total market capitalization stays the same.</li>
             </ul>
           </div>
           <Image
             className="
-                    py-8
+                    sm:pt-4
+                    pb-8
                     w-full
                     "
             src={'/buy-back.png'}
