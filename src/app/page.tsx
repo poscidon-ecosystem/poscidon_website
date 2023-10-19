@@ -7,6 +7,7 @@ import ContactUs from "./components/ContactUs";
 import { useState } from 'react';
 import Button from './components/Button';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
+import logoMark from '/logoMark.svg';
 
 export default function Home() {
   const [resSrc, setResSrc] = useState('/ResearchWhite.webp');
