@@ -6,17 +6,14 @@ import Footer from './components/Footer';
 import ContactUs from "./components/ContactUs";
 import { useState } from 'react';
 import Button from './components/Button';
-import Twitter from './components/Twitter';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export default function Home() {
   const [resSrc, setResSrc] = useState('/ResearchWhite.webp');
   const [comSrc, setComSrc] = useState('/CommunityWhite.webp');
   const [tokSrc, setTokSrc] = useState('/TokensWhite.webp');
-  // const [resSrc, setResSrc] = useState('./../home/buy-blue.svg');
   //https://discord.gg/TXZZV5KXmn
 
-  //          bg-[url('../../public/WebsiteHero.webp')] bg-cover bg-no-repeat bg-bottom
   return (
     <div className="
         xl:w-[65%]
@@ -335,7 +332,7 @@ export default function Home() {
             whitespace-pre-line
             '>
             <div className='text-2xl pt-2 font-proximaSemiBold'>
-              Our Multi-Token Model
+              Our Token Model
             </div>
             <p
             className="py-2"

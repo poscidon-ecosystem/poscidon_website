@@ -6,29 +6,27 @@ export default function Footer() {
   return (
     <div
       className="
-      items-space 
+      items-center 
       flex 
       flex-col
       w-full
       max-w-full 
       justify-center
+      pt-8
       "
     >
       <div
         className=" 
         flex
-        py-4
         "
       >
         <div
           className="
-        flex 
-        flex-col
-        justify-between
-        items-center
-        sm:px-8
-        px-2
-        "
+          flex 
+          flex-col
+          justify-between
+          items-center
+          "
         >
           <Link href="/" className="flex sm:w-[10rem] w-[5rem]">
             <Image
@@ -43,17 +41,21 @@ export default function Footer() {
         <div className="
         grid 
         grid-cols-2 
-        sm:grid-cols-3 
+        md:grid-cols-3 
         w-full 
         max-w-full 
         items-start 
         justify-start 
-        sm:gap-24 
+        md:gap-24 
         gap-4 
         sm:px-4
         ">
           <div className="flex flex-col gap-2 pt-2">
-            <p className="text-sm text-seaBlue-700">ABOUT POSCIDON DAO</p>
+            <p className="
+            text-sm 
+            text-seaBlue-700
+            font-proximaSemiBold
+            ">ABOUT POSCIDON DAO</p>
             <Link 
             className="hover:text-seaBlue-700" 
             href={'/'}>For scientists</Link>
@@ -61,14 +63,18 @@ export default function Footer() {
             <Link
               target="_blank"
               className="hover:text-seaBlue-700" 
-              href="/Whitepaper.pdf"
-              download="PoSciDon_Whitepaper"
+              href="https://tinyurl.com/poscidon-whitepaper/"
+              title='PoSciDon Whitepaper'
             >
               Whitepaper
             </Link>
           </div>
           <div className="flex flex-col gap-2 pt-2">
-            <p className="text-sm text-seaBlue-700">GET INVOLVED</p>
+            <p className="
+            text-sm 
+            text-seaBlue-700
+            font-proximaSemiBold
+            ">GET INVOLVED</p>
             <Link 
             className="hover:text-seaBlue-700" 
             href="https://test.poscidon.com/donation"
@@ -87,7 +93,10 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex flex-col gap-2 pt-2">
-            <p className="text-sm text-seaBlue-700">FINE PRINT</p>
+            <p className="
+            text-sm 
+            text-seaBlue-700
+            font-proximaSemiBold">FINE PRINT</p>
             <Link className="hover:text-seaBlue-700" href={'/'}>Brand guidelines</Link>
             <Link className="hover:text-seaBlue-700" href={'/'}>Privacy policy</Link>
           </div>

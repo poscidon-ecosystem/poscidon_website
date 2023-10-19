@@ -77,15 +77,20 @@ export default function NavBar() {
                     top-20
                     z-10
                     flex 
-                    w-full 
-                    max-w-full
+                    w-full
                     flex-col 
-                    items-end
+                    items-center
                     sm:items-center
                     justify-center gap-8 bg-white p-4
                     "
-          >
-              <Footer/>
+          > <div className='
+                  xl:w-[65%]
+                  lg:w-[85%]
+                  md:w-[100%]
+          '>
+            <Footer/>
+          </div>
+              
           </div>
         )}
       </div>
