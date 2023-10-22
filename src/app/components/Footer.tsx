@@ -1,114 +1,109 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Socials from './Socials';
+import Logo from '/public/logoMark.svg';
 
 export default function Footer() {
-    return(
-        <div className='
-        flex 
-        flex-col
-        justify-center
-        items-center 
-        bg-seaBlue-50 
-        w-[100%] 
-        h-[10rem]
-        mt-12
-        text-seaBlue-400
-        '>
-        <div className='
-          w-[100%]
+  return (
+    <div
+      className="
+      items-center 
+      flex 
+      flex-col
+      w-full
+      max-w-full 
+      justify-center
+      pt-8
+      "
+    >
+      <div
+        className=" 
+        flex
+        "
+      >
+        <div
+          className="
           flex 
-          items-center 
-          justify-center
-          sm:justify-start
-          py-4
-          px-4
-          gap-8
-          '>
-          <p className='text-3xl sm:text-4xl'>Join us</p>
-          <Link 
-          href='https://discord.gg/TXZZV5KXmn'
-          target='_blank'
-          className='flex items-start justify-start'
-          >
-            <div className='flex items-center justify-center w-10 h-[4rem]'>
-              <Image
-                className='
-                flex
-                flex-col
-                justify-end
-                items-end
-                rounded-3xl
-                max-w-full 
-                w-full
-                h-full 
-                '
-                width={300}
-                height={300}
-                alt="discord"
-                src='/discord.svg'
-              />
-            </div>
-          </Link>
-          <Link 
-          href='https://twitter.com/poscidondao'
-          target='_blank'
-          className='flex items-start justify-start'
-          >
-          <div className='flex items-center justify-center w-10 h-[4rem]'>
+          flex-col
+          justify-between
+          items-center
+          "
+        >
+          <Link href="/" className="flex sm:w-[10rem] w-[5rem]">
             <Image
-              className='
-              flex
-              flex-col
-              justify-end
-              items-end
-              rounded-3xl
-              max-w-full 
-              w-full
-              h-full 
-              '
-              width={300}
-              height={300}
-              alt="twitter"
-              src='/twitter.svg'
+              width={1000}
+              height={1000}
+              className=""
+              src={Logo}
+              alt="PoSciDon logo"
             />
+          </Link>
+        </div>
+        <div className="
+        grid 
+        grid-cols-2 
+        md:grid-cols-3 
+        w-full 
+        max-w-full 
+        items-start 
+        justify-start 
+        md:gap-24 
+        gap-4 
+        sm:px-4
+        ">
+          <div className="flex flex-col gap-2 pt-2">
+            <p className="
+            text-sm 
+            text-seaBlue-700
+            font-proximaSemiBold
+            ">ABOUT POSCIDON DAO</p>
+            <Link 
+            className="hover:text-seaBlue-700" 
+            href={'/'}>For scientists</Link>
+            <Link className="hover:text-seaBlue-700" href="/tokens">Tokens</Link>
+            <Link
+              target="_blank"
+              className="hover:text-seaBlue-700" 
+              href="/Whitepaper.pdf"
+              title='PoSciDon Whitepaper'
+            >
+              Whitepaper
+            </Link>
           </div>
-          </Link>
-          <Link 
-          href='/'
-          target='_blank'
-          className='flex items-start justify-start'
-          >
-            <div className='flex items-center justify-center w-10 h-[4rem]'>
-              <Image
-              className='
-              flex
-              flex-col
-              justify-end
-              items-end
-              rounded-3xl
-              max-w-full 
-              w-full
-              h-full 
-              '
-              width={300}
-              height={300}
-              alt="telegram"
-              src='/telegram.svg'
-            />
-            </div>
-          </Link>
+          <div className="flex flex-col gap-2 pt-2">
+            <p className="
+            text-sm 
+            text-seaBlue-700
+            font-proximaSemiBold
+            ">GET INVOLVED</p>
+            <Link 
+            className="hover:text-seaBlue-700" 
+            href="https://test.poscidon.com/donation"
+            target="_blank"
+            >Become a donor</Link>
+            <Link 
+            className="hover:text-seaBlue-700" 
+            href="https://forms.gle/hY52XW7inek4ynrR6" target='_blank'>Become a contributor</Link>
+            <Link 
+            className="hover:text-seaBlue-700" 
+            href="https://discord.gg/TXZZV5KXmn" target="_blank">Join our discord</Link>
+            <Link 
+            className="hover:text-seaBlue-700" 
+            href="https://twitter.com/poscidondao" target="_blank">
+              Join our twitter
+            </Link>
+          </div>
+          <div className="flex flex-col gap-2 pt-2">
+            <p className="
+            text-sm 
+            text-seaBlue-700
+            font-proximaSemiBold">FINE PRINT</p>
+            <Link className="hover:text-seaBlue-700" href={'/'}>Brand guidelines</Link>
+            <Link className="hover:text-seaBlue-700" href={'/'}>Privacy policy</Link>
+          </div>
         </div>
-        <div className=' 
-        flex 
-        justify-center
-        items-center
-        sm:justify-start
-        w-full
-        py-2
-        px-4
-        '>
-          © PoSciDon. All rights reserved.
-        </div>
-      </div>  
-    );
+      </div>
+      <Socials/>
+    </div>
+  );
 }

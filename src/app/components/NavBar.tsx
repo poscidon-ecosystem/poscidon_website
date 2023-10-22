@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Content from './Content';
+import Footer from './Footer';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,18 +13,16 @@ export default function NavBar() {
   return (
     <nav
       className="
-        fixed
-        max-w-full
-        w-full
-        top-0
-        flex
-        h-20
-        items-center
-        justify-between
-        border-b-2
-        border-seaBlue-700
-        bg-white
-        px-4
+      top-0
+      flex
+      h-20
+      w-full
+      items-center
+      justify-between
+      border-b-2
+      border-seaBlue-700
+      bg-white
+      px-4
         "
     >
       <Link
@@ -79,15 +77,20 @@ export default function NavBar() {
                     top-20
                     z-10
                     flex 
-                    h-[20rem] 
-                    w-full 
-                    max-w-full
+                    w-full
                     flex-col 
                     items-center
+                    sm:items-center
                     justify-center gap-8 bg-white p-4
                     "
-          >
-            <Content />
+          > <div className='
+                  xl:w-[65%]
+                  lg:w-[85%]
+                  md:w-[100%]
+          '>
+            <Footer/>
+          </div>
+              
           </div>
         )}
       </div>
