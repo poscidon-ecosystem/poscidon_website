@@ -8,7 +8,7 @@ export async function POST(req) {
   try {
     const body = await req.json();
     console.log("body", body);
-    const { txId, title, description, strategy } = body;
+    const { txId, title, description, strategy, country } = body;
     const send = await sgMail.send({
       from: "marco@poscidon.com",
       to: "marco@poscidon.com",
@@ -18,7 +18,8 @@ export async function POST(req) {
       has been submitted through the poscidon website.
       Project title: ${title}
       Project description: ${description}
-      Go to market strategy: ${strategy} 
+      Go to market strategy: ${strategy}
+      Research country: ${country} 
       `
     });
     return NextResponse.json(send);

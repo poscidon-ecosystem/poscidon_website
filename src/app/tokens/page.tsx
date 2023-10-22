@@ -90,11 +90,10 @@ export default function Tokens() {
             "
         >
           <div className="flex">
-            <Image alt="dna" src="/dnaBlue.svg" width={40} height={40} />
             <h1
               className="
                     flex
-                    p-4
+                    py-4
                     font-proximaSemiBold
                     text-4xl
                     text-seaBlue-700
@@ -132,7 +131,7 @@ export default function Tokens() {
         </div>
         <Image
           className="
-                    rounded-xl
+                    rounded-3xl
                     sm:my-8
                     "
           src={'/TokenAllocation.svg'}
@@ -159,11 +158,10 @@ export default function Tokens() {
                 "
         >
           <div className="flex justify-start">
-            <Image alt="dna" src="/dnaBlue.svg" width={40} height={40} />
             <h1
               className="
                 flex
-                p-4
+                py-4
                 font-proximaSemiBold
                 text-4xl
                 text-seaBlue-700
@@ -182,7 +180,10 @@ export default function Tokens() {
           >
             <li>
               Your $SCI can be staked through the{' '}
-              <a href={'https://test.poscidon.com/staking'}>
+              <a 
+              className='underline text-seaBlue-700'
+              target='_blank'
+              href={'https://test.poscidon.com/staking'}>
                 PoSciDon Protocol
               </a>
               .
@@ -219,16 +220,15 @@ export default function Tokens() {
 
         <div
           className="
-                pt-4
                 pb-8
+                pt-4
                 "
         >
           <div className="flex w-full justify-start">
-            <Image alt="dna" src="/dnaBlue.svg" width={40} height={40} />
             <div
               className="
                             flex
-                            p-4
+                            py-4
                             font-proximaSemiBold
                             text-4xl
                             text-seaBlue-700

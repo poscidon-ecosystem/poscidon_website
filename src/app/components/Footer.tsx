@@ -103,6 +103,20 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {/* <div className='
+            text-center
+            w-full
+            '> */}
+            {/* <Button
+            link={true}
+            href='https://test.poscidon.com/'
+            onClick={''}
+            type="button"
+            text="Visit app"
+            icon=''
+            style={styles.btncolor}
+            /> */}
+            {/* </div> */}
       <Socials/>
     </div>
   );
