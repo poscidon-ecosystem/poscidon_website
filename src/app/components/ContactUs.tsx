@@ -79,16 +79,17 @@ export default function ContactUs() {
     console.log(fullname, email);
   };
   return (
-    <header className="flex items-center justify-center">
+    <>
       <form
         onSubmit={sendEmail}
         className="
-        rounded-lg 
+        rounded-3xl 
         shadow-xl 
         flex 
         flex-col 
-        px-8 
-        py-8 
+        p-8
+        mb-16
+        w-full
         bg-seaBlue-700"
       >
         <h1 className="text-2xl font-bold text-white">
@@ -158,7 +159,7 @@ export default function ContactUs() {
         <div className="text-left">
           {showSuccessMessage && (
             <p className="text-green-500 font-semibold text-sm my-2">
-              Thankyou! Your project has been submitted.
+              Successfully subscribed, thank you!
             </p>
           )}
           {showFailureMessage && (
@@ -168,6 +169,6 @@ export default function ContactUs() {
           )}
         </div>
       </form>
-    </header>
+    </>
   );
 }

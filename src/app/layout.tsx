@@ -29,6 +29,7 @@ const proximaNovaItalic = localFont({
 export const metadata = {
   title: 'PoSciDon',
   description: 'PoSciDon DAO Website',
+  
 };
 
 export default function RootLayout({

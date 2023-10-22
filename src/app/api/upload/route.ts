@@ -1,7 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import Irys from "@irys/sdk";
 
-// const TOP_UP = '200000000000000';
 const MIN_FUNDS = 0.05;
 
 export async function POST(req: NextRequest) {
@@ -22,7 +21,6 @@ export async function POST(req: NextRequest) {
     let balance = await irys.getLoadedBalance();
     let readableBalance = irys.utils.fromAtomic(balance).toNumber();
 
-
     if(readableBalance < MIN_FUNDS) {
         try {
             const fundTx = await irys.fund(irys.utils.toAtomic(0.05));
@@ -36,7 +34,8 @@ export async function POST(req: NextRequest) {
         JSON.stringify({
             title: data.title, 
             description: data.description,
-            strategy: data.strategy
+            strategy: data.strategy,
+            country: data.country
         }), {
         tags: [{ name: 'Content-Type', value: 'application/json' }],
     });
@@ -45,6 +44,8 @@ export async function POST(req: NextRequest) {
         txId: `${tx.id}`,
         title: `${data.title}`,
         description: `${data.description}`,
-        strategy: `${data.strategy}`
+        strategy: `${data.strategy}`,
+        country: `${data.country}`
+
     })
 }

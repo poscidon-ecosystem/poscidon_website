@@ -59,7 +59,7 @@ export default function Footer() {
             ">ABOUT POSCIDON DAO</p>
             <Link 
             className="hover:text-seaBlue-700" 
-            href={'/'}>For scientists</Link>
+            href={'/research'}>For scientists</Link>
             <Link className="hover:text-seaBlue-700" href="/tokens">Tokens</Link>
             <Link
               target="_blank"
@@ -103,6 +103,20 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {/* <div className='
+            text-center
+            w-full
+            '> */}
+            {/* <Button
+            link={true}
+            href='https://test.poscidon.com/'
+            onClick={''}
+            type="button"
+            text="Visit app"
+            icon=''
+            style={styles.btncolor}
+            /> */}
+            {/* </div> */}
       <Socials/>
     </div>
   );

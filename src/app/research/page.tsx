@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import countries from 'i18n-iso-countries';
 import enLocale from 'i18n-iso-countries/langs/en.json';
-import Footer from '../components/Footer';
+import Link from 'next/link';
 
 export default function Research() {
   const [title, setTitle] = useState('');
@@ -94,6 +94,8 @@ export default function Research() {
         body: JSON.stringify({
           title: title,
           description: description,
+          strategy: strategy,
+          country: country
         }),
       });
       const response = await res1.json();
@@ -107,6 +109,7 @@ export default function Research() {
           title: response.title,
           description: response.description,
           strategy: response.strategy,
+          country: response.country
         }),
       });
       const { errorUpload } = response;
@@ -142,6 +145,8 @@ export default function Research() {
       // Reset form fields
       setTitle('');
       setDescription('');
+      setStrategy('');
+      setCountry('');
     }
   }
 
@@ -334,7 +339,7 @@ export default function Research() {
               </p>
             )}
           </section>
-          <div className="my-8 flex w-full items-start justify-start">
+          <div className="my-4 flex w-full items-start justify-start">
             <Button
               link={false}
               type={'submit'}
@@ -351,10 +356,18 @@ export default function Research() {
               style={styles.btncolor}
             />
           </div>
-          <div className="text-left">
+          <div className="text-left text-lg py-4 mb-6">
             {showSuccessMessage && (
-              <p className="my-2 text-sm font-semibold text-green-500">
-                Thankyou! Your Message has been delivered.
+              <p className="font-semibold text-green-500">
+                Thank you! 
+                Your project has been submitted 
+                and will be reviewed shortly.{' '}<br></br>
+                <Link  
+                    className="text-seaBlue-700 underline" 
+                    href="https://discord.gg/TXZZV5KXmn" target="_blank">
+                        Join our discord
+                </Link> 
+                {' '}to stay up to date with your submission progress.
               </p>
             )}
             {showFailureMessage && (

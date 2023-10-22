@@ -1,14 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from './Footer';
+import { useClickOutside } from './ClickOutside';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-[0.25rem] w-8 my-[0.2rem] rounded-full bg-black transition ease transform duration-300`;
   const [src, setSrc] = useState('./../BlackLogo.svg');
+  const dropdown = useRef<any>();
+  useClickOutside(dropdown, () => setIsOpen(false));
+
+  const handleToggleButton = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <nav
@@ -21,7 +28,7 @@ export default function NavBar() {
       justify-between
       border-b-2
       border-seaBlue-700
-      bg-white
+      bg-[#FDFDFD]
       px-4
         "
     >
@@ -38,18 +45,19 @@ export default function NavBar() {
           alt="PoSciDon logo"
         />
       </Link>
-      <div className="flex items-center">
-
-
+      <div 
+      ref={dropdown}
+      className="flex items-center">
         <div className="ml-10 flex">
           <button
+          
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
             onClick={() => setIsOpen(!isOpen)}
           >
             <div
               className={`${genericHamburgerLine} ${
                 isOpen
-                  ? 'group-hover:bg-seaBlue-700 mb-[0.35rem] translate-y-3 rotate-45 group-hover:opacity-100'
+                  ? 'mb-[0.35rem] translate-y-3 rotate-45 group-hover:bg-seaBlue-700 group-hover:opacity-100'
                   : 'group-hover:bg-seaBlue-700 group-hover:opacity-100'
               }`}
             />
@@ -63,7 +71,7 @@ export default function NavBar() {
             <div
               className={`${genericHamburgerLine} ${
                 isOpen
-                  ? 'group-hover:bg-seaBlue-700 -translate-y-3 -rotate-45 group-hover:opacity-100'
+                  ? '-translate-y-3 -rotate-45 group-hover:bg-seaBlue-700 group-hover:opacity-100'
                   : 'group-hover:bg-seaBlue-700 group-hover:opacity-100'
               }`}
             />
@@ -72,25 +80,30 @@ export default function NavBar() {
         {isOpen && (
           <div
             className="
-                    absolute 
-                    right-0
-                    top-20
-                    z-10
-                    flex 
-                    w-full
-                    flex-col 
-                    items-center
-                    sm:items-center
-                    justify-center gap-8 bg-white p-4
-                    "
-          > <div className='
-                  xl:w-[65%]
-                  lg:w-[85%]
-                  md:w-[100%]
-          '>
-            <Footer/>
-          </div>
-              
+            absolute 
+            right-0
+            top-20
+            z-10
+            flex 
+            w-full
+            flex-col 
+            items-center
+            justify-center
+            gap-8 border-b-2 border-seaBlue-700 bg-white
+            p-4
+            sm:items-center
+            "
+          >
+            <div
+              className="
+            md:w-[100%]
+            lg:w-[85%]
+            xl:w-[65%]
+                  
+          "
+            >
+              <Footer />
+            </div>
           </div>
         )}
       </div>
