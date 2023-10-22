@@ -64,7 +64,7 @@ export default function Footer() {
             <Link
               target="_blank"
               className="hover:text-seaBlue-700" 
-              href="https://tinyurl.com/poscidon-whitepaper/"
+              href="/Whitepaper.pdf"
               title='PoSciDon Whitepaper'
             >
               Whitepaper

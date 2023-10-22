@@ -5,12 +5,15 @@ import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import Countries from '../components/Countries';
+import countries from 'i18n-iso-countries';
+import enLocale from 'i18n-iso-countries/langs/en.json';
+import Footer from '../components/Footer';
 
 export default function Research() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [strategy, setStrategy] = useState('');
+  const [country, setCountry] = useState('');
   const [buttonText, setButtonText] = useState('Submit');
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -20,15 +23,37 @@ export default function Research() {
     title: false,
     description: false,
     strategy: false,
-    countries: false
+    country: false
   });
+
+  countries.registerLocale(enLocale);
+
+  const obj = countries.getNames('en', {select: "official"});
+  const arr = Object.entries(obj).map(([key, value]) => {
+      return {
+          label: value,
+          value: key
+      }
+  }); 
+
+  const handleErrors = ({tempErrors}) => {
+    setErrors({ ...tempErrors });
+    setTimeout(() => {
+      setErrors({      
+            title: false,
+            description: false,
+            strategy: false,
+            country: false
+        })
+    }, 6000);
+  };
 
   const handleValidation = () => {
     let tempErrors = {
       title: false,
       description: false,
       strategy: false,
-      countries: false
+      country: false
     };
     let isValid = true;
 
@@ -44,12 +69,12 @@ export default function Research() {
       tempErrors.strategy = true;
       isValid = false;
     }
-    if (strategy.length <= 0) {
-      tempErrors.countries = true;
+    if (country.length <= 0) {
+      tempErrors.country = true;
       isValid = false;
     }
 
-    setErrors({ ...tempErrors });
+    handleErrors({tempErrors});
     console.log('errors', errors);
     return isValid;
   };
@@ -93,6 +118,8 @@ export default function Research() {
 
         setTitle('');
         setDescription('');
+        setStrategy('');
+        setCountry('');
         return;
       }
       const { errorSending } = await res2.json();
@@ -104,6 +131,8 @@ export default function Research() {
 
         setTitle('');
         setDescription('');
+        setStrategy('');
+        setCountry('');
         return;
       }
 
@@ -202,7 +231,6 @@ export default function Research() {
                     p-4
                     shadow 
                     ring-tropicalBlue 
-                    focus:rounded-3xl 
                     focus:outline-none 
                     focus:ring-2
                     "
@@ -231,7 +259,6 @@ export default function Research() {
                 p-4
                 shadow 
                 ring-tropicalBlue 
-                focus:rounded-3xl 
                 focus:outline-none 
                 focus:ring-2
                 "
@@ -260,7 +287,6 @@ export default function Research() {
                 p-4
                 shadow 
                 ring-tropicalBlue 
-                focus:rounded-3xl 
                 focus:outline-none 
                 focus:ring-2
                 "
@@ -278,14 +304,37 @@ export default function Research() {
                 >
                 Research country<span className="text-red-500">*</span>
             </label>
-            <Countries/>
-            {errors?.countries && (
+            <select
+                className={`
+                rounded-3xl 
+                p-4
+                shadow 
+                ring-tropicalBlue  
+                focus:outline-none 
+                focus:ring-2
+                ${country.length > 0 ? "text-black" : "text-gray-400"}
+                `}
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                >
+                {arr.map(({label, value}) => (
+                <>
+                    <option hidden>Select Country...</option>
+                    <option 
+                        key={value} value={label}
+                        >
+                        {label}
+                    </option>
+                </>
+                ))}        
+            </select>
+            {errors?.country && (
               <p className="text-red-500">
-                Commercialization strategy cannot be empty.
+                A country must be selected.
               </p>
             )}
           </section>
-          <div className="my-4 flex w-full items-start justify-start">
+          <div className="my-8 flex w-full items-start justify-start">
             <Button
               link={false}
               type={'submit'}

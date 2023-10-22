@@ -315,22 +315,6 @@ export default function Home() {
         />
         </div>
       </div>
-      <hr className="border-b-1 w-full border-gray-200"></hr>
-      <Footer/>
-      <div className="flex w-full pt-2 flex-col">
-        <hr className="border-b-1 w-full border-gray-200"></hr>
-        <div
-          className=" 
-        flex 
-        h-20
-        items-center
-        justify-center
-        text-gray-400
-        "
-        >
-          © PoSciDon DAO. All rights reserved.
-        </div>
-      </div>
     </div>
   );
 }
