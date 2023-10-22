@@ -1,4 +1,3 @@
-import Footer from '../components/Footer';
 import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import Image from 'next/image';

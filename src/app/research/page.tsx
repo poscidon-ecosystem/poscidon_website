@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import countries from 'i18n-iso-countries';
 import enLocale from 'i18n-iso-countries/langs/en.json';
-import Footer from '../components/Footer';
 
 export default function Research() {
   const [title, setTitle] = useState('');
@@ -334,7 +333,7 @@ export default function Research() {
               </p>
             )}
           </section>
-          <div className="my-8 flex w-full items-start justify-start">
+          <div className="my-4 flex w-full items-start justify-start">
             <Button
               link={false}
               type={'submit'}
@@ -351,10 +350,10 @@ export default function Research() {
               style={styles.btncolor}
             />
           </div>
-          <div className="text-left">
+          <div className="text-left text-xl py-8">
             {showSuccessMessage && (
               <p className="my-2 text-sm font-semibold text-green-500">
-                Thankyou! Your Message has been delivered.
+                Thank you! Your project has been submitted and will be reviewed shortly.
               </p>
             )}
             {showFailureMessage && (

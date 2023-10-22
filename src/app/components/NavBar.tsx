@@ -1,14 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from './Footer';
+import { useClickOutside } from './ClickOutside';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-[0.25rem] w-8 my-[0.2rem] rounded-full bg-black transition ease transform duration-300`;
-  const [src, setSrc] = useState('./../BlackLogo.svg');
+  const [src, setSrc] = useState('./../BlackLogo.svg');   
+  const dropdown = useRef<any>();
+  useClickOutside(dropdown, () => setIsOpen(false));
+  
+  const handleToggleButton = () => {
+    setIsOpen((prev) => !prev);
+  }
 
   return (
     <nav
@@ -21,7 +28,7 @@ export default function NavBar() {
       justify-between
       border-b-2
       border-seaBlue-700
-      bg-white
+      bg-[#FDFDFD]
       px-4
         "
     >
@@ -44,7 +51,8 @@ export default function NavBar() {
         <div className="ml-10 flex">
           <button
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={handleToggleButton}
+            ref={dropdown}
           >
             <div
               className={`${genericHamburgerLine} ${
@@ -71,6 +79,7 @@ export default function NavBar() {
         </div>
         {isOpen && (
           <div
+            ref={dropdown}
             className="
                     absolute 
                     right-0
@@ -82,11 +91,15 @@ export default function NavBar() {
                     items-center
                     sm:items-center
                     justify-center gap-8 bg-white p-4
+                    border-b-2
+                    border-seaBlue-700
                     "
-          > <div className='
+          > <div 
+          className='
                   xl:w-[65%]
                   lg:w-[85%]
                   md:w-[100%]
+                  
           '>
             <Footer/>
           </div>

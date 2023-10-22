@@ -59,7 +59,7 @@ export default function Footer() {
             ">ABOUT POSCIDON DAO</p>
             <Link 
             className="hover:text-seaBlue-700" 
-            href={'/'}>For scientists</Link>
+            href={'/research'}>For scientists</Link>
             <Link className="hover:text-seaBlue-700" href="/tokens">Tokens</Link>
             <Link
               target="_blank"
