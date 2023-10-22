@@ -6,8 +6,9 @@ import Footer from './components/Footer';
 import ContactUs from "./components/ContactUs";
 import { useState } from 'react';
 import Button from './components/Button';
+import styles from "./components/Button.module.css";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-import logoMark from '/logoMark.svg';
+
 
 export default function Home() {
   const [resSrc, setResSrc] = useState('/ResearchWhite.webp');
@@ -20,39 +21,26 @@ export default function Home() {
         xl:w-[65%]
         lg:w-[85%]
         md:w-[100%]
+        w-full 
+        max-w-full
         sm:pt-12
         flex
         flex-col 
         justify-center 
         items-center 
-        w-full 
-        max-w-full 
         ">     
-      <div className="
-          flex 
-          justify-center 
-          items-center 
-          w-full 
-          max-w-full 
-          px-4
-          sm:py-8
-          ">
         <div className="
         flex 
         flex-col 
         justify-center 
         items-center 
-        gap-4
-        bg-white
-        bg-opacity-90
-        p-6
-        rounded-3xl
+        py-8
         ">
           <div className={`
           lg:text-6xl 
-          md:text-5xl
           sm:text-5xl 
-          text-4xl 
+          text-4xl
+          sm:w-[85%] 
           w-full
           max-w-full
           flex
@@ -65,14 +53,14 @@ export default function Home() {
             Revolutionizing Personalized Medicine Research Funding
           </div>
           <div className={`
+          w-[70%]
           flex 
           items-center 
           justify-center 
           sm:text-lg 
           text-base 
-          py-4
+          py-8
           text-center
-          
           `}>
             PoSciDon Decentralized Autonomous Organisation (DAO) 
             focuses on funding research projects that develop personalized treatments 
@@ -83,58 +71,24 @@ export default function Home() {
           <div className='flex gap-4'>
             <Button
             link={true}
+            type={"button"}
             onClick={null}
             text={`Become a donor`}
             href={'https://test.poscidon.com/donation'}
-            style={`
-            shadow transition-all inline-block hover:cursor-pointer
-            font-proximaSemiBold
-            items-center
-            justify-center
-            rounded-[8rem]
-            border-2 
-            border-seaBlue-700
-            bg-seaBlue-700
-            px-8 
-            py-3
-            md:text-2xl
-            lg:text-3xl
-            text-seaBlue-50 
-            hover:border-2
-            hover:border-seaBlue-700 
-            hover:bg-seaBlue-50 
-            hover:text-seaBlue-700
-            active:bg-seaBlue-300
-            active:text-white
-            `}
+            icon={''}
+            style={styles.btncolor}
             />      
             <Button
             link={true}
+            type={"button"}
             onClick={null}
             text={`Join the DAO`}
             href={'https://discord.gg/QKzZkrYpw7'}
-            style={`
-            shadow transition-all inline-block hover:cursor-pointer
-            hover:bg-tropicalBlue
-            font-proximaSemiBold
-            flex
-            items-center
-            justify-center
-            rounded-[8rem]
-            border-2
-            border-seaBlue-700
-            px-8 
-            py-3
-            md:text-2xl
-            lg:text-3xl
-            text-seaBlue-700
-            active:bg-seaBlue-300
-            active:text-white
-            `}
+            icon={''}
+            style={styles.btn}
             />      
           </div>      
         </div>
-      </div>
       <div className='
         flex
         md:flex-row
@@ -145,8 +99,8 @@ export default function Home() {
         md:justify-start 
         max-w-full
         w-full
-        pt-4
-        sm:py-8
+        sm:py-12
+        py-8
         gap-6
         px-8
         '>

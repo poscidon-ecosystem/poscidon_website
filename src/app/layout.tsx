@@ -36,8 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="            
-    bg-[#FDFDFD]" 
+    <html
     lang="en">
       <Head>
         <link
@@ -67,10 +66,11 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-<script src="https://kit.fontawesome.com/bfd0659090.js" crossOrigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/bfd0659090.js" crossOrigin="anonymous"></script>
       </Head>
       <body
             className={`
+            bg-[#FDFDFD]
             flex
             flex-col
             items-center

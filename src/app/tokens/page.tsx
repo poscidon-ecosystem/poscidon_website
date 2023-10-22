@@ -1,106 +1,71 @@
 import Footer from '../components/Footer';
 import Button from '../components/Button';
+import styles from "../components/Button.module.css";
 import Image from 'next/image';
 
 export default function Tokens() {
   return (
-    <div
-      className="
-        flex
-        w-full
+    <div className="
+        xl:w-[65%]
+        lg:w-[85%]
+        md:w-[100%]
+        w-full 
         max-w-full
-        flex-col
-        items-center
+        sm:pt-12
+        flex
+        flex-col 
         justify-center 
-        sm:pt-12 
-        md:w-[100%] 
-        lg+:w-[80%] 
-        xl+:w-[65%] 
-        "
-    >
-      <title>PoSciDon DAO | SCI</title>
-      <div
-        className="
-            max-w-full 
-            px-4
-            sm:py-8
-            "
-      >
-        <div
-          className="
-        mb-2 
+        items-center 
+        ">     
+        <div className="
         flex 
         flex-col 
+        justify-center 
         items-center 
-        justify-center
-        gap-4
-        rounded-3xl
-        bg-white
-        bg-opacity-90
         py-8
-        "
-        >
-          <div
-            className={`
-          flex 
-          w-full
-          max-w-full 
-          items-center 
-          justify-center
-          text-center
-          font-proximaSemiBold
+        ">
+          <div className={`
+          lg:text-6xl 
+          sm:text-5xl 
           text-4xl
+          sm:w-[85%] 
+          w-full
+          max-w-full
+          flex
+          text-center
+          justify-center
+          items-center
+          font-proximaSemiBold
           text-seaBlue-700
-          sm:text-5xl
-          lg:text-6xl
-          `}
-          >
+          `}>
             Discover the SCI Token
           </div>
           <p
             className="
-                    w-[80%] 
-                    py-4 
-                    text-center
-                    sm:text-xl
-                    "
+            w-[70%]
+            xl+:w-[50%]
+            flex 
+            items-center 
+            justify-center 
+            sm:text-lg 
+            text-base 
+            py-8
+            text-center
+          "  
           >
-            <span className="font-proximaSemiBold">
-              $SCI is a governance token{' '}
-            </span>{' '}
+            $SCI is a governance token
             allowing holders to vote on DAO proposals.
             Revenue from commercialized assets will be used to buy back
             and burn $SCI tokens. $SCI will be released soon!
           </p>
           <Button
             link={true}
+            type={"button"}
             href={'/Whitepaper.pdf'}
             onClick={''}
             text={'Read our Whitepaper'}
-            style="
-                    flex
-                    w-[14rem]
-                    lg:w-[16rem]
-                    items-center
-                    text-center
-                    justify-center
-                    rounded-[8rem]
-                    border-2 
-                    border-seaBlue-700
-                    bg-seaBlue-700
-                    px-2 
-                    py-2
-                    text-base
-                    lg:px-4
-                    lg:py-4
-                    sm:text-xl
-                    text-seaBlue-50 
-                    hover:border-2
-                    hover:border-seaBlue-700 
-                    hover:bg-seaBlue-50 
-                    hover:text-seaBlue-700
-                    active:bg-seaBlue-300
-                    active:text-white"
+            icon={''}
+            style={styles.btncolor}
           />
         </div>
         <hr className="border-b-1 w-full border-gray-200"></hr>
@@ -217,14 +182,9 @@ export default function Tokens() {
             ">
                 <li>
                     Your $SCI can be staked through the{' '}
-                <Button
-                    link={true}
+                <a
                     href={'https://test.poscidon.com/staking'}
-                    text={'PoSciDon Protocol'}
-                    onClick={''}
-                    style={'underline text-seaBlue-700'}
-                />
-                .
+                >PoSciDon Protocol</a>.
                 </li>
                 <br></br>
                 <li>Once staked, you will gain voting power allowing you to vote on
@@ -297,7 +257,6 @@ export default function Tokens() {
             height={1000}
           />
         </div>
-      </div>
       <hr className="border-b-1 w-full border-gray-200"></hr>
       <Footer />
       <div className="flex w-full flex-col pt-2">

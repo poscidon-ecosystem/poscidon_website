@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import styles from "./Button.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactUs() {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
 
   const [errors, setErrors] = useState({
     fullname: false, 
@@ -54,12 +53,11 @@ export default function ContactUs() {
         },
         body: JSON.stringify({
           email: email,
-          fullname: fullname,
-          subject: subject,
-          message: message,
+          fullname: fullname
         }),
       });
 
+      console.log(res);
       const { error }  = await res.json();
       if (error) {
         console.log(error);
@@ -69,8 +67,6 @@ export default function ContactUs() {
 
         setFullname("");
         setEmail("");
-        setMessage("");
-        setSubject("");
         return;
       }
       setShowSuccessMessage(true);
@@ -79,10 +75,8 @@ export default function ContactUs() {
       // Reset form fields
       setFullname("");
       setEmail("");
-      setMessage("");
-      setSubject("");
     }
-    console.log(fullname, email, subject, message);
+    console.log(fullname, email);
   };
   return (
     <header className="flex items-center justify-center">
@@ -150,29 +144,21 @@ export default function ContactUs() {
         {errors?.email && (
           <p className="text-red-500">Email cannot be empty.</p>
         )}
-        <div className="flex flex-row items-center justify-start">
-          <button className="
-          px-10 
-          mt-8 
-          py-2 
-          bg-white 
-          text-seaBlue-700 
-          hover:bg-seaBlue-100 
-          hover:text-seaBlue-700 
-          rounded-md 
-          text-lg 
-          flex 
-          flex-row 
-          items-center
-          ">
-            {buttonText} <FontAwesomeIcon icon={faEnvelope} className="pl-2" style={{ color: "#0b1dee" }}/>
-          </button>
-
+        <div className="flex flex-row items-center justify-start my-8">
+        <Button
+          link={false}
+          type={"submit"}
+          onClick={null}
+          text={buttonText}
+          href={''}
+          style={styles.btncolor}
+          icon={<FontAwesomeIcon icon={faEnvelope} className="pl-2" style={{ color: "#FDFDFD" }}/>}
+          /> 
         </div>
         <div className="text-left">
           {showSuccessMessage && (
             <p className="text-green-500 font-semibold text-sm my-2">
-              Thankyou! Your Message has been delivered.
+              Thankyou! Your project has been submitted.
             </p>
           )}
           {showFailureMessage && (
