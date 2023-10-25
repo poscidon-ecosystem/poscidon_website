@@ -184,7 +184,7 @@ export default function ProjectForm() {
         pt-8
         "
       >
-        <div
+        <h1
           className={`
           flex 
           w-[90%] 
@@ -201,7 +201,7 @@ export default function ProjectForm() {
           `}
         >
           Get Your Personalized Medicine Project Funded
-        </div>
+        </h1>
         <p
           className="
             flex

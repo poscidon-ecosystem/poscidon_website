@@ -38,7 +38,7 @@ export default function Home() {
         pt-8
         "
       >
-        <div
+        <h1
           className={`
           flex 
           w-full 
@@ -55,7 +55,7 @@ export default function Home() {
           `}
         >
           Revolutionizing Personalized Medicine Research Funding
-        </div>
+        </h1>
         <div
           className={`
           flex

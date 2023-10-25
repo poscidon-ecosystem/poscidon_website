@@ -44,7 +44,7 @@ export default function Tokens() {
         py-8
         "
       >
-        <div
+        <h1
           className={`
           flex 
           w-full 
@@ -61,7 +61,7 @@ export default function Tokens() {
           `}
         >
           Discover the SCI Token
-        </div>
+        </h1>
         <p
           className="
             flex
