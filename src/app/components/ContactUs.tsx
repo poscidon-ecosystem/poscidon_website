@@ -152,8 +152,8 @@ export default function ContactUs() {
           onClick={null}
           text={buttonText}
           href={''}
-          style={styles.btncolor}
-          icon={<FontAwesomeIcon icon={faEnvelope} className="pl-2" style={{ color: "#FDFDFD" }}/>}
+          style={styles.secondary}
+          icon={<FontAwesomeIcon icon={faEnvelope} className="pl-2" style={{ color: "#0b1dee" }}/>}
           /> 
         </div>
         <div className="text-left">

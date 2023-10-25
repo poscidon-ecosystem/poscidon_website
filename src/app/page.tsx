@@ -2,12 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Footer from './components/Footer';
 import ContactUs from './components/ContactUs';
 import { useState } from 'react';
 import Button from './components/Button';
 import styles from './components/Button.module.css';
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export default function Home() {
   const [resSrc, setResSrc] = useState('/ResearchWhite.webp');
@@ -24,8 +22,8 @@ export default function Home() {
         flex-col 
         items-center
         justify-center
-        sm:pt-12
         px-8
+        sm:pt-12
         md:w-[100%] 
         lg:w-[85%] 
         xl:w-[65%] 
@@ -36,11 +34,11 @@ export default function Home() {
         flex 
         flex-col 
         items-center 
-        justify-center 
-        py-8
+        justify-between 
+        pt-8
         "
       >
-        <div
+        <h1
           className={`
           flex 
           w-full 
@@ -51,13 +49,13 @@ export default function Home() {
           font-proximaSemiBold
           text-4xl
           text-seaBlue-700
-          sm:w-[85%]
+          sm:w-[95%]
           sm:text-5xl
           lg:text-6xl
           `}
         >
           Revolutionizing Personalized Medicine Research Funding
-        </div>
+        </h1>
         <div
           className={`
           flex
@@ -84,7 +82,7 @@ export default function Home() {
             text={`Become a donor`}
             href={'https://test.poscidon.com/donation'}
             icon={''}
-            style={styles.btncolor}
+            style={styles.primary}
           />
           <Button
             link={true}
@@ -93,7 +91,7 @@ export default function Home() {
             text={`Join the DAO`}
             href={'https://discord.gg/QKzZkrYpw7'}
             icon={''}
-            style={styles.btn}
+            style={styles.secondary}
           />
         </div>
       </div>
@@ -107,7 +105,7 @@ export default function Home() {
         justify-center
         gap-6
         py-8
-        sm:py-12
+        sm:py-16
         md:flex-row
         md:items-start
         md:justify-start
@@ -156,17 +154,21 @@ export default function Home() {
           flex 
           max-w-full 
           flex-col 
-          items-start 
-          justify-start 
+          items-center   
+          justify-center
+          text-center 
           whitespace-pre-line
           "
           >
             <div className="pt-2 font-proximaSemiBold text-2xl">
               Fund your research
             </div>
-            <p className="py-2">
+            <p className="
+            py-2
+            px-4           
+            ">
               Interact with personalized medicine researchers and receive
-              funding for your project
+              funding for your project.
             </p>
             <Link
               className="flex pb-2 font-proximaItalic text-seaBlue-700"
@@ -226,15 +228,16 @@ export default function Home() {
           flex 
           max-w-full 
           flex-col 
-          items-start 
-          justify-start 
+          items-center
+          text-center
+          justify-center
           whitespace-pre-line
           "
           >
             <div className="pt-2 font-proximaSemiBold text-2xl">
               Become part of the community
             </div>
-            <p className="py-2">
+            <p className="py-2 px-4">
               Leverage you knowledge and skills to innovate personalized
               medicine research. PoSciDon is built by people like you.
             </p>
@@ -297,17 +300,18 @@ export default function Home() {
             flex 
             max-w-full 
             flex-col 
-            items-start 
-            justify-start  
+            items-center
+            justify-center
+            text-center 
             whitespace-pre-line
             "
           >
             <div className="pt-2 font-proximaSemiBold text-2xl">
               Our Token Model
             </div>
-            <p className="py-2">
+            <p className="py-2 px-4">
               Everything you need to know about the tokens that drive our
-              ecosystem
+              ecosystem.
             </p>
             <Link
               className="flex pb-2 font-proximaItalic text-seaBlue-700"

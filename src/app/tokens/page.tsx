@@ -1,6 +1,23 @@
 import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import Image from 'next/image';
+import Head from 'next/head';
+import { Metadata } from 'next';
+
+const url = new URL('https://poscidon.com/tokens/');
+
+export const metadata: Metadata = {
+  metadataBase: url,
+  title: 'PoSciDon DAO | SCI Token',
+  description: `Holding the SCI token makes you a valuable DAO member 
+  as it allows you to vote on DAO proposals and have a say in the funding of research projects. 
+  `,
+  viewport: "width=device-width, initial-scale=1.0",
+  alternates: {
+    canonical: url,
+  },
+  robots: "index, follow",
+};
 
 export default function Tokens() {
   return (
@@ -27,7 +44,7 @@ export default function Tokens() {
         py-8
         "
       >
-        <div
+        <h1
           className={`
           flex 
           w-full 
@@ -44,7 +61,7 @@ export default function Tokens() {
           `}
         >
           Discover the SCI Token
-        </div>
+        </h1>
         <p
           className="
             flex
@@ -69,7 +86,7 @@ export default function Tokens() {
           onClick={''}
           text={'Read our Whitepaper'}
           icon={''}
-          style={styles.btncolor}
+          style={styles.primary}
         />
       </div>
       <hr className="border-b-1 w-full border-gray-200"></hr>
@@ -180,10 +197,11 @@ export default function Tokens() {
           >
             <li>
               Your $SCI can be staked through the{' '}
-              <a 
-              className='underline text-seaBlue-700'
-              target='_blank'
-              href={'https://test.poscidon.com/staking'}>
+              <a
+                className="text-seaBlue-700 underline"
+                target="_blank"
+                href={'https://test.poscidon.com/staking'}
+              >
                 PoSciDon Protocol
               </a>
               .
@@ -269,5 +287,6 @@ export default function Tokens() {
         />
       </div>
     </div>
+    // </>
   );
 }
