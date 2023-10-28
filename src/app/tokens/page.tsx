@@ -82,7 +82,7 @@ export default function Tokens() {
         <Button
           link={true}
           type={'button'}
-          href={'/Whitepaper.pdf'}
+          href={'/whitepaper.pdf'}
           onClick={''}
           text={'Read our Whitepaper'}
           icon={''}
@@ -151,7 +151,7 @@ export default function Tokens() {
                     rounded-3xl
                     sm:my-8
                     "
-          src={'/TokenAllocation.svg'}
+          src={'/token-allocation.svg'}
           alt=""
           width={500}
           height={500}
@@ -164,7 +164,7 @@ export default function Tokens() {
             py-8
             sm:flex
             "
-          src={'/poStaking.png'}
+          src={'/staking.png'}
           alt="Staking $SCI and $PO tokens"
           width={1000}
           height={1000}
@@ -230,12 +230,11 @@ export default function Tokens() {
             sm:hidden
             sm:py-8
             "
-          src={'/poStaking.png'}
+          src={'/staking.png'}
           alt="Staking $SCI and $PO tokens"
           width={1000}
           height={1000}
         />
-
         <div
           className="
                 pb-8

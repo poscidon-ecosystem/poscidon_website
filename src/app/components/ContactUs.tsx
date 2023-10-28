@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from "react";
 import Button from "./Button";
 import styles from "./Button.module.css";
@@ -120,7 +122,7 @@ export default function ContactUs() {
 
         <label
           htmlFor="email"
-          className="text-gray-500 font-light mt-4 dark:text-gray-50"
+          className="text-white font-light mt-4 "
         >
           E-mail<span className="text-red-500">*</span>
         </label>

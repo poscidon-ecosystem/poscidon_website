@@ -9,7 +9,7 @@ import { useClickOutside } from './ClickOutside';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-[0.25rem] w-8 my-[0.2rem] rounded-full bg-black transition ease transform duration-300`;
-  const [src, setSrc] = useState('./../BlackLogo.svg');
+  const [src, setSrc] = useState('./../black-logo.svg');
   const dropdown = useRef<any>();
   useClickOutside(dropdown, () => setIsOpen(false));
 
@@ -33,8 +33,8 @@ export default function NavBar() {
         "
     >
       <Link
-        onMouseEnter={() => setSrc('./../BlueLogo.svg')}
-        onMouseLeave={() => setSrc('./../BlackLogo.svg')}
+        onMouseEnter={() => setSrc('./../blue-logo.svg')}
+        onMouseLeave={() => setSrc('./../black-logo.svg')}
         href="/"
       >
         <Image

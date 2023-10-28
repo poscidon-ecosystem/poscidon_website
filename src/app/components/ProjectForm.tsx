@@ -162,7 +162,7 @@ export default function ProjectForm() {
     key="canonical"
   />
   </Head>
-    <div
+    <main
       className="
         flex
         w-full 
@@ -384,7 +384,7 @@ export default function ProjectForm() {
           </div>
         </form>
       </div>
-    </div>
+    </main>
     </>
   );
 }

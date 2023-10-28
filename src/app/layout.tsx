@@ -9,21 +9,30 @@ import { Metadata } from 'next';
 config.autoAddCss = false;
 
 const proximaNova = localFont({
-  src: './ProximaNovaRegular.otf',
+  src: [
+    { path: 'ProximaNovaRegular.otf' }
+  ],
   variable: '--font-proximaNova',
 });
 
 const proximaNovaExtraBold = localFont({
-  src: './ProximaNovaExtrabold.otf',
+  src: [
+    { path: 'ProximaNovaExtrabold.otf' }
+  ],
   variable: '--font-proximaNovaBold',
 });
+
 const proximaNovaSemiBold = localFont({
-  src: './ProximaNovaSemibold.otf',
+  src: [
+    { path: 'ProximaNovaSemibold.otf' }
+  ],
   variable: '--font-proximaNovaSemiBold',
 });
 
 const proximaNovaItalic = localFont({
-  src: './ProximaNovaRegularItalic.otf',
+  src: [
+    { path: 'ProximaNovaRegularItalic.otf' }
+  ],
   variable: '--font-proximaNovaItalic',
 });
 
@@ -32,10 +41,7 @@ const url = new URL('https://poscidon.com/');
 export const metadata: Metadata = {
   metadataBase: url,
   title: 'PoSciDon DAO | Personalized Medicine Funding Revolutionized',
-  description: `PoSciDon is a decentralized science DAO that
-  aims to streamline the funding process of personalized medicine research.
-  Join the revolution!
-  `,
+  description: `PoSciDon is a decentralized science DAO that aims to streamline the funding process of personalized medicine research. Join the revolution!`,
   viewport: "width=device-width, initial-scale=1.0",
   alternates: {
     canonical: "https://poscidon.com/"
@@ -49,7 +55,7 @@ export const metadata: Metadata = {
           {rel: "android-chrome-192x192", url: `${url}android-chrome-192x192.png`},
           {rel: "android-chrome-512x512", url: `${url}android-chrome-512x512.png`},
         ],
-  manifest: `${url}manifest.json`
+  manifest: `${url}manifest.json`,
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Socials from './Socials';
-import Logo from '/public/logoMark.svg';
+import Logo from '/public/logo.svg';
 
 export default function Footer() {
   return (
@@ -33,7 +33,6 @@ export default function Footer() {
             <Image
               width={1000}
               height={1000}
-              className=""
               src={Logo}
               alt="PoSciDon logo"
             />
@@ -97,7 +96,7 @@ export default function Footer() {
             <p className="
             text-sm 
             text-seaBlue-700
-            font-proximaSemiBold">FINE PRINT</p>
+            font-proximaSemiBold">OTHER</p>
             <Link className="hover:text-seaBlue-700" href={'/'}>Brand guidelines</Link>
             <Link className="hover:text-seaBlue-700" href={'/'}>Privacy policy</Link>
           </div>

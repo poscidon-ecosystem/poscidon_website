@@ -10,5 +10,6 @@
         {"src": "https://poscidon.com/apple-touch-icon.png"},
         {"src": "https://poscidon.com/android-chrome-192x192.png", "sizes": "192x192"},
         {"src": "https://poscidon.com/android-chrome-512x512.png", "sizes": "512x512"}
-      ]
+      ],
+    "display": "fullscreen"
   }
