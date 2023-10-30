@@ -334,6 +334,7 @@ export default function ProjectForm() {
           </section>
           <div className="my-8 flex w-full items-center justify-center">
             <Button
+              target={''}
               link={false}
               type={'submit'}
               onClick={''}
