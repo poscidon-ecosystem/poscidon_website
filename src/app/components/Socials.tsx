@@ -14,17 +14,20 @@ export default function Socials() {
           gap-24
           "
           >
-            <Link 
+            <Link
+            aria-label="Join PoSciDon DAO's Discord server" 
             className="flex items-center justify-center"
             href="https://discord.gg/TXZZV5KXmn" target="_blank">
                 <FontAwesomeIcon icon={faDiscord} className="fa-2x" style={{color: "#0b1dee"}}/>
             </Link>
-            <Link 
+            <Link
+            aria-label="Visit PoSciDon DAO's X (formerly known as Twitter) profile" 
             className="flex h-[4rem] w-10 items-center justify-center"
             href="https://twitter.com/poscidondao" target="_blank">
                 <FontAwesomeIcon icon={faTwitter} className="fa-2x" style={{color: "#0b1dee"}}/>
             </Link>
             <Link 
+            aria-label="Start the conversation in PoSciDon DAO's Telegram group"
             className="flex h-[4rem] w-10 items-center justify-center"
             href="https://t.me/+orlGVaLwlGVlZjI8" target="_blank">
                 <FontAwesomeIcon icon={faTelegram} className="fa-2x" style={{color: "#0b1dee"}}/>

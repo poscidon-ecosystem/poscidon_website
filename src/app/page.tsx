@@ -2,6 +2,7 @@ import ContactUs from './components/ContactUs';
 import Button from './components/Button';
 import styles from './components/Button.module.css';
 import Cards from './components/Cards';
+import Hero from './components/Hero';
 
 export default function Home() {
 
@@ -16,8 +17,7 @@ export default function Home() {
         justify-center
         px-8
         sm:pt-12
-        lg:w-[85%] 
-        xl:w-[65%] 
+        xl:w-[70%] 
         "
     >
       <section
@@ -25,52 +25,53 @@ export default function Home() {
         flex 
         flex-col 
         items-center 
-        justify-between 
+        justify-center 
         pt-8
         pb-16
         "
       >
-        <h1
+        {/* <h1
           className={`
           flex 
           w-full 
+          sm:w-[95%]
           max-w-full
           items-center 
           justify-center
           text-center
+          text-seaBlue-700
           font-proximaSemiBold
           text-4xl
-          text-seaBlue-700
-          sm:w-[95%]
-          sm:text-5xl
-          lg:text-6xl
+          sm:text-6xl
+          md:text-7xl
+          lg:text-8xl
           `}
         >
           Revolutionizing Personalized Medicine Research Funding
-        </h1>
+        </h1> */}
+        <Hero/>
         <div
           className={`
-          flex
           w-[80%]
-          sm:w-[70%] 
-          items-center 
-          justify-center 
+          sm:w-[70%]
           py-8 
-          text-center 
-          text-base
-          sm:text-lg
+          text-center
+          text-base 
+          md:text-lg
+          xl:text-2xl
           `}
         >
-          PoSciDon Decentralized Autonomous Organisation (DAO) focuses on
-          funding research projects that develop personalized treatments for
-          patients affected by life-altering diseases such as cancer and
-          Alzheimer's disease. Together with your help we can change the lives
-          of people affected by these diseases.
+          PoSciDon Decentralized Autonomous Organisation (DAO) 
+          funds personalized medicine research
+          {' '}for <span className='font-proximaBold'>life-altering diseases</span> (incl. cancer and Alzheimer's disease). 
+          Together with your help we 
+          can <span className='font-proximaBold'>change the lives of people </span> affected by these diseases.
         </div>
         <div className="flex gap-4">
           <Button
             link={true}
             type={'button'}
+            target={'_blank'}
             onClick={null}
             text={`Become a donor`}
             href={'https://test.poscidon.com/donation'}
@@ -81,6 +82,7 @@ export default function Home() {
             link={true}
             type={'button'}
             onClick={null}
+            target={'_blank'}
             text={`Join the DAO`}
             href={'https://discord.gg/QKzZkrYpw7'}
             icon={''}
@@ -88,10 +90,16 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className='py-8'>
+      <section className='
+      flex 
+      justify-center 
+      items-center 
+      py-8 
+      w-full
+      '>
         <Cards/>
       </section>  
-      <section className='py-8'>
+      <section className='py-8 w-full'>
         <ContactUs />
       </section>
 

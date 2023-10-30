@@ -13,10 +13,6 @@ export default function NavBar() {
   const dropdown = useRef<any>();
   useClickOutside(dropdown, () => setIsOpen(false));
 
-  const handleToggleButton = () => {
-    setIsOpen((prev) => !prev);
-  };
-
   return (
     <nav
       className="
@@ -24,6 +20,7 @@ export default function NavBar() {
       flex
       h-20
       w-full
+      min-w-full
       items-center
       justify-between
       border-b-2
@@ -42,7 +39,7 @@ export default function NavBar() {
           height={100}
           className="h-36 shrink-0"
           src={`${src}`}
-          alt="PoSciDon logo"
+          alt="PoSciDon DAO's Logo consisting of a trident attached to a DNA helix"
         />
       </Link>
       <div 
@@ -50,7 +47,7 @@ export default function NavBar() {
       className="flex items-center">
         <div className="ml-10 flex">
           <button
-          
+            type='button'
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
             onClick={() => setIsOpen(!isOpen)}
           >

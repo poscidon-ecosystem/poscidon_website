@@ -1,7 +1,6 @@
 import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import Image from 'next/image';
-import Head from 'next/head';
 import { Metadata } from 'next';
 
 const url = new URL('https://poscidon.com/tokens/');
@@ -82,6 +81,7 @@ export default function Tokens() {
         <Button
           link={true}
           type={'button'}
+          target={'_blank'}
           href={'/whitepaper.pdf'}
           onClick={''}
           text={'Read our Whitepaper'}
@@ -123,7 +123,7 @@ export default function Tokens() {
           </div>
           <ul
             className="
-            list-image-[url(/listArrow.svg)] 
+            list-image-[url(/arrow.svg)] 
             md:text-xl
             "
           >
@@ -191,7 +191,7 @@ export default function Tokens() {
           </div>
           <ul
             className="
-            list-image-[url(/listArrow.svg)]
+            list-image-[url(/arrow.svg)]
             md:text-xl
             "
           >
@@ -258,7 +258,7 @@ export default function Tokens() {
           </div>
           <ul
             className="
-            list-image-[url(/listArrow.svg)] 
+            list-image-[url(/arrow.svg)]
             md:text-xl"
           >
             <li>

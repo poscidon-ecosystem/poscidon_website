@@ -13,12 +13,13 @@ export default function Cards() {
         <div
         className="
         flex
-        w-full
-        max-w-full 
         flex-col
         items-center
         justify-center
         gap-6
+        w-[80%]
+        md:w-full
+        max-w-full 
         md:flex-row
         md:items-start
         md:justify-start
@@ -27,7 +28,6 @@ export default function Cards() {
         <div
           className="
           flex 
-          h-full
           w-full
           max-w-full
           flex-col
@@ -58,7 +58,7 @@ export default function Cards() {
               "
               width={1000}
               height={1000}
-              alt="research with genetic code background"
+              alt="Genetic code surrounding the word 'research'"
               src={`${resSrc}`}
             />
           </Link>
@@ -86,7 +86,7 @@ export default function Cards() {
             </p>
             <Link
               className="flex pb-2 font-proximaItalic text-seaBlue-700"
-              href="/research"
+              href="/get-funding"
             >
               Get your project funded {'>'}
             </Link>
@@ -107,8 +107,7 @@ export default function Cards() {
             target="_blank"
             className="
               flex
-              h-full
-              w-full
+              md:w-full
               items-center
               justify-center
               rounded-3xl
@@ -133,7 +132,7 @@ export default function Cards() {
               "
               width={1000}
               height={1000}
-              alt="community with genetic code background"
+              alt="Genetic code surrounding the word 'community'"
               src={`${comSrc}`}
             />
           </Link>
@@ -209,7 +208,7 @@ export default function Cards() {
               "
               width={1000}
               height={1000}
-              alt="tokens with genetic code background"
+              alt="Genetic code surrounding the word 'tokens'"
               src={`${tokSrc}`}
             />
           </Link>

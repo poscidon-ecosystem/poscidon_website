@@ -30,6 +30,13 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+h2 {
+  @apply py-2 font-proximaBold text-2xl 
+}
+
+h4 {
+  @apply py-1 font-proximaBold text-lg ;
+}
 
 
 
