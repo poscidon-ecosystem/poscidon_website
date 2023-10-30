@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Socials from './Socials';
-import Logo from '/public/logoMark.svg';
+import Logo from '/public/logo.svg';
 
 export default function Footer() {
   return (
@@ -33,7 +33,6 @@ export default function Footer() {
             <Image
               width={1000}
               height={1000}
-              className=""
               src={Logo}
               alt="PoSciDon logo"
             />
@@ -64,7 +63,7 @@ export default function Footer() {
             <Link
               target="_blank"
               className="hover:text-seaBlue-700" 
-              href="/Whitepaper.pdf"
+              href="/whitepaper.pdf"
               title='PoSciDon Whitepaper'
             >
               Whitepaper
@@ -83,11 +82,22 @@ export default function Footer() {
             >Become a donor</Link>
             <Link 
             className="hover:text-seaBlue-700" 
-            href="https://forms.gle/hY52XW7inek4ynrR6" target='_blank'>Become a contributor</Link>
+            href="https://forms.gle/hY52XW7inek4ynrR6" target='_blank'>
+              Become a contributor
+            </Link>
             <Link 
             className="hover:text-seaBlue-700" 
-            href="https://discord.gg/TXZZV5KXmn" target="_blank">Join our discord</Link>
+            href="/submit-project">
+              Submit project
+            </Link>
             <Link 
+            aria-label="Join PoSciDon DAO's Discord server"
+            className="hover:text-seaBlue-700" 
+            href="https://discord.gg/TXZZV5KXmn" target="_blank">
+              Join our discord
+            </Link>
+            <Link 
+            aria-label="Visit PoSciDon DAO's X (formerly known as Twitter) profile" 
             className="hover:text-seaBlue-700" 
             href="https://twitter.com/poscidondao" target="_blank">
               Join our twitter
@@ -97,9 +107,9 @@ export default function Footer() {
             <p className="
             text-sm 
             text-seaBlue-700
-            font-proximaSemiBold">FINE PRINT</p>
-            <Link className="hover:text-seaBlue-700" href={'/'}>Brand guidelines</Link>
-            <Link className="hover:text-seaBlue-700" href={'/'}>Privacy policy</Link>
+            font-proximaSemiBold">OTHER</p>
+            <Link className="hover:text-seaBlue-700" target="_blank" href={'/brand-guidelines.pdf'}>Brand guidelines</Link>
+            <Link className="hover:text-seaBlue-700" href={'/privacy-policy'}>Privacy policy</Link>
           </div>
         </div>
       </div>

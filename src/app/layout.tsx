@@ -1,29 +1,31 @@
 import './globals.css';
 import localFont from '@next/font/local';
 import Head from 'next/head';
+import { Metadata } from 'next';
+import Script from 'next/script';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { Metadata } from 'next';
 config.autoAddCss = false;
 
 const proximaNova = localFont({
-  src: './ProximaNovaRegular.otf',
+  src: [{ path: 'ProximaNovaRegular.otf' }],
   variable: '--font-proximaNova',
 });
 
 const proximaNovaExtraBold = localFont({
-  src: './ProximaNovaExtrabold.otf',
+  src: [{ path: 'ProximaNovaBold.otf' }],
   variable: '--font-proximaNovaBold',
 });
+
 const proximaNovaSemiBold = localFont({
-  src: './ProximaNovaSemibold.otf',
+  src: [{ path: 'ProximaNovaSemibold.otf' }],
   variable: '--font-proximaNovaSemiBold',
 });
 
 const proximaNovaItalic = localFont({
-  src: './ProximaNovaRegularItalic.otf',
+  src: [{ path: 'ProximaNovaRegularItalic.otf' }],
   variable: '--font-proximaNovaItalic',
 });
 
@@ -32,24 +34,21 @@ const url = new URL('https://poscidon.com/');
 export const metadata: Metadata = {
   metadataBase: url,
   title: 'PoSciDon DAO | Personalized Medicine Funding Revolutionized',
-  description: `PoSciDon is a decentralized science DAO that
-  aims to streamline the funding process of personalized medicine research.
-  Join the revolution!
-  `,
-  viewport: "width=device-width, initial-scale=1.0",
+  description: `PoSciDon is a decentralized science DAO that aims to streamline the funding process of personalized medicine research. Join the revolution!`,
+  viewport: 'width=device-width, initial-scale=1.0',
   alternates: {
-    canonical: "https://poscidon.com/"
+    canonical: 'https://poscidon.com/',
   },
-  robots: "index, follow",
+  robots: 'index, follow',
   icons: [
-          {rel: "icon", url: `${url}favicon.ico`},
-          {rel: "icon", url: `${url}favicon-16x16.png`},
-          {rel: "icon", url: `${url}favicon-32x32.png`},
-          {rel: "apple-touch-icon", url: `${url}apple-touch-icon.png`},
-          {rel: "android-chrome-192x192", url: `${url}android-chrome-192x192.png`},
-          {rel: "android-chrome-512x512", url: `${url}android-chrome-512x512.png`},
-        ],
-  manifest: `${url}manifest.json`
+    { rel: 'icon', url: `${url}favicon.ico` },
+    { rel: 'icon', url: `${url}favicon-16x16.png` },
+    { rel: 'icon', url: `${url}favicon-32x32.png` },
+    { rel: 'apple-touch-icon', url: `${url}apple-touch-icon.png` },
+    { rel: 'android-chrome-192x192', url: `${url}android-chrome-192x192.png` },
+    { rel: 'android-chrome-512x512', url: `${url}android-chrome-512x512.png` },
+  ],
+  manifest: `${url}manifest.json`,
 };
 
 export default function RootLayout({
@@ -58,20 +57,43 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <Head>
-        <script
-          src="https://kit.fontawesome.com/bfd0659090.js"
-          crossOrigin="anonymous"
-        ></script>
-      </Head>
+    <html
+      lang="en"
+      className="
+    flex
+    w-full 
+    flex-col 
+    items-center
+    justify-center
+    "
+    >
+      <Script
+        src="https://kit.fontawesome.com/bfd0659090.js"
+        crossOrigin="anonymous"
+      />
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+          page_path: window.location.pathname,
+          });
+        `}
+      </Script>
       <body
         className={`
-            bg-[#FDFDFD]
             flex
+            w-full
+            max-w-full
             flex-col
-            justify-center
             items-center
+            justify-center
+            bg-[#FDFDFD]
             ${proximaNova.variable}  
             ${proximaNovaExtraBold.variable}  
             ${proximaNovaSemiBold.variable}  
@@ -79,10 +101,10 @@ export default function RootLayout({
             font-proxima
              `}
       >
-        <NavBar/>
+        <NavBar />
         {children}
         <hr className="border-b-1 w-full border-gray-200"></hr>
-        <Footer/>
+        <Footer />
         <div className="flex w-full flex-col pt-2">
           <hr className="border-b-1 w-full border-gray-200"></hr>
           <div

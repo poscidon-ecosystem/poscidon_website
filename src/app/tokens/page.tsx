@@ -1,7 +1,6 @@
 import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import Image from 'next/image';
-import Head from 'next/head';
 import { Metadata } from 'next';
 
 const url = new URL('https://poscidon.com/tokens/');
@@ -82,7 +81,8 @@ export default function Tokens() {
         <Button
           link={true}
           type={'button'}
-          href={'/Whitepaper.pdf'}
+          target={'_blank'}
+          href={'/whitepaper.pdf'}
           onClick={''}
           text={'Read our Whitepaper'}
           icon={''}
@@ -123,7 +123,7 @@ export default function Tokens() {
           </div>
           <ul
             className="
-            list-image-[url(/listArrow.svg)] 
+            list-image-[url(/arrow.svg)] 
             md:text-xl
             "
           >
@@ -151,7 +151,7 @@ export default function Tokens() {
                     rounded-3xl
                     sm:my-8
                     "
-          src={'/TokenAllocation.svg'}
+          src={'/token-allocation.svg'}
           alt=""
           width={500}
           height={500}
@@ -164,7 +164,7 @@ export default function Tokens() {
             py-8
             sm:flex
             "
-          src={'/poStaking.png'}
+          src={'/staking.png'}
           alt="Staking $SCI and $PO tokens"
           width={1000}
           height={1000}
@@ -191,7 +191,7 @@ export default function Tokens() {
           </div>
           <ul
             className="
-            list-image-[url(/listArrow.svg)]
+            list-image-[url(/arrow.svg)]
             md:text-xl
             "
           >
@@ -230,12 +230,11 @@ export default function Tokens() {
             sm:hidden
             sm:py-8
             "
-          src={'/poStaking.png'}
+          src={'/staking.png'}
           alt="Staking $SCI and $PO tokens"
           width={1000}
           height={1000}
         />
-
         <div
           className="
                 pb-8
@@ -259,7 +258,7 @@ export default function Tokens() {
           </div>
           <ul
             className="
-            list-image-[url(/listArrow.svg)] 
+            list-image-[url(/arrow.svg)]
             md:text-xl"
           >
             <li>

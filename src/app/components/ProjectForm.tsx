@@ -8,7 +8,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import countries from 'i18n-iso-countries';
 import enLocale from 'i18n-iso-countries/langs/en.json';
 import Link from 'next/link';
-import Head from 'next/head';
 
 export default function ProjectForm() {
   const [title, setTitle] = useState('');
@@ -152,17 +151,7 @@ export default function ProjectForm() {
   }
 
   return (
-    <>
-    <Head>
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link
-    rel="canonical"
-    href={`https://poscidon.com/research`}
-    key="canonical"
-  />
-  </Head>
-    <div
+    <main
       className="
         flex
         w-full 
@@ -170,8 +159,7 @@ export default function ProjectForm() {
         flex-col
         items-center
         justify-center
-        sm:pt-12
-        lg:w-[85%] 
+        sm:pt-12 
         xl:w-[65%] 
         "
     >
@@ -195,7 +183,7 @@ export default function ProjectForm() {
           font-proximaSemiBold
           text-4xl
           text-seaBlue-700 
-          sm:w-[75%]
+          lg:w-[80%]
           sm:text-5xl
           lg:text-6xl
           `}
@@ -346,6 +334,7 @@ export default function ProjectForm() {
           </section>
           <div className="my-8 flex w-full items-center justify-center">
             <Button
+              target={''}
               link={false}
               type={'submit'}
               onClick={''}
@@ -384,7 +373,6 @@ export default function ProjectForm() {
           </div>
         </form>
       </div>
-    </div>
-    </>
+    </main>
   );
 }

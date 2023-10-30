@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Button.module.css";
 
-export default function Button({link, href, onClick, type, text, icon, style }) {
+export default function Button({link, href, target, onClick, type, text, icon, style }) {
 
     return(
         <>
@@ -9,7 +9,7 @@ export default function Button({link, href, onClick, type, text, icon, style }) 
                 <Link 
                 href={href}
                 onClick={onClick}
-                target="_blank"
+                target={target}
                 className={style}
                 >
                     <span><slot>{text}</slot><slot>{icon}</slot></span>

@@ -9,13 +9,9 @@ import { useClickOutside } from './ClickOutside';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-[0.25rem] w-8 my-[0.2rem] rounded-full bg-black transition ease transform duration-300`;
-  const [src, setSrc] = useState('./../BlackLogo.svg');
+  const [src, setSrc] = useState('./../black-logo.svg');
   const dropdown = useRef<any>();
   useClickOutside(dropdown, () => setIsOpen(false));
-
-  const handleToggleButton = () => {
-    setIsOpen((prev) => !prev);
-  };
 
   return (
     <nav
@@ -24,6 +20,7 @@ export default function NavBar() {
       flex
       h-20
       w-full
+      min-w-full
       items-center
       justify-between
       border-b-2
@@ -33,8 +30,8 @@ export default function NavBar() {
         "
     >
       <Link
-        onMouseEnter={() => setSrc('./../BlueLogo.svg')}
-        onMouseLeave={() => setSrc('./../BlackLogo.svg')}
+        onMouseEnter={() => setSrc('./../blue-logo.svg')}
+        onMouseLeave={() => setSrc('./../black-logo.svg')}
         href="/"
       >
         <Image
@@ -42,7 +39,7 @@ export default function NavBar() {
           height={100}
           className="h-36 shrink-0"
           src={`${src}`}
-          alt="PoSciDon logo"
+          alt="PoSciDon DAO's Logo consisting of a trident attached to a DNA helix"
         />
       </Link>
       <div 
@@ -50,7 +47,7 @@ export default function NavBar() {
       className="flex items-center">
         <div className="ml-10 flex">
           <button
-          
+            type='button'
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
             onClick={() => setIsOpen(!isOpen)}
           >
