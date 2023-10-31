@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import FAQ from '../components/FAQ';
 
-const url = new URL('https://poscidon.com/get-funding/');
+const url = new URL('https://poscidon.com/research/');
 
 export const metadata: Metadata = {
   metadataBase: url,

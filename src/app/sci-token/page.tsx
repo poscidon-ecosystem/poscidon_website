@@ -107,7 +107,7 @@ export default function Tokens() {
             "
         >
           <div className="flex">
-            <h1
+            <h2
               className="
                     flex
                     py-4
@@ -119,7 +119,7 @@ export default function Tokens() {
                     "
             >
               Allocation
-            </h1>
+            </h2>
           </div>
           <ul
             className="
@@ -175,7 +175,7 @@ export default function Tokens() {
                 "
         >
           <div className="flex justify-start">
-            <h1
+            <h2
               className="
                 flex
                 py-4
@@ -187,7 +187,7 @@ export default function Tokens() {
                 "
             >
               Staking
-            </h1>
+            </h2>
           </div>
           <ul
             className="
@@ -242,7 +242,7 @@ export default function Tokens() {
                 "
         >
           <div className="flex w-full justify-start">
-            <div
+            <h2
               className="
                             flex
                             py-4
@@ -254,7 +254,7 @@ export default function Tokens() {
                             "
             >
               Burning
-            </div>
+            </h2>
           </div>
           <ul
             className="
@@ -286,6 +286,5 @@ export default function Tokens() {
         />
       </div>
     </div>
-    // </>
   );
 }

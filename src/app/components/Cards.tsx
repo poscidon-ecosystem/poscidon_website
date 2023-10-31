@@ -86,7 +86,7 @@ export default function Cards() {
             </p>
             <Link
               className="flex pb-2 font-proximaItalic text-seaBlue-700"
-              href="/get-funding"
+              href="/research"
             >
               Get your project funded {'>'}
             </Link>
@@ -147,9 +147,9 @@ export default function Cards() {
           whitespace-pre-line
           "
           >
-            <div className="pt-2 font-proximaSemiBold text-2xl">
+            <h3 className="pt-2 font-proximaSemiBold text-2xl">
               Become part of the community
-            </div>
+            </h3>
             <p className="
               py-2             
               w-[80%]
@@ -179,7 +179,7 @@ export default function Cards() {
           "
         >
           <Link
-            href="/tokens"
+            href="/sci-token"
             className="
               flex
               h-full
@@ -223,9 +223,9 @@ export default function Cards() {
             whitespace-pre-line
             "
           >
-            <div className="pt-2 font-proximaSemiBold text-2xl">
+            <h3 className="pt-2 font-proximaSemiBold text-2xl">
               Our Token Model
-            </div>
+            </h3>
             <p className="
               py-2             
               w-[80%]
@@ -236,7 +236,7 @@ export default function Cards() {
             </p>
             <Link
               className="flex pb-2 font-proximaItalic text-seaBlue-700"
-              href="/tokens"
+              href="/sci-token"
             >
               Discover our tokens {'>'}
             </Link>

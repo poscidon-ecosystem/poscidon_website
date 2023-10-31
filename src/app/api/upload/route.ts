@@ -35,7 +35,9 @@ export async function POST(req: NextRequest) {
             title: data.title, 
             description: data.description,
             strategy: data.strategy,
-            country: data.country
+            country: data.country,
+            address: data.address,
+            funds: data.funds
         }), {
         tags: [{ name: 'Content-Type', value: 'application/json' }],
     });
@@ -45,7 +47,9 @@ export async function POST(req: NextRequest) {
         title: `${data.title}`,
         description: `${data.description}`,
         strategy: `${data.strategy}`,
-        country: `${data.country}`
+        country: `${data.country}`,
+        address: `${data.address}`,
+        funds: `${data.funds}`
 
     })
 }

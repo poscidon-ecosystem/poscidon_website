@@ -7,11 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactUs() {
-  const [fullname, setFullname] = useState('');
+  const [name, setname] = useState('');
   const [email, setEmail] = useState('');
 
   const [errors, setErrors] = useState({
-    fullname: false,
+    name: false,
     email: false,
   });
 
@@ -22,13 +22,13 @@ export default function ContactUs() {
 
   const handleValidation = () => {
     let tempErrors = {
-      fullname: false,
+      name: false,
       email: false,
     };
     let isValid = true;
 
-    if (fullname.length <= 0) {
-      tempErrors.fullname = true;
+    if (name.length <= 0) {
+      tempErrors.name = true;
       isValid = false;
     }
     if (email.length <= 0) {
@@ -55,19 +55,41 @@ export default function ContactUs() {
         },
         body: JSON.stringify({
           email: email,
-          fullname: fullname,
+          name: name,
+        }),
+      });
+      const resLead = await fetch('/api/sendgrid-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          name: name,
         }),
       });
 
       console.log(res);
-      const { error } = await res.json();
-      if (error) {
-        console.log(error);
+      const { error1 } = await res.json();
+      if (error1) {
+        console.log(error1);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
         setButtonText('Subscribe');
 
-        setFullname('');
+        setname('');
+        setEmail('');
+        return;
+      }
+      console.log(resLead);
+      const { error2 } = await resLead.json();
+      if (error2) {
+        console.log(error2);
+        setShowSuccessMessage(false);
+        setShowFailureMessage(true);
+        setButtonText('Subscribe');
+
+        setname('');
         setEmail('');
         return;
       }
@@ -75,10 +97,10 @@ export default function ContactUs() {
       setShowFailureMessage(false);
       setButtonText('Subscribe');
       // Reset form fields
-      setFullname('');
+      setname('');
       setEmail('');
     }
-    console.log(fullname, email);
+    console.log(name, email);
   };
   return (
     <form
@@ -93,13 +115,13 @@ export default function ContactUs() {
         p-8
         shadow-xl"
     >
-      <h1 className="text-2xl font-bold text-white">Stay up to date</h1>
-      <p className="py-4 text-white">
+      <h1 className="text-4xl font-bold text-[#FDFDFD]">Stay up to date</h1>
+      <p className="py-4 text-[#FDFDFD]">
         Want to know more about what PoSciDon decentralized autonomous
-        organisation is doing? Sign up for the PoSciDonDAO newsletter for news,
-        events and more!
+        organisation is doing? Sign up for PoSciDon DAO's 🔱 monthly newsletter for DAO news,
+        personalized medicine updates and more!
       </p>
-      <label htmlFor="name" className="mt-4 font-light text-white">
+      <label htmlFor="name" className="mt-4 font-light text-[#FDFDFD]">
         Name<span className="text-red-500">*</span>
       </label>
       <input
@@ -107,17 +129,17 @@ export default function ContactUs() {
         type="text"
         name="name"
         placeholder='John Doe'
-        value={fullname}
+        value={name}
         onChange={(e) => {
-          setFullname(e.target.value);
+          setname(e.target.value);
         }}
-        className="border-b bg-transparent py-2 text-white ring-tropicalBlue focus:rounded-md focus:outline-none focus:ring-1"
+        className="border-b bg-transparent py-2 text-[#FDFDFD] ring-tropicalBlue focus:rounded-md focus:outline-none focus:ring-1"
       />
-      {errors?.fullname && (
+      {errors?.name && (
         <p className="text-red-500">Name cannot be empty.</p>
       )}
 
-      <label htmlFor="email" className="mt-4 font-light text-white ">
+      <label htmlFor="email" className="mt-4 font-light text-[#FDFDFD]">
         E-mail<span className="text-red-500">*</span>
       </label>
       <input
@@ -141,7 +163,7 @@ export default function ContactUs() {
           "
       />
       {errors?.email && <p className="text-red-500">Email cannot be empty.</p>}
-      <div className="my-8 flex flex-row items-center justify-start">
+      <div className="my-6 flex flex-row items-center justify-start">
         <Button
           link={false}
           type={'submit'}
@@ -161,12 +183,12 @@ export default function ContactUs() {
       </div>
       <div className="text-left">
         {showSuccessMessage && (
-          <p className="my-2 text-sm font-semibold text-green-500">
-            Successfully subscribed, thank you!
+          <p className="text-xl font-semibold text-aquaBlue">
+            Subscribed successfully, thank you!
           </p>
         )}
         {showFailureMessage && (
-          <p className="text-red-500">
+          <p className="text-xl font-semibold text-fieryRed">
             Oops! Something went wrong, please try again.
           </p>
         )}

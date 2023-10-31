@@ -1,5 +1,3 @@
-import AccordionItem from './AccordionItem';
-
 export default function FAQ() {
   return (
     <div
@@ -106,7 +104,7 @@ export default function FAQ() {
           
         </div>
         <p className="w-[90%] text-center text-lg">
-                
+
         </p>
       </div>
     </div>
