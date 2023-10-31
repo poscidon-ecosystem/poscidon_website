@@ -53,25 +53,24 @@ export const Hero = () => {
       // onMouseLeave={stopScramble}
       className="
         max-w-full
-        text-center
+        bg-gradient-to-r
+        from-seaBlue-900
+        via-seaBlue-700
+        to-seaBlue-500
+        bg-clip-text
+        text-center 
         font-proximaSemiBold
         text-3xl
-        uppercase
-        text-seaBlue-700
+        uppercase 
+        text-seaBlue-700 
+        text-transparent
         sm:text-6xl 
-        md:text-7xl
+        md:text-7xl 
         lg:text-8xl
-        bg-gradient-to-r 
-        from-seaBlue-900 
-        via-seaBlue-700
-        to-seaBlue-500 
-        text-transparent 
-        bg-clip-text
         "
     >
-        <span className="">{text}</span>
-        <div>Personalized Medicine Research Funding</div>
-      {/* </div> */}
+      <span className="">{text}</span>
+      <div>Personalized Medicine Research Funding</div>
     </motion.h1>
   );
 };

@@ -1,6 +1,5 @@
 import './globals.css';
 import localFont from '@next/font/local';
-import Head from 'next/head';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import '@fortawesome/fontawesome-svg-core/styles.css';

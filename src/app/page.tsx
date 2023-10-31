@@ -30,27 +30,8 @@ export default function Home() {
         pb-16
         "
       >
-        {/* <h1
-          className={`
-          flex 
-          w-full 
-          sm:w-[95%]
-          max-w-full
-          items-center 
-          justify-center
-          text-center
-          text-seaBlue-700
-          font-proximaSemiBold
-          text-4xl
-          sm:text-6xl
-          md:text-7xl
-          lg:text-8xl
-          `}
-        >
-          Revolutionizing Personalized Medicine Research Funding
-        </h1> */}
         <Hero/>
-        <div
+        <h2
           className={`
           w-[80%]
           sm:w-[70%]
@@ -58,6 +39,7 @@ export default function Home() {
           text-center
           text-base 
           md:text-lg
+          font-proxima
           xl:text-2xl
           `}
         >
@@ -66,7 +48,7 @@ export default function Home() {
           {' '}for <span className='font-proximaBold'>life-altering diseases</span> (incl. cancer and Alzheimer's disease). 
           Together with your help we 
           can <span className='font-proximaBold'>change the lives of people </span> affected by these diseases.
-        </div>
+        </h2>
         <div className="flex gap-4">
           <Button
             link={true}

@@ -8,12 +8,15 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import countries from 'i18n-iso-countries';
 import enLocale from 'i18n-iso-countries/langs/en.json';
 import Link from 'next/link';
+import InfoToolTip from './InfoToolTip';
 
 export default function ProjectForm() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [strategy, setStrategy] = useState('');
   const [country, setCountry] = useState('');
+  const [address, setAddress] = useState('');
+  const [funds, setFunds] = useState('');
   const [buttonText, setButtonText] = useState('Submit');
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -24,6 +27,7 @@ export default function ProjectForm() {
     description: false,
     strategy: false,
     country: false,
+    funds: false,
   });
 
   countries.registerLocale(enLocale);
@@ -44,8 +48,9 @@ export default function ProjectForm() {
         description: false,
         strategy: false,
         country: false,
+        funds: false,
       });
-    }, 6000);
+    }, 12000);
   };
 
   const handleValidation = () => {
@@ -54,6 +59,7 @@ export default function ProjectForm() {
       description: false,
       strategy: false,
       country: false,
+      funds: false
     };
     let isValid = true;
 
@@ -71,6 +77,10 @@ export default function ProjectForm() {
     }
     if (country.length <= 0) {
       tempErrors.country = true;
+      isValid = false;
+    }
+    if (funds.length <= 0) {
+      tempErrors.funds = true;
       isValid = false;
     }
 
@@ -96,6 +106,8 @@ export default function ProjectForm() {
           description: description,
           strategy: strategy,
           country: country,
+          address: address,
+          funds: funds,
         }),
       });
       const response = await res1.json();
@@ -110,6 +122,8 @@ export default function ProjectForm() {
           description: response.description,
           strategy: response.strategy,
           country: response.country,
+          address: response.address,
+          funds: response.funds
         }),
       });
       const { errorUpload } = response;
@@ -123,6 +137,8 @@ export default function ProjectForm() {
         setDescription('');
         setStrategy('');
         setCountry('');
+        setAddress('');
+        setFunds('');
         return;
       }
       const { errorSending } = await res2.json();
@@ -136,6 +152,8 @@ export default function ProjectForm() {
         setDescription('');
         setStrategy('');
         setCountry('');
+        setAddress('');
+        setFunds('');
         return;
       }
 
@@ -147,6 +165,8 @@ export default function ProjectForm() {
       setDescription('');
       setStrategy('');
       setCountry('');
+      setAddress('');
+      setFunds('');
     }
   }
 
@@ -183,8 +203,8 @@ export default function ProjectForm() {
           font-proximaSemiBold
           text-4xl
           text-seaBlue-700 
-          lg:w-[80%]
           sm:text-5xl
+          lg:w-[80%]
           lg:text-6xl
           `}
         >
@@ -219,7 +239,7 @@ export default function ProjectForm() {
               htmlFor="title"
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
-              Project Title<span className="text-red-500">*</span>
+              Project Title<span className="text-fieryRed py-2">*</span>
             </label>
             <input
               type="text"
@@ -239,7 +259,7 @@ export default function ProjectForm() {
                     "
             />
             {errors?.title && (
-              <p className="text-red-500">Title cannot be empty.</p>
+              <p className="text-fieryRed py-2">Title cannot be empty.</p>
             )}
           </section>
           <section className="flex flex-col py-2">
@@ -247,7 +267,7 @@ export default function ProjectForm() {
               htmlFor="description"
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
-              Project Description<span className="text-red-500">*</span>
+              Project Description<span className="text-fieryRed py-2">*</span>
             </label>
             <textarea
               value={description}
@@ -267,7 +287,7 @@ export default function ProjectForm() {
                 "
             />
             {errors?.description && (
-              <p className="text-red-500">Description cannot be empty.</p>
+              <p className="text-fieryRed py-2">Description cannot be empty.</p>
             )}
           </section>
           <section className="flex flex-col py-2">
@@ -276,7 +296,7 @@ export default function ProjectForm() {
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
               Commercialization strategy
-              <span className="text-red-500">*</span>
+              <span className="text-fieryRed py-2">*</span>
             </label>
             <textarea
               value={strategy}
@@ -296,7 +316,7 @@ export default function ProjectForm() {
                 "
             />
             {errors?.strategy && (
-              <p className="text-red-500">
+              <p className="text-fieryRed py-2">
                 Commercialization strategy cannot be empty.
               </p>
             )}
@@ -306,7 +326,7 @@ export default function ProjectForm() {
               htmlFor="description"
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
-              Research country<span className="text-red-500">*</span>
+              Research country<span className="text-fieryRed py-2">*</span>
             </label>
             <select
               className={`
@@ -329,8 +349,80 @@ export default function ProjectForm() {
               ))}
             </select>
             {errors?.country && (
-              <p className="text-red-500">A country must be selected.</p>
+              <p className="text-fieryRed py-2">A country must be selected.</p>
             )}
+          </section>
+          <section className="flex flex-col py-2">
+            <label
+              htmlFor="funds"
+              className="my-4 font-proximaSemiBold text-seaBlue-700"
+            >
+              Proposed funding amount (in USD)
+              <span className="text-fieryRed py-2">*</span>
+            </label>
+            <input
+            type='number'
+              value={funds}
+              onChange={(e) => {
+                setFunds(e.target.value);
+              }}
+              placeholder={`Fill in the amount of USD you need to fund your project...`}
+              name="funds"
+              className="
+                rounded-3xl 
+                p-4
+                shadow 
+                ring-tropicalBlue 
+                focus:outline-none 
+                focus:ring-2
+                "
+            />
+            {errors?.funds && (
+              <p className="text-fieryRed py-2">
+                Funding amount cannot be empty.
+              </p>
+            )}
+          </section>
+          <section className="flex flex-col py-2">
+            <label
+              htmlFor="address"
+              className="
+              my-4
+              flex
+              items-start 
+              gap-2 
+              font-proximaSemiBold 
+              text-seaBlue-700"
+            >
+              Ethereum address
+              <InfoToolTip 
+              message={`Once your project has been accepted, 
+              your funds will be sent to this Ethereum blockchain address.
+
+              Using blockchain technology we can ensure transparency, decentralization and reduced bias in the funding process. 
+              You can create a digital wallet at https://app.safe.global or at https://metamask.io
+
+              It is not yet required to have a wallet at this point. 
+              Our Due Diligence crew will help you setup a wallet. 
+              `}/>
+            </label>
+            <input
+            type='text'
+              value={address}
+              onChange={(e) => {
+                setAddress(e.target.value);
+              }}
+              placeholder={`Starts with 0x...`}
+              name="address"
+              className="
+                rounded-3xl 
+                p-4
+                shadow 
+                ring-tropicalBlue 
+                focus:outline-none 
+                focus:ring-2
+                "
+            />
           </section>
           <div className="my-8 flex w-full items-center justify-center">
             <Button
@@ -352,7 +444,7 @@ export default function ProjectForm() {
           </div>
           <div className="text-left text-lg">
             {showSuccessMessage && (
-              <p className="font-semibold mb-6 py-4 text-green-500">
+              <p className="mb-6 py-4 font-semibold text-aquaBlue">
                 Thank you! Your project has been submitted and will be reviewed
                 shortly. <br></br>
                 <Link
@@ -366,7 +458,7 @@ export default function ProjectForm() {
               </p>
             )}
             {showFailureMessage && (
-              <p className="font-semibold text-red-500 mb-6 py-4">
+              <p className="mb-6 py-4 font-semibold text-fieryRed">
                 Oops! Something went wrong, please try again.
               </p>
             )}

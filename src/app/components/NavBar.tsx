@@ -42,12 +42,33 @@ export default function NavBar() {
           alt="PoSciDon DAO's Logo consisting of a trident attached to a DNA helix"
         />
       </Link>
-      <div 
-      ref={dropdown}
-      className="flex items-center">
+      <div className="hidden w-full items-center justify-end gap-12 lg:flex">
+        <Link className="hover:text-seaBlue-700" href={'/research'}>
+          For scientists
+        </Link>
+        <Link
+          className="hover:text-seaBlue-700"
+          href="https://test.poscidon.com/donation"
+          target="_blank"
+        >
+          Become a donor
+        </Link>
+        <Link
+          className="hover:text-seaBlue-700"
+          href="https://forms.gle/hY52XW7inek4ynrR6"
+          target="_blank"
+        >
+          Become a contributor
+        </Link>
+        <Link className="hover:text-seaBlue-700" href="/tokens">
+          SCI token
+        </Link>
+      </div>
+      <div ref={dropdown} className="flex items-center">
         <div className="ml-10 flex">
           <button
-            type='button'
+            name="navbar dropdown menu button"
+            type="button"
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
             onClick={() => setIsOpen(!isOpen)}
           >

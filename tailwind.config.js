@@ -40,6 +40,7 @@ module.exports = {
         seafoamGreen: '#4FA88F',
         pineGreen: '#1b9574',
         forestGreen: '#004832',
+        fieryRed: '#fe3303'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

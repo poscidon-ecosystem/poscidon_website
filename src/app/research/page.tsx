@@ -2,8 +2,12 @@ import { Metadata } from 'next';
 import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import FAQ from '../components/FAQ';
+export const config = {
+  amp: true,
+}
 
-const url = new URL('https://poscidon.com/get-funding/');
+
+const url = new URL('https://poscidon.com/research/');
 
 export const metadata: Metadata = {
   metadataBase: url,
