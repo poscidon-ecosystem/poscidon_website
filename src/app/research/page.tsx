@@ -3,12 +3,12 @@ import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import FAQ from '../components/FAQ';
 
-const url = new URL('https://poscidon.com/research/');
+const url = new URL('https://poscidondao.com/research');
 
 export const metadata: Metadata = {
   metadataBase: url,
-  title: 'PoSciDon DAO | Fund Your Research Project',
-  description: `Fill in this form to obtain funding for your personalized medicine-focused research project
+  title: 'PoSciDonDAO | Fund Your Research Project',
+  description: `Fast, unbiased and decentralized funding for your personalized / precision medicine research project
   `,
   viewport: "width=device-width, initial-scale=1.0",
   alternates: {
