@@ -54,6 +54,7 @@ export default function Tokens() {
           font-proximaSemiBold
           text-4xl
           text-seaBlue-700
+          uppercase
           sm:w-[85%]
           sm:text-5xl
           lg:text-6xl

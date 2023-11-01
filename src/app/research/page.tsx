@@ -48,6 +48,7 @@ export default function ProjectFunding() {
             items-center
             justify-center
             text-center
+            uppercase
             font-proximaSemiBold
             text-4xl
             text-seaBlue-700 
