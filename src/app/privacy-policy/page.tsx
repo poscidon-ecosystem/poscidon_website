@@ -1,3 +1,18 @@
+import { Metadata } from 'next';
+
+const url = new URL('https://poscidondao.com/research');
+
+export const metadata: Metadata = {
+  metadataBase: url,
+  title: 'PoSciDonDAO | Privacy Policy',
+  description: `PoSciDonDAO's privacy policy`,
+  viewport: "width=device-width, initial-scale=1.0",
+  alternates: {
+    canonical: url,
+  },
+  robots: "index, follow",
+};
+
 export default function Policy() {
   return (
     <div

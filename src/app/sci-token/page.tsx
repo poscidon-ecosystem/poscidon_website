@@ -3,11 +3,11 @@ import styles from '../components/Button.module.css';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-const url = new URL('https://poscidon.com/sci-token/');
+const url = new URL('https://poscidondao.com/sci-token');
 
 export const metadata: Metadata = {
   metadataBase: url,
-  title: 'PoSciDon DAO | SCI Token',
+  title: 'PoSciDonDAO | SCI Token',
   description: `Holding the SCI token makes you a valuable DAO member 
   as it allows you to vote on DAO proposals and have a say in the funding of research projects. 
   `,

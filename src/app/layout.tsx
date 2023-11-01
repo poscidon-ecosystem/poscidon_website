@@ -28,15 +28,15 @@ const proximaNovaItalic = localFont({
   variable: '--font-proximaNovaItalic',
 });
 
-const url = new URL('https://poscidon.com/');
+const url = new URL('https://poscidondao.com/');
 
 export const metadata: Metadata = {
   metadataBase: url,
-  title: 'PoSciDon DAO | Personalized Medicine Funding Revolutionized',
-  description: `PoSciDon is a decentralized science DAO that aims to streamline the funding process of personalized medicine research. Join the revolution!`,
+  title: 'PoSciDonDAO | Personalized Medicine Funding Revolutionized',
+  description: `PoSciDonDAO streamlines and democratizes the funding process of personalized medicine research. Become part of the change that science needs!`,
   viewport: 'width=device-width, initial-scale=1.0',
   alternates: {
-    canonical: 'https://poscidon.com/',
+    canonical: 'https://poscidondao.com/',
   },
   robots: 'index, follow',
   icons: [
