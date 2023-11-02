@@ -31,7 +31,7 @@ export default function ProjectFunding() {
           xl:w-[65%] 
           "
       >
-        <div
+        <section
           className="
           flex 
           flex-col 
@@ -71,7 +71,7 @@ export default function ProjectFunding() {
               sm:text-xl
             "
           >
-            PoSciDon DAO is a member-owned worldwide organisation that funds and incubates 
+            PoSciDonDAO is a member-owned worldwide organisation that funds and incubates 
             personalized medicine research projects with the goal to commercialize their research output.
             <br></br>
             <br></br>
@@ -89,10 +89,10 @@ export default function ProjectFunding() {
           text={'Submit your project proposal'}
           icon={''}
           />
-        </div>
-        <div className='flex justify-center items-center'>
+        </section>
+        <section className='flex justify-center items-center'>
             <FAQ/>
-        </div>
+        </section>
       </main>
     );
 }
