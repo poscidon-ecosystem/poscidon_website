@@ -1,24 +1,24 @@
-   <?xml version="1.0" encoding="UTF-8"?>
+   <xml version="1.0" encoding="UTF-8">
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://poscidondao.com</loc>
+        <loc>https://www.poscidondao.com</loc>
       </url>
       <url>
-        <loc>https://poscidondao.com/sci-token</loc>
+        <loc>https://www.poscidondao.com/sci-token</loc>
       </url>
       <url>
-        <loc>https://poscidondao.com/research</loc>
+        <loc>https://www.poscidondao.com/research</loc>
       </url>
       <url>
-        <loc>https://poscidondao.com/submit-project</loc>
+        <loc>https://www.poscidondao.com/submit-project</loc>
       </url>
       <url>
-        <loc>https://poscidondao.com/privacy-policy</loc>
+        <loc>https://www.poscidondao.com/privacy-policy</loc>
       </url>
       <url>
-        <loc>https://poscidondao.com/whitepaper.pdf</loc>
+        <loc>https://www.poscidondao.com/whitepaper.pdf</loc>
       </url>
       <url>
-        <loc>https://poscidondao.com/brand-guidelines.pdf</loc>
+        <loc>https://www.poscidondao.com/brand-guidelines.pdf</loc>
       </url>
     </urlset>
