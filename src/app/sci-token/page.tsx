@@ -79,7 +79,7 @@ export default function Tokens() {
         </p>
         <Button
           link={true}
-          type={'button'}
+          type={''}
           target={'_blank'}
           href={'/whitepaper.pdf'}
           onClick={''}
