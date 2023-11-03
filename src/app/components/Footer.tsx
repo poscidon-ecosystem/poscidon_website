@@ -55,7 +55,7 @@ export default function Footer() {
             text-seaBlue-700
             "
             >
-              ABOUT POSCIDON DAO
+              ABOUT POSCIDONDAO
             </p>
             <Link className="hover:text-seaBlue-700" href="/research">
               For scientists
@@ -67,9 +67,15 @@ export default function Footer() {
               target="_blank"
               className="hover:text-seaBlue-700"
               href="/whitepaper.pdf"
-              title="PoSciDon Whitepaper"
+              title="PoSciDonDAO Whitepaper"
             >
               Whitepaper
+            </Link>
+            <Link
+              className="hover:text-seaBlue-700"
+              href="/blog"
+            >
+              Blog
             </Link>
           </div>
           <div className="flex flex-col gap-2 pt-2">
@@ -100,7 +106,7 @@ export default function Footer() {
               Submit project
             </Link>
             <Link
-              aria-label="Join PoSciDon DAO's Discord server"
+              aria-label="Join our Discord"
               className="hover:text-seaBlue-700"
               href="https://discord.gg/TXZZV5KXmn"
               target="_blank"
@@ -108,7 +114,7 @@ export default function Footer() {
               Join our discord
             </Link>
             <Link
-              aria-label="Visit PoSciDon DAO's X (formerly known as Twitter) profile"
+              aria-label="Join our Twitter"
               className="hover:text-seaBlue-700"
               href="https://twitter.com/poscidondao"
               target="_blank"

@@ -28,10 +28,9 @@ export default function Tokens() {
         flex-col 
         items-center
         justify-center
-        sm:pt-12
-        md:w-[100%] 
+        sm:pt-12 
         lg:w-[85%] 
-        xl:w-[65%] 
+        xl:w-[75%] 
         "
     >
       <div
@@ -55,12 +54,11 @@ export default function Tokens() {
           text-4xl
           text-seaBlue-700
           uppercase
-          sm:w-[85%]
           sm:text-5xl
           lg:text-6xl
           `}
         >
-          Discover the SCI Token
+          Explore the SCI Token
         </h1>
         <p
           className="

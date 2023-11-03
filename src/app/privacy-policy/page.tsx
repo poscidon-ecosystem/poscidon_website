@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Policy() {
   return (
-    <div
+    <main
       className="
       flex 
       w-[70%] 
@@ -973,6 +973,6 @@ export default function Policy() {
         </a>{' '}
         from WBS law.
       </p>
-    </div>
+    </main>
   );
 }

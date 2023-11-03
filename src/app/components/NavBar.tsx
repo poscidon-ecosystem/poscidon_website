@@ -60,15 +60,14 @@ export default function NavBar() {
         >
           Become a contributor
         </Link>
-        <Link className="hover:text-seaBlue-700" href="/tokens">
+        <Link className="hover:text-seaBlue-700" href="/sci-token">
           SCI token
         </Link>
       </div>
       <div ref={dropdown} className="flex items-center">
         <div className="ml-10 flex">
           <button
-            name="navbar dropdown menu button"
-            type="button"
+            aria-label='Navbar button'
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
             onClick={() => setIsOpen(!isOpen)}
           >
