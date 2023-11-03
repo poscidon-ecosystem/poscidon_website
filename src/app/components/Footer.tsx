@@ -77,7 +77,7 @@ export default function Footer() {
             <Link
               target="_blank"
               className="hover:text-seaBlue-700"
-              href="/whitepaper.pdf"
+              href="/whitepape.pdf"
             >
               Whitepaper
             </Link>
