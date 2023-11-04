@@ -80,7 +80,6 @@ export default function Footer() {
               locale={false}
               className="hover:text-seaBlue-700"
               href="/Whitepaper.pdf"
-              download={"PoSciDon_Whitepaper"}
             >
               Whitepaper
             </Link>
