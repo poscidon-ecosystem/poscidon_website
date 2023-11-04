@@ -74,16 +74,14 @@ export default function Footer() {
             >
               SCI token
             </Link>
-            <Link
+            <a
               rel="noopener"
               target="_blank"
-              locale={false}
               className="hover:text-seaBlue-700"
-              href={"public/whitepaper.pdf"}
-              download
+              href={"/whitepaper.pdf"}
             >
               Whitepaper
-            </Link>
+            </a>
             <Link
               className="hover:text-seaBlue-700" 
               href="/blog">
