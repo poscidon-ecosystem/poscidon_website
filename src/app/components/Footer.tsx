@@ -75,13 +75,14 @@ export default function Footer() {
               SCI token
             </Link>
             <Link
+              rel="noopener"
               target="_blank"
               className="hover:text-seaBlue-700"
-              href="/whitepape.pdf"
+              href="/whitepaper.pdf"
             >
               Whitepaper
             </Link>
-            <Link 
+            <Link
               className="hover:text-seaBlue-700" 
               href="/blog">
               Blog
@@ -118,6 +119,7 @@ export default function Footer() {
               Submit project
             </Link>
             <Link
+              rel="noopener"
               className="hover:text-seaBlue-700"
               href="https://discord.gg/TXZZV5KXmn"
               target="_blank"
@@ -125,6 +127,7 @@ export default function Footer() {
               Join our discord
             </Link>
             <Link
+              rel="noopener"
               className="hover:text-seaBlue-700"
               href="https://twitter.com/poscidondao"
               target="_blank"
@@ -142,6 +145,7 @@ export default function Footer() {
               OTHER
             </p>
             <Link
+              rel="noopener"
               className="hover:text-seaBlue-700"
               target="_blank"
               href="/brand-guidelines.pdf"
