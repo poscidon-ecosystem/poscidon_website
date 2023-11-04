@@ -3,7 +3,7 @@ import styles from '../components/Button.module.css';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-const url = new URL('https://poscidondao.com/sci-token');
+const url = new URL('https://www.poscidondao.com/sci-token');
 
 export const metadata: Metadata = {
   metadataBase: url,
@@ -79,7 +79,7 @@ export default function Tokens() {
         </p>
         <Button
           link={true}
-          type={'button'}
+          type={''}
           target={'_blank'}
           href={'/whitepaper.pdf'}
           onClick={''}

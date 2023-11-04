@@ -30,7 +30,12 @@ export default function Footer() {
           "
         >
           <Link href="/" className="flex w-[5rem] sm:w-[10rem]">
-            <Image width={1000} height={1000} src={Logo} alt="PoSciDon logo consisting of a trident on top of a DNA helix" />
+            <Image
+              width={1000}
+              height={1000}
+              src={Logo}
+              alt="PoSciDon logo consisting of a trident on top of a DNA helix"
+            />
           </Link>
         </div>
         <div
@@ -57,24 +62,29 @@ export default function Footer() {
             >
               ABOUT POSCIDONDAO
             </p>
-            <Link className="hover:text-seaBlue-700" href="/research">
+            <Link 
+              className="hover:text-seaBlue-700" 
+              href="/research"
+            >
               For scientists
             </Link>
-            <Link className="hover:text-seaBlue-700" href="/sci-token">
+            <Link 
+              className="hover:text-seaBlue-700" 
+              href="/sci-token"
+            >
               SCI token
             </Link>
             <Link
+              rel="noopener"
               target="_blank"
               className="hover:text-seaBlue-700"
               href="/whitepaper.pdf"
-              title="PoSciDonDAO Whitepaper"
             >
               Whitepaper
             </Link>
             <Link
-              className="hover:text-seaBlue-700"
-              href="/blog"
-            >
+              className="hover:text-seaBlue-700" 
+              href="/blog">
               Blog
             </Link>
           </div>
@@ -102,11 +112,14 @@ export default function Footer() {
             >
               Become a contributor
             </Link>
-            <Link className="hover:text-seaBlue-700" href="/submit-project">
+            <Link 
+              className="hover:text-seaBlue-700" 
+              href="/submit-project"
+            >
               Submit project
             </Link>
             <Link
-              aria-label="Join our Discord"
+              rel="noopener"
               className="hover:text-seaBlue-700"
               href="https://discord.gg/TXZZV5KXmn"
               target="_blank"
@@ -114,7 +127,7 @@ export default function Footer() {
               Join our discord
             </Link>
             <Link
-              aria-label="Join our Twitter"
+              rel="noopener"
               className="hover:text-seaBlue-700"
               href="https://twitter.com/poscidondao"
               target="_blank"
@@ -132,6 +145,7 @@ export default function Footer() {
               OTHER
             </p>
             <Link
+              rel="noopener"
               className="hover:text-seaBlue-700"
               target="_blank"
               href="/brand-guidelines.pdf"

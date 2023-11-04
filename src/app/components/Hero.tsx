@@ -70,7 +70,7 @@ export const Hero = () => {
         "
     >
       <span className="">{text}</span>
-      <div>Personalized Medicine Research Funding</div>
+      <div className="w-full">Personalized Medicine Research Funding</div>
     </motion.h1>
   );
 };

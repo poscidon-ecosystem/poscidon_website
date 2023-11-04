@@ -17,7 +17,7 @@ export default function Home() {
         justify-center
         px-8
         sm:pt-12
-        xl:w-[70%] 
+        xl+:w-[70%] 
         "
     >
       <section
@@ -31,7 +31,7 @@ export default function Home() {
         "
       >
         <Hero/>
-        <h2
+        <p
           className={`
           w-[80%]
           sm:w-[70%]
@@ -48,9 +48,9 @@ export default function Home() {
           {' '}for <span className='font-proximaBold'>life-altering diseases</span> (incl. cancer and Alzheimer's disease). 
           Together with your help we 
           can <span className='font-proximaBold'>change the lives of people </span> affected by these diseases.
-        </h2>
+        </p>
         <div className="flex gap-4">
-          <Button
+          {/* <Button
             link={true}
             type={'button'}
             target={'_blank'}
@@ -59,7 +59,7 @@ export default function Home() {
             href={'https://test.poscidon.com/donation'}
             icon={''}
             style={styles.primary}
-          />
+          /> */}
           <Button
             link={true}
             type={'button'}
@@ -68,7 +68,7 @@ export default function Home() {
             text={`Join the DAO`}
             href={'https://discord.gg/QKzZkrYpw7'}
             icon={''}
-            style={styles.secondary}
+            style={styles.primary}
           />
         </div>
       </section>
