@@ -77,8 +77,9 @@ export default function Footer() {
             <Link
               rel="noopener"
               target="_blank"
+              locale={false}
               className="hover:text-seaBlue-700"
-              href="/whitepaper.pdf"
+              href="/Whitepaper.pdf"
             >
               Whitepaper
             </Link>
@@ -146,9 +147,10 @@ export default function Footer() {
             </p>
             <Link
               rel="noopener"
+              locale={false}
               className="hover:text-seaBlue-700"
               target="_blank"
-              href="/brand-guidelines.pdf"
+              href={"/brand-guidelines.pdf"}
             >
               Brand guidelines
             </Link>
