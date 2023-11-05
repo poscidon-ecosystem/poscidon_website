@@ -52,6 +52,7 @@ export const Hero = () => {
       // onMouseEnter={scramble}
       // onMouseLeave={stopScramble}
       className="
+        w-full
         max-w-full
         bg-gradient-to-r
         from-seaBlue-900
@@ -60,17 +61,18 @@ export const Hero = () => {
         bg-clip-text
         text-center 
         font-proximaSemiBold
-        text-3xl
+        text-4xl
         uppercase 
         text-seaBlue-700 
         text-transparent
-        sm:text-6xl 
-        md:text-7xl 
-        lg:text-8xl
+        sm:text-5xl 
+        md:text-6xl 
+        lg:text-7xl
+        xl:text-8xl
         "
     >
-      <span className="">{text}</span>
-      <div className="w-full">Personalized Medicine Research Funding</div>
+      <div className="">{text}</div>
+      <div className="">Personalized Medicine Research Funding</div>
     </motion.h1>
   );
 };

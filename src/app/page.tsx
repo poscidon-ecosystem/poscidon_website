@@ -17,7 +17,7 @@ export default function Home() {
         justify-center
         px-8
         sm:pt-12
-        xl+:w-[70%] 
+        xl+:w-[75%] 
         "
     >
       <section
@@ -34,13 +34,12 @@ export default function Home() {
         <p
           className={`
           w-[80%]
-          sm:w-[70%]
           py-8 
           text-center
+          font-proxima
           text-base 
           md:text-lg
-          font-proxima
-          xl:text-2xl
+          lg:text-2xl
           `}
         >
           PoSciDon Decentralized Autonomous Organisation (DAO) 

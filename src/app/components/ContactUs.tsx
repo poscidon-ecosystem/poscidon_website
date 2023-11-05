@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactUs() {
-  const [name, setname] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   const [errors, setErrors] = useState({
@@ -77,7 +77,7 @@ export default function ContactUs() {
         setShowFailureMessage(true);
         setButtonText('Subscribe');
 
-        setname('');
+        setName('');
         setEmail('');
         return;
       }
@@ -89,7 +89,7 @@ export default function ContactUs() {
         setShowFailureMessage(true);
         setButtonText('Subscribe');
 
-        setname('');
+        setName('');
         setEmail('');
         return;
       }
@@ -97,7 +97,7 @@ export default function ContactUs() {
       setShowFailureMessage(false);
       setButtonText('Subscribe');
       // Reset form fields
-      setname('');
+      setName('');
       setEmail('');
     }
     console.log(name, email);
@@ -117,9 +117,9 @@ export default function ContactUs() {
     >
       <h1 className="text-4xl font-bold text-[#FDFDFD]">Stay up to date</h1>
       <p className="py-4 text-[#FDFDFD]">
-        Want to know more about what PoSciDon decentralized autonomous
-        organisation is doing? Sign up for PoSciDon DAO's 🔱 monthly newsletter for DAO news,
-        personalized medicine updates and more!
+        Want to know more about what PoSciDonDAO 🔱 is doing? Sign up
+        for our monthly newsletter for DAO news, personalized
+        medicine updates and more!
       </p>
       <label htmlFor="name" className="mt-4 font-light text-[#FDFDFD]">
         Name<span className="text-red-500">*</span>
@@ -128,16 +128,14 @@ export default function ContactUs() {
         id="name"
         type="text"
         name="name"
-        placeholder='John Doe'
+        placeholder="John Doe"
         value={name}
         onChange={(e) => {
-          setname(e.target.value);
+          setName(e.target.value);
         }}
         className="border-b bg-transparent py-2 text-[#FDFDFD] ring-tropicalBlue focus:rounded-md focus:outline-none focus:ring-1"
       />
-      {errors?.name && (
-        <p className="text-red-500">Name cannot be empty.</p>
-      )}
+      {errors?.name && <p className="text-red-500">Name cannot be empty.</p>}
 
       <label htmlFor="email" className="mt-4 font-light text-[#FDFDFD]">
         E-mail<span className="text-red-500">*</span>
@@ -146,7 +144,7 @@ export default function ContactUs() {
         id="email"
         type="email"
         name="email"
-        placeholder='johndoe@domain.com'
+        placeholder="johndoe@domain.com"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
@@ -188,7 +186,7 @@ export default function ContactUs() {
           </p>
         )}
         {showFailureMessage && (
-          <p className="text-xl font-semibold text-fieryRed">
+          <p className="text-fieryRed text-xl font-semibold">
             Oops! Something went wrong, please try again.
           </p>
         )}
