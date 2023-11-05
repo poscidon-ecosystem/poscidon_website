@@ -1,3 +1,5 @@
+import BlogPostCard from "../components/BlogPostCard";
+
 export default function Blog() {
   return (
     <main className="
@@ -12,7 +14,8 @@ export default function Blog() {
         xl:w-[75%] 
         "
       >
-        <div
+        <section
+          id="hero"
           className="
         flex 
         flex-col 
@@ -54,7 +57,19 @@ export default function Blog() {
           >
 
           </p>
-        </div>
+        </section>
+        <section 
+        id="blog-posts"
+        className="grid grid-cols-2 gap-4 px-12"
+        >
+          <BlogPostCard
+            src={'/blue-logo.webp'}
+            alt={''}
+            date={'November 4, 2023'}
+            title={'Introducing PoSciDonDAO: The first community-owned collective funding personalized medicine research for life-altering diseases.'}
+            text={''}
+          />
+        </section>
     </main>
   );
 }

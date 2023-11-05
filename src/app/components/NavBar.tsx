@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from './Footer';
@@ -9,7 +9,7 @@ import { useClickOutside } from './ClickOutside';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const genericHamburgerLine = `h-[0.25rem] w-8 my-[0.2rem] rounded-full bg-black transition ease transform duration-300`;
-  const [src, setSrc] = useState('./../black-logo.svg');
+  const [src, setSrc] = useState('/black-logo.webp');
   const dropdown = useRef<any>();
   useClickOutside(dropdown, () => setIsOpen(false));
 
@@ -26,20 +26,20 @@ export default function NavBar() {
       border-b-2
       border-seaBlue-700
       bg-[#FDFDFD]
-      px-4
+      pr-4
         "
     >
       <Link
-        onMouseEnter={() => setSrc('./../blue-logo.svg')}
-        onMouseLeave={() => setSrc('./../black-logo.svg')}
+        onMouseEnter={() => setSrc('/blue-logo.webp')}
+        onMouseLeave={() => setSrc('/black-logo.webp')}
         href="/"
       >
         <Image
-          width={200}
+          width={300}
           height={100}
-          className="h-36 shrink-0"
+          className="hover:cursor-pointer"
           src={`${src}`}
-          alt="PoSciDon DAO's Logo consisting of a trident attached to a DNA helix"
+          alt="PoSciDonDAO's Logo: a trident attached to a DNA helix"
         />
       </Link>
       <div className="hidden w-full items-center justify-end gap-12 lg:flex">
@@ -116,7 +116,6 @@ export default function NavBar() {
             md:w-[100%]
             lg:w-[85%]
             xl:w-[65%]
-                  
           "
             >
               <Footer />
