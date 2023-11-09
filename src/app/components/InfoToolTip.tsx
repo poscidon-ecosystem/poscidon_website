@@ -28,16 +28,16 @@ export default function InfoToolTip({ message }) {
         <div
           className="
           absolute
-          ml-[26rem]
-          h-auto
-          w-[25rem]
+          sm:ml-[26rem]
+          sm:w-[25rem]
           max-w-full
-          whitespace-normal 
           rounded-xl 
           border-2 
           border-seaBlue-700 
           bg-seaBlue-200 
-          p-3 
+          p-3
+          mx-2
+          sm:mx-0 
           text-base
           font-proxima
           "

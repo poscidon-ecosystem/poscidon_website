@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import styles from '../components/Button.module.css';
 import FAQ from '../components/FAQ';
 
-const url = new URL('https://poscidondao.com/research');
+const url = new URL('https://www.poscidondao.com/research');
 
 export const metadata: Metadata = {
   metadataBase: url,

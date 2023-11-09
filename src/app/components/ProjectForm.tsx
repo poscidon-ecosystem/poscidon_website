@@ -395,7 +395,7 @@ export default function ProjectForm() {
               font-proximaSemiBold 
               text-seaBlue-700"
             >
-              Ethereum address
+              Ethereum address (optional)
               <InfoToolTip 
               message={`Once your project has been accepted, 
               your funds will be sent to this Ethereum blockchain address.

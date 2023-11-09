@@ -194,12 +194,11 @@ export default function Cards() {
         <Link
           href="/sci-token"
           className="
-              flex
-              h-full
-              w-full
-              items-center
-              justify-center
-              rounded-3xl
+          flex
+          items-center
+          justify-center
+          rounded-3xl
+          md:w-full
               "
         >
           <Image
@@ -210,14 +209,14 @@ export default function Cards() {
               setTokSrc('/tokens-white.webp');
             }}
             className="
-              flex
-              w-full
-              max-w-full
-              items-start
-              justify-start 
-              rounded-3xl
-              border-2
-              border-seaBlue-700
+            flex
+            w-full
+            max-w-full
+            items-start
+            justify-start 
+            rounded-3xl
+            border-2
+            border-seaBlue-700
               "
             loading='eager'
             width={200}
