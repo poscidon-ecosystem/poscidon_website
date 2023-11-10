@@ -61,7 +61,7 @@ export const Hero = () => {
         bg-clip-text
         text-center 
         font-proximaSemiBold
-        text-4xl
+        text-3xl
         uppercase 
         text-seaBlue-700 
         text-transparent

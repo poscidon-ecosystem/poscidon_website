@@ -1,8 +1,9 @@
-import BlogPostCard from "../components/BlogPostCard";
+import BlogPostCard from '../components/BlogPostCard';
 
 export default function Blog() {
   return (
-    <main className="
+    <main
+      className="
         flex
         w-full
         max-w-full
@@ -13,19 +14,19 @@ export default function Blog() {
         lg:w-[85%] 
         xl:w-[75%] 
         "
-      >
-        <section
-          id="hero"
-          className="
+    >
+      <section
+        id="hero"
+        className="
         flex 
         flex-col 
         items-center 
         justify-center 
-        py-8
+        pt-8
         "
-        >
-          <h1
-            className={`
+      >
+        <h1
+          className={`
           flex 
           w-full 
           max-w-full
@@ -39,11 +40,11 @@ export default function Blog() {
           sm:text-5xl
           lg:text-6xl
           `}
-          >
-            PoSciDonDAO's Blog
-          </h1>
-          <p
-            className="
+        >
+          PoSciDonDAO's Blog
+        </h1>
+        <p
+          className="
             flex
             w-[70%]
             items-center 
@@ -54,22 +55,34 @@ export default function Blog() {
             sm:text-lg
             xl+:w-[50%]
           "
-          >
-
-          </p>
-        </section>
-        <section 
+        ></p>
+      </section>
+      <section
         id="blog-posts"
-        className="grid grid-cols-2 gap-4 px-12"
-        >
-          <BlogPostCard
-            src={'/blue-logo.webp'}
-            alt={''}
-            date={'November 4, 2023'}
-            title={'Introducing PoSciDonDAO: The first community-owned collective funding personalized medicine research for life-altering diseases.'}
-            text={''}
-          />
-        </section>
+        className="
+        grid 
+        place-items-center
+        w-[80%]
+        sm:w-[70%]
+        "
+      >
+        <BlogPostCard
+          src={'/blue-logo.webp'}
+          alt={''}
+          date={'November 4, 2023'}
+          title={
+            'Introducing PoSciDonDAO: The first community-owned collective funding personalized medicine research for life-altering diseases.'
+          }
+          href={
+            '/blog/1'
+          }
+          text={`
+            Hello web3, scientists and metaverse,
+
+            we are PoSciDonDAO!
+            `}
+        />
+      </section>
     </main>
   );
 }

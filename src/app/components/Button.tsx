@@ -8,7 +8,6 @@ export default function Button({link, href, target, onClick, type, text, icon, s
             {link ? 
                 <Link 
                 href={href}
-                onClick={onClick}
                 target={target}
                 className={style}
                 >

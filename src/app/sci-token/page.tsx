@@ -146,7 +146,7 @@ export default function Tokens() {
             </li>
           </ul>
         </div>
-        <Image
+        {/* <Image
           className="
                     rounded-3xl
                     sm:my-8
@@ -155,7 +155,15 @@ export default function Tokens() {
           alt=""
           width={500}
           height={500}
-        />
+        /> */}
+        <div className="h-full flex justify-center items-center">
+          <iframe
+            className=""
+            src="/donut.html"
+            width={'100%'}
+            height={'100%'}
+          ></iframe>
+        </div>
 
         <Image
           className="

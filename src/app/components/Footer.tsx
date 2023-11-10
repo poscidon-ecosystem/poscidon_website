@@ -29,7 +29,7 @@ export default function Footer() {
           justify-between
           "
         >
-          <Link href="/" className="flex w-[5rem] sm:w-[10rem]">
+          <Link href="/" className="flex w-[5rem] sm:w-[10rem] transition-all ease-in duration-500">
             <Image
               width={1000}
               height={1000}
@@ -46,10 +46,13 @@ export default function Footer() {
         grid-cols-2 
         items-start 
         justify-start 
-        gap-4 
+        gap-6 
         sm:px-4 
-        md:grid-cols-3 
-        md:gap-24
+        md:grid-cols-3
+        md:gap-18
+        lg:gap-20
+        xl:gap-22
+        transition-all ease-in duration-500
         "
         >
           <div className="flex flex-col gap-2 pt-2">
@@ -99,13 +102,13 @@ export default function Footer() {
             >
               GET INVOLVED
             </p>
-            <Link
+            {/* <Link
               className="hover:text-seaBlue-700"
               href="https://test.poscidon.com/donation"
               target="_blank"
             >
               Become a donor
-            </Link>
+            </Link> */}
             <Link
               className="hover:text-seaBlue-700"
               href="https://forms.gle/hY52XW7inek4ynrR6"
