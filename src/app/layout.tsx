@@ -32,7 +32,7 @@ const url = new URL('https://www.poscidondao.com/');
 
 export const metadata: Metadata = {
   metadataBase: url,
-  title: 'PoSciDonDAO | Personalized Medicine Funding Revolutionized',
+  title: 'PoSciDonDAO | Revolutionizing Personalized Medicine Research Funding',
   description: `PoSciDonDAO streamlines and democratizes the funding process of personalized medicine research. Become part of the change that science needs!`,
   viewport: 'width=device-width, initial-scale=1.0',
   alternates: {

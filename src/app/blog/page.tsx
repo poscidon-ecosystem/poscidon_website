@@ -34,7 +34,7 @@ export default function Blog() {
           justify-center
           text-center
           font-proximaSemiBold
-          text-4xl
+          text-3xl
           uppercase
           text-seaBlue-700
           sm:text-5xl

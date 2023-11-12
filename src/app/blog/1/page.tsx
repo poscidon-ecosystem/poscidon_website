@@ -17,9 +17,9 @@ export default function Blog1() {
     //   'https://gateway.irys.xyz/_XhnEPm1WrRKGbqzkCPdcMf48DvFZeHkefr5VBS8-ZE'
     // );
     const res = await fetch(
-      'https://gateway.irys.xyz/UogLipTCnhTfx29bAHojHmGZYb6CPL_yrHBed-ctKEw'
+      'https://gateway.irys.xyz/WXQoXS502Ra8oGKmy0CgITx12IJd_xWeiczuQgsKy0c'
     );
-    setBlog(await String(res));
+    setBlog(await res.text());
   }
 
   const createPost = () => {
@@ -30,12 +30,15 @@ export default function Blog1() {
   // <main className='max-w-full'>
   //   {blog}
   // </main>
-  <main className='max-w-full w-full h-[40rem]'>
+  <main className=''>
     {/* <div> */}
-    <iframe 
+    {/* <iframe 
     className='overflow-scroll w-[30rem] h-[30rem]'
-    src={`${blog}`} width={'100%'} height={'100%'}/>
-
+    src={`${blog}`} width={'100%'} height={'100%'}/> */}
+    <embed
+    src={'https://gateway.irys.xyz/WXQoXS502Ra8oGKmy0CgITx12IJd_xWeiczuQgsKy0c'}
+    >
+    </embed>
   </main>
   );
 }

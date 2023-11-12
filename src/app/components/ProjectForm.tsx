@@ -201,7 +201,7 @@ export default function ProjectForm() {
           justify-center
           text-center
           font-proximaSemiBold
-          text-4xl
+          text-3xl
           text-seaBlue-700
           uppercase 
           sm:text-5xl
