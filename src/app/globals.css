@@ -31,12 +31,49 @@ body {
 }
 
 h2 {
-  @apply py-2 font-proximaBold text-2xl 
+  @apply py-2 font-proximaBold text-2xl;
 }
 
 h4 {
-  @apply py-1 font-proximaBold text-lg ;
+  @apply py-1 font-proximaBold text-lg;
 }
 
+main.blog {
+  @apply sm:w-[70%] max-w-full px-8;
+}
 
+h1.header {
+  @apply py-4 mt-2 text-center font-proximaSemiBold sm:text-4xl text-3xl leading-10 text-seaBlue-700;
+}
 
+h2.header {
+  @apply text-xl text-seaBlue-700;
+}
+
+span.text {
+  @apply py-1;
+}
+
+p.text {
+ @apply py-2
+}
+
+span.description {
+  @apply font-proximaItalic;
+}
+
+section.image {
+  @apply flex flex-col items-center justify-center text-center;
+}
+
+section.paragraph {
+  @apply py-2 my-2
+}
+
+span.reference {
+  @apply my-2 break-normal
+}
+
+a.ref {
+  @apply underline text-seaBlue-700
+}

@@ -9,7 +9,6 @@ export default function BlogPostCard({ src, alt, date, title, text, href }) {
   return (
     <Link
       href={href}
-      target='_blank'
       className="
       mx-8
       mb-8 

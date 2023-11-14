@@ -77,7 +77,7 @@ export default function Blog() {
             '/blog/1'
           }
           text={`
-            Hello web3, scientists and metaverse,
+            Hello web3 and scientists,
 
             we are PoSciDonDAO!
             `}
