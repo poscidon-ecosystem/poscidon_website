@@ -81,9 +81,9 @@ export default function Cards() {
           text-center
           "
         >
-          <div className="pt-2 font-proximaSemiBold text-2xl">
+          <h2 className="pt-2 font-proximaSemiBold text-2xl">
             Fund your research
-          </div>
+          </h2>
           <p
             className="
             w-[80%]
@@ -158,9 +158,9 @@ export default function Cards() {
           text-center
           "
         >
-          <h3 className="pt-2 font-proximaSemiBold text-2xl">
+          <h2 className="pt-2 font-proximaSemiBold text-2xl">
             Become part of the community
-          </h3>
+          </h2>
           <p
             className="
               w-[80%]             
@@ -236,9 +236,9 @@ export default function Cards() {
             text-center
             "
         >
-          <h3 className="pt-2 font-proximaSemiBold text-2xl">
+          <h2 className="pt-2 font-proximaSemiBold text-2xl">
             Our Token Model
-          </h3>
+          </h2>
           <p
             className="
               w-[80%]             

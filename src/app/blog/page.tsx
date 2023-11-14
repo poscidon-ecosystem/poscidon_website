@@ -34,7 +34,7 @@ export default function Blog() {
           justify-center
           text-center
           font-proximaSemiBold
-          text-4xl
+          text-3xl
           uppercase
           text-seaBlue-700
           sm:text-5xl
@@ -77,7 +77,7 @@ export default function Blog() {
             '/blog/1'
           }
           text={`
-            Hello web3, scientists and metaverse,
+            Hello web3 and scientists,
 
             we are PoSciDonDAO!
             `}

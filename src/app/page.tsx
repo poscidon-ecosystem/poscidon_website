@@ -40,10 +40,12 @@ export default function Home() {
           text-base 
           md:text-lg
           lg:text-2xl
+          transition-all
+          duration-500
           `}
         >
-          PoSciDon Decentralized Autonomous Organisation (DAO) 
-          funds personalized medicine research
+          PoSciDonDAO is a Decentralized Autonomous Organisation (DAO) 
+          that funds personalized medicine research
           {' '}for <span className='font-proximaBold'>life-altering diseases</span> (incl. cancer and Alzheimer's disease). 
           Together with your help we 
           can <span className='font-proximaBold'>change the lives of people </span> affected by these diseases.
@@ -80,7 +82,10 @@ export default function Home() {
       '>
         <Cards/>
       </section>  
-      <section className='py-8 w-full'>
+      <section className='
+        py-8 
+        w-full         
+        '>
         <ContactUs />
       </section>
 
