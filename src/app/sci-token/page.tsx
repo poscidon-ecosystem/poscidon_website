@@ -31,7 +31,7 @@ export default function Tokens() {
         justify-center
         sm:pt-12 
         lg:w-[85%] 
-        xl:w-[75%] 
+        xl:w-[60%] 
         "
     >
       <div
@@ -90,101 +90,79 @@ export default function Tokens() {
         />
       </div>
       <hr className="border-b-1 w-full border-gray-200"></hr>
-      <div
+      <section
         className="
-            mx-10 
-            grid
-            grid-cols-1 
-            items-center 
-            justify-center
-            gap-8
-            sm:grid-cols-2
-            "
+        flex
+        items-start 
+        justify-start
+        p-16
+        "
       >
-        <div
-          className="
-            py-4
-            "
-        >
-          <div className="flex">
-            <h2
-              className="
-                    flex
-                    py-4
+        <div className="flex w-full flex-col items-start justify-center">
+          <h2
+            className="
+                    pb-8
                     font-proximaSemiBold
                     text-4xl
                     text-seaBlue-700
                     sm:text-5xl
                     lg:text-6xl
                     "
-            >
-              Allocation
-            </h2>
-          </div>
-          <ul
+          >
+            Allocation
+          </h2>
+          <p
             className="
-            list-image-[url(/arrow.svg)] 
+            max-w-[90%]
             md:text-xl
             "
           >
-            <li>The total supply of $SCI is 18,910,000 tokens.</li>
-            <br></br>
-            <li>
-              At genesis, 10% of the total $SCI supply will be offered through{' '}
-              <a
-                className="text-seaBlue-700 underline"
-                href="https://fairprotocol.eth.limo/"
-              >
-                Fair Protocol's
-              </a>{' '}
-              liquidity bootstrap batch auction.
-            </li>
-            <br></br>
-            <li>
-              Additionally, 5% of the tokens will be offered to contributors,
-              also known as Crew members.
-            </li>
-          </ul>
+            The total supply of $SCI is 18,910,000 tokens. At genesis, 10% of
+            the total $SCI supply will be offered through a public sale using{' '}
+            <a
+              className="text-seaBlue-700 underline"
+              href="https://fairprotocol.eth.limo/"
+            >
+              Fair Protocol's
+            </a>{' '}
+            liquidity bootstrap batch auction. Additionally, 5% of the tokens
+            will be offered to Crew contributors and 5% will be used to
+            compensate contractors. Another 10% will be assigned to our staking
+            program.
+          </p>
         </div>
-        {/* <Image
-          className="
-                    rounded-3xl
-                    sm:my-8
-                    "
-          src={'/token-allocation.svg'}
-          alt=""
-          width={500}
-          height={500}
-        /> */}
-        <div className="h-full flex justify-center items-center">
-          <iframe
-            className=""
-            src="/donut.html"
-            width={'100%'}
-            height={'100%'}
-          ></iframe>
-        </div>
-
+        <iframe
+          className="flex h-[23rem] w-full items-center justify-center"
+          src="/donut.html"
+          width={'100%'}
+          height={'100%'}
+        />
+      </section>
+      <hr className="border-b-1 w-full border-gray-200"></hr>
+      <section
+        className="
+      flex
+      items-center 
+      justify-center
+      p-16
+      "
+      >
         <Image
           className="
             hidden
-            w-full
-            py-8
+            w-full 
+            items-center
+            justify-start
             sm:flex
             "
-          src={'/staking.png'}
+          src={'/staking.webp'}
           alt="Staking $SCI and $PO tokens"
-          width={1000}
-          height={1000}
+          width={300}
+          height={300}
         />
-        <div
-          className="
-                py-4
-                "
-        >
-          <div className="flex justify-start">
-            <h2
-              className="
+        <div className="flex w-full flex-col items-start justify-center">
+          <h2
+            className="
                 flex
                 py-4
                 font-proximaSemiBold
@@ -193,43 +171,28 @@ export default function Tokens() {
                 sm:text-5xl
                 lg:text-6xl
                 "
-            >
-              Staking
-            </h2>
-          </div>
-          <ul
+          >
+            Staking
+          </h2>
+          <p
             className="
-            list-image-[url(/arrow.svg)]
+            max-w-[90%]
             md:text-xl
             "
           >
-            <li>
-              Your $SCI can be staked through the{' '}
-              <a
-                className="text-seaBlue-700 underline"
-                target="_blank"
-                href={'https://test.poscidon.com/staking'}
-              >
-                PoSciDon Protocol
-              </a>
-              .
-            </li>
-            <br></br>
-            <li>
-              Once staked, you will gain voting power allowing you to vote on
-              DAO proposals.
-            </li>
-            <br></br>
-            <li>
-              After on-chain voting on proposals, you will receive the
-              untradable $PO token.
-            </li>
-            <br></br>
-            <li>
-              When $PO is staked together with $SCI, you will receive more $SCI
-              tokens on a daily basis.
-            </li>
-          </ul>
+            Your $SCI can be staked through{' '}
+            <a
+              className="text-seaBlue-700 underline"
+              target="_blank"
+              href={'https://test.poscidon.com/staking'}
+            >
+              PoSciDonDAO's Protocol
+            </a>
+            . Once staked, you will gain voting power allowing you to vote on
+            DAO proposals. After on-chain voting on proposals, you will receive
+            the untradable $PO token. When $PO is staked together with $SCI, you
+            will receive more $SCI tokens on a daily basis.
+          </p>
         </div>
         <Image
           className="
@@ -238,20 +201,24 @@ export default function Tokens() {
             sm:hidden
             sm:py-8
             "
-          src={'/staking.png'}
+          src={'/staking.webp'}
           alt="Staking $SCI and $PO tokens"
           width={1000}
           height={1000}
         />
-        <div
-          className="
-                pb-8
-                pt-4
-                "
-        >
-          <div className="flex w-full justify-start">
-            <h2
-              className="
+      </section>
+      <hr className="border-b-1 w-full border-gray-200"></hr>
+      <section
+        className="
+      flex
+      items-center 
+      justify-center
+      p-16
+      "
+      >
+        <div className="flex w-full flex-col items-start justify-center">
+          <h2
+            className="
                             flex
                             py-4
                             font-proximaSemiBold
@@ -260,26 +227,20 @@ export default function Tokens() {
                             sm:text-5xl
                             lg:text-6xl
                             "
-            >
-              Burning
-            </h2>
-          </div>
-          <ul
-            className="
-            list-image-[url(/arrow.svg)]
-            md:text-xl"
           >
-            <li>
-              30% of the revenue will be used to buy $SCI from the market.
-            </li>
-            <br></br>
-            <li>Those $SCI tokens will then be burned.</li>
-            <br></br>
-            <li>
-              Lower token supply leads to higher value per $SCI token, given the
-              total market capitalization stays the same.
-            </li>
-          </ul>
+            Burning
+          </h2>
+          <p
+            className="
+            max-w-[90%]
+            md:text-xl
+            "
+          >
+            Of the generated revenue, 30% will be used to buy $SCI from the market. Those
+            $SCI tokens will then be burned. Lower token supply leads to higher
+            value per $SCI token, given the total market capitalization stays
+            the same.
+          </p>
         </div>
         <Image
           className="
@@ -292,7 +253,7 @@ export default function Tokens() {
           width={1000}
           height={1000}
         />
-      </div>
+      </section>
     </div>
   );
 }
