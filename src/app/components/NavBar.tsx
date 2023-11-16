@@ -46,19 +46,19 @@ export default function NavBar() {
         <Link className="hover:text-seaBlue-700" href={'/research'}>
           For scientists
         </Link>
-        <Link
+        {/* <Link
           className="hover:text-seaBlue-700"
-          href="https://test.poscidon.com/donation"
+          href="https://test.poscidondao.com/donation"
           target="_blank"
         >
           Become a donor
-        </Link>
+        </Link> */}
         <Link
           className="hover:text-seaBlue-700"
           href="https://forms.gle/hY52XW7inek4ynrR6"
           target="_blank"
         >
-          Become a contributor
+          Contribute
         </Link>
         <Link className="hover:text-seaBlue-700" href="/sci-token">
           SCI token

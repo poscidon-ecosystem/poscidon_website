@@ -183,7 +183,7 @@ export default function ProjectForm() {
         xl:w-[65%] 
         "
     >
-      <div
+      <header
         className="
         flex 
         flex-col 
@@ -228,7 +228,7 @@ export default function ProjectForm() {
           potentially commercialize assets such as data and intellectual
           property.
         </p>
-      </div>
+      </header>
       <div
         className="        
             w-[90%]

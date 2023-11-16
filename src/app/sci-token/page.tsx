@@ -31,10 +31,10 @@ export default function Tokens() {
         justify-center
         sm:pt-12 
         lg:w-[85%] 
-        xl:w-[60%] 
+        xl+:w-[60%] 
         "
     >
-      <div
+      <header
         className="
         flex 
         flex-col 
@@ -43,8 +43,9 @@ export default function Tokens() {
         py-8
         "
       >
-        <h1
-          className={`
+        <div className="flex items-center justify-center">
+          <h1
+            className={`
           flex 
           w-full 
           max-w-full
@@ -58,9 +59,19 @@ export default function Tokens() {
           sm:text-5xl
           lg:text-6xl
           `}
-        >
-          Explore the SCI Token
-        </h1>
+          >
+            Explore the{' '}
+            <Image
+              className="mx-2"
+              alt="Representation of SCI, PoSciDonDAO's tradable governance token"
+              width={100}
+              height={100}
+              src="/sci.webp"
+            />{' '}
+            Token
+          </h1>
+        </div>
+
         <p
           className="
             flex
@@ -71,7 +82,7 @@ export default function Tokens() {
             text-center 
             text-base 
             sm:text-lg
-            xl+:w-[50%]
+            xl:w-[50%]
           "
         >
           $SCI is a governance token allowing holders to vote on DAO proposals.
@@ -88,20 +99,27 @@ export default function Tokens() {
           icon={''}
           style={styles.primary}
         />
-      </div>
+      </header>
       <hr className="border-b-1 w-full border-gray-200"></hr>
       <section
         className="
+        my-2
         flex
-        items-start 
-        justify-start
-        p-16
+        flex-col
+        items-start
+        justify-between
+        p-4
+        max-h-full
+        md:h-1/3
+        md:flex-row
+        md:gap-16
+        md:p-16
         "
       >
-        <div className="flex w-full flex-col items-start justify-center">
+        <div className="flex w-full flex-col items-center justify-center">
           <h2
             className="
-                    pb-8
+                    py-4
                     font-proximaSemiBold
                     text-4xl
                     text-seaBlue-700
@@ -113,8 +131,10 @@ export default function Tokens() {
           </h2>
           <p
             className="
-            max-w-[90%]
-            md:text-xl
+            w-full
+            text-center
+            lg:text-lg
+            xl:text-xl
             "
           >
             The total supply of $SCI is 18,910,000 tokens. At genesis, 10% of
@@ -131,36 +151,52 @@ export default function Tokens() {
             program.
           </p>
         </div>
-        <iframe
-          className="flex h-[23rem] w-full items-center justify-center"
-          src="/donut.html"
-          width={'100%'}
-          height={'100%'}
-        />
+        <div
+          className="
+          flex 
+          h-[20rem] 
+          w-full 
+          items-center 
+          justify-center
+        "
+        >
+          <iframe
+            className=""
+            src="/donut.html"
+            width={'100%'}
+            height={'100%'}
+          />
+        </div>
       </section>
       <hr className="border-b-1 w-full border-gray-200"></hr>
       <section
         className="
-      flex
-      items-center 
-      justify-center
-      p-16
+        my-2
+        flex
+        flex-col
+        items-center
+        justify-center
+        p-4
+        max-h-full
+        md:h-1/3
+        md:flex-row
+        md:gap-16
+        md:p-16
       "
       >
         <Image
           className="
-            hidden
-            w-full 
+            hidden 
             items-center
-            justify-start
-            sm:flex
+            justify-center
+            md:flex
             "
           src={'/staking.webp'}
           alt="Staking $SCI and $PO tokens"
-          width={300}
-          height={300}
+          width={270}
+          height={100}
         />
-        <div className="flex w-full flex-col items-start justify-center">
+        <div className="flex w-full flex-col items-center justify-start">
           <h2
             className="
                 flex
@@ -176,8 +212,10 @@ export default function Tokens() {
           </h2>
           <p
             className="
-            max-w-[90%]
-            md:text-xl
+            w-full
+            text-center
+            lg:text-lg
+            xl:text-xl
             "
           >
             Your $SCI can be staked through{' '}
@@ -194,65 +232,88 @@ export default function Tokens() {
             will receive more $SCI tokens on a daily basis.
           </p>
         </div>
-        <Image
+        <div
           className="
-            flex
-            w-full
-            sm:hidden
-            sm:py-8
-            "
-          src={'/staking.webp'}
-          alt="Staking $SCI and $PO tokens"
-          width={1000}
-          height={1000}
-        />
+          flex 
+          w-full
+          p-4 
+          items-start                     
+          justify-center
+          md:hidden
+          md:pt-4
+          "
+        >
+          <Image
+            className="pt-8"
+            src={'/staking-line.webp'}
+            alt="Staking $SCI and $PO tokens"
+            width={600}
+            height={300}
+          />
+        </div>
       </section>
       <hr className="border-b-1 w-full border-gray-200"></hr>
       <section
         className="
-      flex
-      items-center 
-      justify-center
-      p-16
+        my-2
+        flex
+        flex-col
+        items-center
+        justify-between
+        p-4
+        max-h-full
+        md:h-1/3
+        md:flex-row
+        md:gap-16
+        md:p-16
       "
       >
-        <div className="flex w-full flex-col items-start justify-center">
+        <div className="flex w-full flex-col items-center justify-center">
           <h2
             className="
-                            flex
-                            py-4
-                            font-proximaSemiBold
-                            text-4xl
-                            text-seaBlue-700
-                            sm:text-5xl
-                            lg:text-6xl
-                            "
+            flex
+            py-4
+            font-proximaSemiBold
+            text-4xl
+            text-seaBlue-700
+            sm:text-5xl
+            lg:text-6xl
+            "
           >
             Burning
           </h2>
           <p
             className="
-            max-w-[90%]
-            md:text-xl
+            w-full
+            text-center
+            lg:text-lg
+            xl:text-xl
             "
           >
-            Of the generated revenue, 30% will be used to buy $SCI from the market. Those
-            $SCI tokens will then be burned. Lower token supply leads to higher
-            value per $SCI token, given the total market capitalization stays
-            the same.
+            Of the generated revenue, 30% will be used to buy $SCI from the
+            market. Those $SCI tokens will then be burned. Lower token supply
+            leads to higher value per $SCI token, given the total market
+            capitalization stays the same. The DAO can also decide through a
+            proposal to receive a dividend instead of executing buy-backs.
           </p>
         </div>
-        <Image
+        <div
           className="
-                    w-full
-                    pb-8
-                    sm:pt-4
-                    "
-          src={'/buy-back.png'}
-          alt="Burning $SCI tokens"
-          width={1000}
-          height={1000}
-        />
+          flex
+          h-full 
+          w-full  
+          items-center
+          justify-center                   
+          "
+        >
+          <Image
+            className="max-h-full w-full pt-8"
+            src={'/burn.webp'}
+            alt="Burning $SCI tokens"
+            width={300}
+            height={300}
+          />
+        </div>
       </section>
     </div>
   );
