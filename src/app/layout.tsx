@@ -28,7 +28,7 @@ const proximaNovaItalic = localFont({
   variable: '--font-proximaNovaItalic',
 });
 
-const url = new URL('https://www.poscidondao.com/');
+const url = new URL('https://www.poscidondao.com');
 
 export const metadata: Metadata = {
   metadataBase: url,
@@ -49,6 +49,8 @@ export const metadata: Metadata = {
   ],
   manifest: `${url}manifest.json`,
 };
+
+const GMT_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? '';
 
 export default function RootLayout({
   children,
@@ -73,17 +75,17 @@ export default function RootLayout({
       <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
+      />      
       <Script strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-          page_path: window.location.pathname,
-          });
-        `}
-      </Script>
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GMT_ID}', {
+        page_path: window.location.pathname,
+        });
+      `}
+    </Script>
       <body
         className={`
             flex
@@ -115,7 +117,7 @@ export default function RootLayout({
                   text-gray-400
                   "
           >
-            © PoSciDon DAO. All rights reserved.
+            © PoSciDonDAO. All rights reserved.
           </div>
         </div>
       </body>

@@ -31,10 +31,10 @@ export default function Tokens() {
         justify-center
         sm:pt-12 
         lg:w-[85%] 
-        xl:w-[75%] 
+        xl+:w-[60%] 
         "
     >
-      <div
+      <header
         className="
         flex 
         flex-col 
@@ -43,8 +43,9 @@ export default function Tokens() {
         py-8
         "
       >
-        <h1
-          className={`
+        <div className="flex items-center justify-center">
+          <h1
+            className={`
           flex 
           w-full 
           max-w-full
@@ -58,9 +59,19 @@ export default function Tokens() {
           sm:text-5xl
           lg:text-6xl
           `}
-        >
-          Explore the SCI Token
-        </h1>
+          >
+            Explore the{' '}
+            <Image
+              className="mx-2"
+              alt="Representation of SCI, PoSciDonDAO's tradable governance token"
+              width={100}
+              height={100}
+              src="/sci.webp"
+            />{' '}
+            Token
+          </h1>
+        </div>
+
         <p
           className="
             flex
@@ -71,7 +82,7 @@ export default function Tokens() {
             text-center 
             text-base 
             sm:text-lg
-            xl+:w-[50%]
+            xl:w-[50%]
           "
         >
           $SCI is a governance token allowing holders to vote on DAO proposals.
@@ -88,28 +99,26 @@ export default function Tokens() {
           icon={''}
           style={styles.primary}
         />
-      </div>
+      </header>
       <hr className="border-b-1 w-full border-gray-200"></hr>
-      <div
+      <section
         className="
-            mx-10 
-            grid
-            grid-cols-1 
-            items-center 
-            justify-center
-            gap-8
-            sm:grid-cols-2
-            "
+        my-2
+        flex
+        flex-col
+        items-start
+        justify-between
+        p-4
+        max-h-full
+        md:h-1/3
+        md:flex-row
+        md:gap-16
+        md:p-16
+        "
       >
-        <div
-          className="
-            py-4
-            "
-        >
-          <div className="flex">
-            <h2
-              className="
-                    flex
+        <div className="flex w-full flex-col items-center justify-center">
+          <h2
+            className="
                     py-4
                     font-proximaSemiBold
                     text-4xl
@@ -117,74 +126,79 @@ export default function Tokens() {
                     sm:text-5xl
                     lg:text-6xl
                     "
-            >
-              Allocation
-            </h2>
-          </div>
-          <ul
+          >
+            Allocation
+          </h2>
+          <p
             className="
-            list-image-[url(/arrow.svg)] 
-            md:text-xl
+            w-full
+            text-center
+            lg:text-lg
+            xl:text-xl
             "
           >
-            <li>The total supply of $SCI is 18,910,000 tokens.</li>
-            <br></br>
-            <li>
-              At genesis, 10% of the total $SCI supply will be offered through{' '}
-              <a
-                className="text-seaBlue-700 underline"
-                href="https://fairprotocol.eth.limo/"
-              >
-                Fair Protocol's
-              </a>{' '}
-              liquidity bootstrap batch auction.
-            </li>
-            <br></br>
-            <li>
-              Additionally, 5% of the tokens will be offered to contributors,
-              also known as Crew members.
-            </li>
-          </ul>
+            The total supply of $SCI is 18,910,000 tokens. At genesis, 10% of
+            the total $SCI supply will be offered through a public sale using{' '}
+            <a
+              className="text-seaBlue-700 underline"
+              href="https://fairprotocol.eth.limo/"
+            >
+              Fair Protocol's
+            </a>{' '}
+            liquidity bootstrap batch auction. Additionally, 5% of the tokens
+            will be offered to Crew contributors and 5% will be used to
+            compensate contractors. Another 10% will be assigned to our staking
+            program.
+          </p>
         </div>
-        {/* <Image
+        <div
           className="
-                    rounded-3xl
-                    sm:my-8
-                    "
-          src={'/token-allocation.svg'}
-          alt=""
-          width={500}
-          height={500}
-        /> */}
-        <div className="h-full flex justify-center items-center">
+          flex 
+          h-[20rem] 
+          w-full 
+          items-center 
+          justify-center
+        "
+        >
           <iframe
             className=""
             src="/donut.html"
             width={'100%'}
             height={'100%'}
-          ></iframe>
+          />
         </div>
-
+      </section>
+      <hr className="border-b-1 w-full border-gray-200"></hr>
+      <section
+        className="
+        my-2
+        flex
+        flex-col
+        items-center
+        justify-center
+        p-4
+        max-h-full
+        md:h-1/3
+        md:flex-row
+        md:gap-16
+        md:p-16
+      "
+      >
         <Image
           className="
-            hidden
-            w-full
-            py-8
-            sm:flex
+            hidden 
+            items-center
+            justify-center
+            md:flex
             "
-          src={'/staking.png'}
+          src={'/staking.webp'}
           alt="Staking $SCI and $PO tokens"
-          width={1000}
-          height={1000}
+          width={270}
+          height={100}
         />
-        <div
-          className="
-                py-4
-                "
-        >
-          <div className="flex justify-start">
-            <h2
-              className="
+        <div className="flex w-full flex-col items-center justify-start">
+          <h2
+            className="
                 flex
                 py-4
                 font-proximaSemiBold
@@ -193,106 +207,114 @@ export default function Tokens() {
                 sm:text-5xl
                 lg:text-6xl
                 "
-            >
-              Staking
-            </h2>
-          </div>
-          <ul
+          >
+            Staking
+          </h2>
+          <p
             className="
-            list-image-[url(/arrow.svg)]
-            md:text-xl
+            w-full
+            text-center
+            lg:text-lg
+            xl:text-xl
             "
           >
-            <li>
-              Your $SCI can be staked through the{' '}
-              <a
-                className="text-seaBlue-700 underline"
-                target="_blank"
-                href={'https://test.poscidon.com/staking'}
-              >
-                PoSciDon Protocol
-              </a>
-              .
-            </li>
-            <br></br>
-            <li>
-              Once staked, you will gain voting power allowing you to vote on
-              DAO proposals.
-            </li>
-            <br></br>
-            <li>
-              After on-chain voting on proposals, you will receive the
-              untradable $PO token.
-            </li>
-            <br></br>
-            <li>
-              When $PO is staked together with $SCI, you will receive more $SCI
-              tokens on a daily basis.
-            </li>
-          </ul>
+            Your $SCI can be staked through{' '}
+            <a
+              className="text-seaBlue-700 underline"
+              target="_blank"
+              href={'https://test.poscidon.com/staking'}
+            >
+              PoSciDonDAO's Protocol
+            </a>
+            . Once staked, you will gain voting power allowing you to vote on
+            DAO proposals. After on-chain voting on proposals, you will receive
+            the untradable $PO token. When $PO is staked together with $SCI, you
+            will receive more $SCI tokens on a daily basis.
+          </p>
         </div>
-        <Image
-          className="
-            flex
-            w-full
-            sm:hidden
-            sm:py-8
-            "
-          src={'/staking.png'}
-          alt="Staking $SCI and $PO tokens"
-          width={1000}
-          height={1000}
-        />
         <div
           className="
-                pb-8
-                pt-4
-                "
+          flex 
+          w-full
+          p-4 
+          items-start                     
+          justify-center
+          md:hidden
+          md:pt-4
+          "
         >
-          <div className="flex w-full justify-start">
-            <h2
-              className="
-                            flex
-                            py-4
-                            font-proximaSemiBold
-                            text-4xl
-                            text-seaBlue-700
-                            sm:text-5xl
-                            lg:text-6xl
-                            "
-            >
-              Burning
-            </h2>
-          </div>
-          <ul
-            className="
-            list-image-[url(/arrow.svg)]
-            md:text-xl"
-          >
-            <li>
-              30% of the revenue will be used to buy $SCI from the market.
-            </li>
-            <br></br>
-            <li>Those $SCI tokens will then be burned.</li>
-            <br></br>
-            <li>
-              Lower token supply leads to higher value per $SCI token, given the
-              total market capitalization stays the same.
-            </li>
-          </ul>
+          <Image
+            className="pt-8"
+            src={'/staking-line.webp'}
+            alt="Staking $SCI and $PO tokens"
+            width={600}
+            height={300}
+          />
         </div>
-        <Image
+      </section>
+      <hr className="border-b-1 w-full border-gray-200"></hr>
+      <section
+        className="
+        my-2
+        flex
+        flex-col
+        items-center
+        justify-between
+        p-4
+        max-h-full
+        md:h-1/3
+        md:flex-row
+        md:gap-16
+        md:p-16
+      "
+      >
+        <div className="flex w-full flex-col items-center justify-center">
+          <h2
+            className="
+            flex
+            py-4
+            font-proximaSemiBold
+            text-4xl
+            text-seaBlue-700
+            sm:text-5xl
+            lg:text-6xl
+            "
+          >
+            Burning
+          </h2>
+          <p
+            className="
+            w-full
+            text-center
+            lg:text-lg
+            xl:text-xl
+            "
+          >
+            Of the generated revenue, 30% will be used to buy $SCI from the
+            market. Those $SCI tokens will then be burned. Lower token supply
+            leads to higher value per $SCI token, given the total market
+            capitalization stays the same. The DAO can also decide through a
+            proposal to receive a dividend instead of executing buy-backs.
+          </p>
+        </div>
+        <div
           className="
-                    w-full
-                    pb-8
-                    sm:pt-4
-                    "
-          src={'/buy-back.png'}
-          alt="Burning $SCI tokens"
-          width={1000}
-          height={1000}
-        />
-      </div>
+          flex
+          h-full 
+          w-full  
+          items-center
+          justify-center                   
+          "
+        >
+          <Image
+            className="max-h-full w-full pt-8"
+            src={'/burn.webp'}
+            alt="Burning $SCI tokens"
+            width={300}
+            height={300}
+          />
+        </div>
+      </section>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import ProjectForm from '../components/ProjectForm';
 import { Metadata } from 'next';
 
-const url = new URL('https://poscidondao.com/submit-project');
+const url = new URL('https://www.poscidondao.com/submit-project');
 
 export const metadata: Metadata = {
   metadataBase: url,

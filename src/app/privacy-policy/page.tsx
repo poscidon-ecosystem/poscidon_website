@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const url = new URL('https://poscidondao.com/privacy-policy');
+const url = new URL('https://www.poscidondao.com/privacy-policy');
 
 export const metadata: Metadata = {
   metadataBase: url,

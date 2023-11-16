@@ -1,24 +1,19 @@
-'use client';
-
 import { Metadata } from 'next';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const url = new URL('https://www.poscidondao.com/blog/1');
-// export const metadata: Metadata = {
-//   metadataBase: url,
-//   title: 'PoSciDonDAO | Introduction Blog',
-//   description: `Get the SCI token, PoSciDonDAO's governance token,
-//    and have a say in the funding of personalized medicine research projects and DAO operations.
-//    Revenue is used to buy-back and burn SCI tokens.
-//   `,
-//   viewport: 'width=device-width, initial-scale=1.0',
-//   alternates: {
-//     canonical: url,
-//   },
-//   robots: 'index, follow',
-// };
+const url = new URL('https://www.poscidondao.com/blog-article/introducing-poscidondao');
+
+export const metadata: Metadata = {
+  metadataBase: url,
+  title: 'PoSciDonDAO | Introduction Blog',
+  description: `PoSciDonDAO innovates healthcare by decentralizing the funding procedure of personalized medicine research. DAO members own the IP and equity assets.`,
+  viewport: 'width=device-width, initial-scale=1.0',
+  alternates: {
+    canonical: url,
+  },
+  robots: 'index, follow',
+};
 
 export default function IntroBlog() {
   // const [blog, setBlog] = useState(<></>);
@@ -140,9 +135,9 @@ export default function IntroBlog() {
           </p>
         </section>
         <section className="image">
-          <img
+          <Image
             alt="PoSciDonDAO's ecosystem streamlining personalized medicine research
-  funding"
+            funding"
             className="w-[30rem] py-4"
             src="/blog-images/ecosystem.webp"
             width={300}
@@ -164,7 +159,7 @@ export default function IntroBlog() {
           </p>
         </section>
         <section className="image">
-          <img
+          <Image
             alt="PoSciDonDAO's governance token SCI"
             src="/blog-images/sci-token.webp"
             width={300}

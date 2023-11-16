@@ -1,6 +1,20 @@
 import BlogPostCard from '../components/BlogPostCard';
+import { Metadata } from 'next';
 
-export default function Blog() {
+const url = new URL('https://www.poscidondao.com/blog');
+
+export const metadata: Metadata = {
+  metadataBase: url,
+  title: 'PoSciDonDAO | Blog',
+  description: `All of PoSciDonDAO's blog articles on decentralized science, tokenomics, personalized medicine, research funding and more`,
+  viewport: 'width=device-width, initial-scale=1.0',
+  alternates: {
+    canonical: url,
+  },
+  robots: 'index, follow',
+};
+
+export default function Blogs() {
   return (
     <main
       className="
@@ -74,7 +88,7 @@ export default function Blog() {
             'Introducing PoSciDonDAO: The first community-owned collective funding personalized medicine research for life-altering diseases.'
           }
           href={
-            '/blog/1'
+            '/blog-article/introducing-poscidondao'
           }
           text={`
             Hello web3 and scientists,
