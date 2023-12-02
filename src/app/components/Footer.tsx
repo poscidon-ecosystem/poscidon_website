@@ -111,7 +111,7 @@ export default function Footer() {
             </Link> */}
             <Link
               className="hover:text-seaBlue-700"
-              href="https://forms.gle/hY52XW7inek4ynrR6"
+              href="https://forms.gle/g52VVJTXCnz7b8LU7"
               target="_blank"
             >
               Contribute
