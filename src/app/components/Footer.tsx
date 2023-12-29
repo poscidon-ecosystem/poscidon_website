@@ -125,7 +125,7 @@ export default function Footer() {
             <Link
               rel="noopener"
               className="hover:text-seaBlue-700"
-              href="https://discord.gg/TXZZV5KXmn"
+              href="https://discord.gg/75SrHpcNSZ"
               target="_blank"
             >
               Join our discord
