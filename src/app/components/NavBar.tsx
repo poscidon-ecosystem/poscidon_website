@@ -35,8 +35,8 @@ export default function NavBar() {
         href="/"
       >
         <Image
-          width={300}
-          height={100}
+          width={500}
+          height={200}
           className="hover:cursor-pointer"
           src={`${src}`}
           alt="PoSciDonDAO's Logo: a trident attached to a DNA helix"
@@ -67,7 +67,7 @@ export default function NavBar() {
       <div ref={dropdown} className="flex items-center">
         <div className="ml-10 flex">
           <button
-            aria-label='Navbar button'
+            aria-label="Navbar button"
             className="group flex h-9 w-6 flex-col items-center justify-center rounded"
             onClick={() => setIsOpen(!isOpen)}
           >
