@@ -54,7 +54,7 @@ export default function IntroBlog() {
       }}
       
       /> */}
-      <main className="blog">
+      <main className="blog animate-fadeUp">
         <section>
           <h1 className="header">
             Introducing PoSciDonDAO: The first community-owned collective

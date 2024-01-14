@@ -26,7 +26,8 @@ export default function Blogs() {
         justify-center
         sm:pt-12 
         lg:w-[85%] 
-        xl:w-[75%] 
+        xl:w-[75%]
+        animate-fadeUp 
         "
     >
       <section
@@ -57,7 +58,7 @@ export default function Blogs() {
         >
           PoSciDonDAO's Blog
         </h1>
-        <p
+        {/* <p
           className="
             flex
             w-[70%]
@@ -69,7 +70,7 @@ export default function Blogs() {
             sm:text-lg
             xl+:w-[50%]
           "
-        ></p>
+        ></p> */}
       </section>
       <section
         id="blog-posts"

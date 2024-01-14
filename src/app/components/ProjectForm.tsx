@@ -59,7 +59,7 @@ export default function ProjectForm() {
       description: false,
       strategy: false,
       country: false,
-      funds: false
+      funds: false,
     };
     let isValid = true;
 
@@ -123,7 +123,7 @@ export default function ProjectForm() {
           strategy: response.strategy,
           country: response.country,
           address: response.address,
-          funds: response.funds
+          funds: response.funds,
         }),
       });
       const { errorUpload } = response;
@@ -189,7 +189,7 @@ export default function ProjectForm() {
         flex-col 
         items-center 
         justify-center 
-        pt-8
+        py-8
         "
       >
         <h1
@@ -202,8 +202,8 @@ export default function ProjectForm() {
           text-center
           font-proximaSemiBold
           text-3xl
-          text-seaBlue-700
-          uppercase 
+          uppercase
+          text-seaBlue-700 
           sm:text-5xl
           lg:w-[80%]
           lg:text-6xl
@@ -229,10 +229,13 @@ export default function ProjectForm() {
           property.
         </p>
       </header>
-      <div
+      <hr className="border-b-1 w-full border-gray-200"></hr>
+      <section
         className="        
             w-[90%]
-            sm:w-[80%]"
+            sm:w-[80%]
+            my-8
+            "
       >
         <form onSubmit={upload} className="flex flex-col">
           <section className="flex flex-col py-2">
@@ -240,7 +243,7 @@ export default function ProjectForm() {
               htmlFor="title"
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
-              Project Title<span className="text-fieryRed py-2">*</span>
+              Project Title<span className="py-2 text-fieryRed">*</span>
             </label>
             <input
               type="text"
@@ -260,7 +263,7 @@ export default function ProjectForm() {
                     "
             />
             {errors?.title && (
-              <p className="text-fieryRed py-2">Title cannot be empty.</p>
+              <p className="py-2 text-fieryRed">Title cannot be empty.</p>
             )}
           </section>
           <section className="flex flex-col py-2">
@@ -268,7 +271,7 @@ export default function ProjectForm() {
               htmlFor="description"
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
-              Project Description<span className="text-fieryRed py-2">*</span>
+              Project Description<span className="py-2 text-fieryRed">*</span>
             </label>
             <textarea
               value={description}
@@ -288,7 +291,7 @@ export default function ProjectForm() {
                 "
             />
             {errors?.description && (
-              <p className="text-fieryRed py-2">Description cannot be empty.</p>
+              <p className="py-2 text-fieryRed">Description cannot be empty.</p>
             )}
           </section>
           <section className="flex flex-col py-2">
@@ -297,7 +300,7 @@ export default function ProjectForm() {
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
               Commercialization strategy
-              <span className="text-fieryRed py-2">*</span>
+              <span className="py-2 text-fieryRed">*</span>
             </label>
             <textarea
               value={strategy}
@@ -317,7 +320,7 @@ export default function ProjectForm() {
                 "
             />
             {errors?.strategy && (
-              <p className="text-fieryRed py-2">
+              <p className="py-2 text-fieryRed">
                 Commercialization strategy cannot be empty.
               </p>
             )}
@@ -327,7 +330,7 @@ export default function ProjectForm() {
               htmlFor="description"
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
-              Research country<span className="text-fieryRed py-2">*</span>
+              Research country<span className="py-2 text-fieryRed">*</span>
             </label>
             <select
               className={`
@@ -350,7 +353,7 @@ export default function ProjectForm() {
               ))}
             </select>
             {errors?.country && (
-              <p className="text-fieryRed py-2">A country must be selected.</p>
+              <p className="py-2 text-fieryRed">A country must be selected.</p>
             )}
           </section>
           <section className="flex flex-col py-2">
@@ -359,10 +362,10 @@ export default function ProjectForm() {
               className="my-4 font-proximaSemiBold text-seaBlue-700"
             >
               Proposed funding amount (in USD)
-              <span className="text-fieryRed py-2">*</span>
+              <span className="py-2 text-fieryRed">*</span>
             </label>
             <input
-            type='number'
+              type="number"
               value={funds}
               onChange={(e) => {
                 setFunds(e.target.value);
@@ -379,7 +382,7 @@ export default function ProjectForm() {
                 "
             />
             {errors?.funds && (
-              <p className="text-fieryRed py-2">
+              <p className="py-2 text-fieryRed">
                 Funding amount cannot be empty.
               </p>
             )}
@@ -396,8 +399,8 @@ export default function ProjectForm() {
               text-seaBlue-700"
             >
               Ethereum address (optional)
-              <InfoToolTip 
-              message={`Once your project has been accepted, 
+              <InfoToolTip
+                message={`Once your project has been accepted, 
               your funds will be sent to this Ethereum blockchain address.
 
               Using blockchain technology we can ensure transparency, decentralization and reduced bias in the funding process. 
@@ -405,10 +408,11 @@ export default function ProjectForm() {
 
               It is not yet required to have a wallet at this point. 
               Our Due Diligence crew will help you setup a wallet. 
-              `}/>
+              `}
+              />
             </label>
             <input
-            type='text'
+              type="text"
               value={address}
               onChange={(e) => {
                 setAddress(e.target.value);
@@ -465,7 +469,7 @@ export default function ProjectForm() {
             )}
           </div>
         </form>
-      </div>
+      </section>
     </main>
   );
 }

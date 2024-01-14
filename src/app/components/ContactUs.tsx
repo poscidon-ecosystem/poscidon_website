@@ -106,7 +106,6 @@ export default function ContactUs() {
     <form
       onSubmit={sendEmail}
       className="
-        mb-16 
         flex 
         w-full 
         flex-col 

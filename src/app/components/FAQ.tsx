@@ -2,7 +2,6 @@ export default function FAQ() {
   return (
     <div
       className="
-    my-16
     flex
     w-[85%]
     lg:w-[80%]

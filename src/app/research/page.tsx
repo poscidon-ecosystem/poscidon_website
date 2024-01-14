@@ -10,56 +10,56 @@ export const metadata: Metadata = {
   title: 'PoSciDonDAO | Fund Your Research Project',
   description: `Fast, unbiased and decentralized funding for your personalized medicine research project
   `,
-  viewport: "width=device-width, initial-scale=1.0",
+  viewport: 'width=device-width, initial-scale=1.0',
   alternates: {
     canonical: url,
   },
-  robots: "index, follow",
+  robots: 'index, follow',
 };
 
 export default function ProjectFunding() {
-    return (
-        <main
-        className="
+  return (
+    <main
+      className="
           flex
           w-full 
           max-w-full
           flex-col
           items-center
           justify-center
-          sm:pt-12
           xl:w-[65%] 
           "
-      >
-        <section
-          className="
+    >
+      <header
+        className="
           flex 
           flex-col 
           items-center 
           justify-center 
-          py-8
+          my-16
+          animate-fadeUp
           "
-        >
-          <h1
-            className={`
+      >
+        <h1
+          className={`
             flex 
             w-[90%] 
             max-w-full
             items-center
             justify-center
             text-center
-            uppercase
             font-proximaSemiBold
             text-4xl
+            uppercase
             text-seaBlue-700 
             sm:text-5xl
             lg:text-6xl
             `}
-          >
-            We Fund Phenomenal Research That Aims To Bring The Right Treatment To The Right Patient
-          </h1>
-          <p
-            className="
+        >
+          We Fund Research That Brings The Right Treatment To The Right Patient
+        </h1>
+        <p
+          className="
               flex
               w-[80%] 
               items-center 
@@ -70,16 +70,17 @@ export default function ProjectFunding() {
               sm:w-[70%]
               sm:text-xl
             "
-          >
-            PoSciDonDAO is a member-owned worldwide organisation that funds and incubates 
-            personalized medicine research projects with the goal to commercialize their research output.
-            <br></br>
-            <br></br>
-            Join our community of personalized medicine researchers, entrepreneurs, 
-            investors and donors that will go above and beyond to
-            assist you from project submission to funding and further. 
-          </p>
-          <Button
+        >
+          PoSciDonDAO is a member-owned worldwide organisation that funds and
+          incubates personalized medicine research projects with the goal to
+          commercialize their research output.
+          <br></br>
+          <br></br>
+          Join our community of personalized medicine researchers,
+          entrepreneurs, investors and donors that will go above and beyond to
+          assist you from project submission to funding and further.
+        </p>
+        <Button
           link={true}
           target={''}
           href={'/submit-project'}
@@ -88,11 +89,12 @@ export default function ProjectFunding() {
           type={'button'}
           text={'Submit your project proposal'}
           icon={''}
-          />
-        </section>
-        <section className='flex justify-center items-center'>
-            <FAQ/>
-        </section>
-      </main>
-    );
+        />
+      </header>
+      <hr className="border-b-1 w-full border-gray-200"></hr>
+      <section className="flex items-center justify-center my-16 animate-fadeUp">
+        <FAQ />
+      </section>
+    </main>
+  );
 }

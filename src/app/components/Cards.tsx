@@ -18,7 +18,7 @@ export default function Cards() {
         flex-col
         items-center
         justify-center
-        gap-6
+        gap-8
         md:w-full 
         md:flex-row
         md:items-start
@@ -43,7 +43,7 @@ export default function Cards() {
           justify-center
           rounded-3xl
           md:w-full
-              "
+          "
         >
           <Image
             onMouseEnter={() => {
@@ -52,7 +52,6 @@ export default function Cards() {
             onMouseLeave={() => {
               setResSrc('/research-white.webp');
             }}
-            
             className="
             flex
             w-full
@@ -63,7 +62,7 @@ export default function Cards() {
             border-2
             border-seaBlue-700
               "
-            loading='eager'
+            loading="eager"
             width={200}
             height={200}
             alt="Genetic code surrounding the word 'research'"
@@ -95,7 +94,7 @@ export default function Cards() {
             for your project.
           </p>
           <Link
-            className="flex pb-2 font-proximaItalic text-seaBlue-700"
+            className="flex sm:pb-0 pb-2 font-proximaItalic text-seaBlue-700"
             href="/research"
           >
             Get your project funded {'>'}
@@ -140,7 +139,7 @@ export default function Cards() {
               border-2
               border-seaBlue-700
               "
-            loading='eager'
+            loading="eager"
             width={200}
             height={200}
             alt="Genetic code surrounding the word 'community'"
@@ -172,7 +171,7 @@ export default function Cards() {
             research. PoSciDon is built by people like you.
           </p>
           <Link
-            className="flex pb-2 font-proximaItalic text-seaBlue-700"
+            className="flex sm:pb-0 pb-2 font-proximaItalic text-seaBlue-700"
             href="https://forms.gle/hY52XW7inek4ynrR6"
             target="_blank"
           >
@@ -218,7 +217,7 @@ export default function Cards() {
             border-2
             border-seaBlue-700
               "
-            loading='eager'
+            loading="eager"
             width={200}
             height={200}
             alt="Genetic code surrounding the word 'tokens'"
@@ -246,11 +245,11 @@ export default function Cards() {
               lg:w-[70%]
               "
           >
-            Everything you need to know about SCI and PO, the tokens that drive our
-            ecosystem.
+            Everything you need to know about SCI and PO, the tokens that drive
+            our ecosystem.
           </p>
           <Link
-            className="flex pb-2 font-proximaItalic text-seaBlue-700"
+            className="flex sm:pb-0 pb-2 font-proximaItalic text-seaBlue-700"
             href="/sci-token"
           >
             Explore our tokens {'>'}

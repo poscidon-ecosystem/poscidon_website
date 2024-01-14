@@ -26,18 +26,19 @@ export default function NavBar() {
       border-b-2
       border-seaBlue-700
       bg-[#FDFDFD]
-      pr-4
+      px-4
         "
     >
       <Link
         onMouseEnter={() => setSrc('/blue-logo.webp')}
         onMouseLeave={() => setSrc('/black-logo.webp')}
         href="/"
+        className=''
       >
         <Image
-          width={500}
+          width={300}
           height={200}
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer w-full"
           src={`${src}`}
           alt="PoSciDonDAO's Logo: a trident attached to a DNA helix"
         />
