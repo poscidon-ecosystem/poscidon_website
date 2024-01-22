@@ -235,7 +235,7 @@ export default function SciTokenPage() {
             >
               PoSciDonDAO's Protocol
             </a>
-            . Once staked, you will gain voting power allowing you to vote on
+            . Once staked, you will gain voting power, allowing you to vote on
             DAO proposals. After on-chain voting on proposals, you will receive
             the untradable $PO token. When $PO is staked together with $SCI, you
             will receive more $SCI tokens on a daily basis.
