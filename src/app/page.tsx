@@ -80,7 +80,7 @@ export default function Home() {
             onClick={null}
             target={'_blank'}
             text={`Join the DAO`}
-            href={'https://discord.gg/QKzZkrYpw7'}
+            href={'https://discord.gg/75SrHpcNSZ'}
             icon={''}
             style={styles.primary}
           />
