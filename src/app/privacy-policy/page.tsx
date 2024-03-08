@@ -37,14 +37,14 @@ export default function Policy() {
           md:text-4xl
           xl:text-6xl
           ">
-        PoSciDon DAO's Privacy Policy
+        PoSciDonDAO's Privacy Policy
       </h1>
 
       <p>
         We are very delighted that you have shown interest in our enterprise.
         Data protection is of a particularly high priority for the management of
-        the PoSciDonDAO Foundation. The use of the Internet pages of the PoSciDon DAO
-        LLC is possible without any indication of personal data; however, if a
+        the PoSciDonDAO Foundation. The use of the Internet pages of the PoSciDonDAO
+        Foundation is possible without any indication of personal data; however, if a
         data subject wants to use special enterprise services via our website,
         processing of personal data could become necessary. If the processing of
         personal data is necessary and there is no statutory basis for such
