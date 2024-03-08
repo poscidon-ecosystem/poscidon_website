@@ -43,7 +43,7 @@ export default function Policy() {
       <p>
         We are very delighted that you have shown interest in our enterprise.
         Data protection is of a particularly high priority for the management of
-        the PoSciDon DAO LLC. The use of the Internet pages of the PoSciDon DAO
+        the PoSciDonDAO Foundation. The use of the Internet pages of the PoSciDon DAO
         LLC is possible without any indication of personal data; however, if a
         data subject wants to use special enterprise services via our website,
         processing of personal data could become necessary. If the processing of
@@ -56,7 +56,7 @@ export default function Policy() {
         address, or telephone number of a data subject shall always be in line
         with the General Data Protection Regulation (GDPR), and in accordance
         with the country-specific data protection regulations applicable to the
-        PoSciDon DAO LLC. By means of this data protection declaration, our
+        PoSciDonDAO Foundation. By means of this data protection declaration, our
         enterprise would like to inform the general public of the nature, scope,
         and purpose of the personal data we collect, use and process.
         Furthermore, data subjects are informed, by means of this data
@@ -64,7 +64,7 @@ export default function Policy() {
       </p>
 
       <p>
-        As the controller, the PoSciDon DAO LLC has implemented numerous
+        As the controller, the PoSciDonDAO Foundation has implemented numerous
         technical and organizational measures to ensure the most complete
         protection of personal data processed through this website. However,
         Internet-based data transmissions may in principle have security gaps,
@@ -75,7 +75,7 @@ export default function Policy() {
 
       <h2 className="py-2 font-proximaBold text-2xl ">1. Definitions</h2>
       <p>
-        The data protection declaration of the PoSciDon DAO LLC is based on the
+        The data protection declaration of the PoSciDonDAO Foundation is based on the
         terms used by the European legislator for the adoption of the General
         Data Protection Regulation (GDPR). Our data protection declaration
         should be legible and understandable for the general public, as well as
@@ -212,13 +212,13 @@ export default function Policy() {
         European Union and other provisions related to data protection is:
       </p>
 
-      <p>PoSciDon DAO LLC</p>
+      <p>PoSciDonDAO Foundation</p>
       <p>Email: marco@poscidon.com</p>
-      <p>Website: https://poscidon.com</p>
+      <p>Website: https://poscidondao.com</p>
 
       <h2 className="py-2 font-proximaBold text-2xl ">3. Cookies</h2>
       <p>
-        The Internet pages of the PoSciDon DAO LLC use cookies. Cookies are text
+        The Internet pages of the PoSciDonDAO Foundation use cookies. Cookies are text
         files that are stored in a computer system via an Internet browser.
       </p>
 
@@ -234,7 +234,7 @@ export default function Policy() {
       </p>
 
       <p>
-        Through the use of cookies, the PoSciDon DAO LLC can provide the users
+        Through the use of cookies, the PoSciDonDAO Foundation can provide the users
         of this website with more user-friendly services that would not be
         possible without the cookie setting.
       </p>
@@ -265,7 +265,7 @@ export default function Policy() {
 
       <h2 className="py-2 font-proximaBold text-2xl ">4. Collection of general data and information</h2>
       <p>
-        The website of the PoSciDon DAO LLC collects a series of general data
+        The website of the PoSciDonDAO Foundation collects a series of general data
         and information when a data subject or automated system calls up the
         website. This general data and information are stored in the server log
         files. Collected may be (1) the browser types and versions used, (2) the
@@ -279,14 +279,14 @@ export default function Policy() {
       </p>
 
       <p>
-        When using these general data and information, the PoSciDon DAO LLC does
+        When using these general data and information, the PoSciDonDAO Foundation does
         not draw any conclusions about the data subject. Rather, this
         information is needed to (1) deliver the content of our website
         correctly, (2) optimize the content of our website as well as its
         advertisement, (3) ensure the long-term viability of our information
         technology systems and website technology, and (4) provide law
         enforcement authorities with the information necessary for criminal
-        prosecution in case of a cyber-attack. Therefore, the PoSciDon DAO LLC
+        prosecution in case of a cyber-attack. Therefore, the PoSciDonDAO Foundation
         analyzes anonymously collected data and information statistically, with
         the aim of increasing the data protection and data security of our
         enterprise, and to ensure an optimal level of protection for the
@@ -296,14 +296,14 @@ export default function Policy() {
 
       <h2 className="py-2 font-proximaBold text-2xl ">5. Subscription to our newsletters</h2>
       <p>
-        On the website of the PoSciDon DAO LLC, users are given the opportunity
+        On the website of the PoSciDonDAO Foundation, users are given the opportunity
         to subscribe to our enterprise's newsletter. The input mask used for
         this purpose determines what personal data are transmitted, as well as
         when the newsletter is ordered from the controller.
       </p>
 
       <p>
-        The PoSciDon DAO LLC informs its customers and business partners
+        The PoSciDonDAO Foundation informs its customers and business partners
         regularly by means of a newsletter about enterprise offers. The
         enterprise's newsletter may only be received by the data subject if (1)
         the data subject has a valid e-mail address and (2) the data subject
@@ -345,12 +345,12 @@ export default function Policy() {
 
       <h2 className="py-2 font-proximaBold text-2xl">6. Newsletter-Tracking</h2>
       <p>
-        The newsletter of the PoSciDon DAO LLC contains so-called tracking
+        The newsletter of the PoSciDonDAO Foundation contains so-called tracking
         pixels. A tracking pixel is a miniature graphic embedded in such
         e-mails, which are sent in HTML format to enable log file recording and
         analysis. This allows a statistical analysis of the success or failure
         of online marketing campaigns. Based on the embedded tracking pixel, the
-        PoSciDon DAO LLC may see if and when an e-mail was opened by a data
+        PoSciDonDAO Foundation may see if and when an e-mail was opened by a data
         subject, and which links in the e-mail were called up by data subjects.
       </p>
 
@@ -363,13 +363,13 @@ export default function Policy() {
         subjects are at any time entitled to revoke the respective separate
         declaration of consent issued by means of the double-opt-in procedure.
         After a revocation, these personal data will be deleted by the
-        controller. The PoSciDon DAO LLC automatically regards a withdrawal from
+        controller. The PoSciDonDAO Foundation automatically regards a withdrawal from
         the receipt of the newsletter as a revocation.
       </p>
 
       <h2 className="py-2 font-proximaBold text-2xl">7. Contact possibility via the website </h2>
       <p>
-        The website of the PoSciDon DAO LLC contains information that enables a
+        The website of the PoSciDonDAO Foundation contains information that enables a
         quick electronic contact to our enterprise, as well as direct
         communication with us, which also includes a general address of the
         so-called electronic mail (e-mail address). If a data subject contacts
@@ -527,8 +527,8 @@ export default function Policy() {
           <p>
             If one of the aforementioned reasons applies, and a data subject
             wishes to request the erasure of personal data stored by the
-            PoSciDon DAO LLC, he or she may, at any time, contact any employee
-            of the controller. An employee of PoSciDon DAO LLC shall promptly
+            PoSciDonDAO Foundation, he or she may, at any time, contact any employee
+            of the controller. An employee of PoSciDonDAO Foundation shall promptly
             ensure that the erasure request is complied with immediately.
           </p>
 
@@ -540,7 +540,7 @@ export default function Policy() {
             measures, to inform other controllers processing the personal data
             that the data subject has requested erasure by such controllers of
             any links to, or copy or replication of, those personal data, as far
-            as processing is not required. An employees of the PoSciDon DAO LLC
+            as processing is not required. An employees of the PoSciDonDAO Foundation
             will arrange the necessary measures in individual cases.
           </p>
         </li>
@@ -577,8 +577,8 @@ export default function Policy() {
           <p>
             If one of the aforementioned conditions is met, and a data subject
             wishes to request the restriction of the processing of personal data
-            stored by the PoSciDon DAO LLC, he or she may at any time contact
-            any employee of the controller. The employee of the PoSciDon DAO LLC
+            stored by the PoSciDonDAO Foundation, he or she may at any time contact
+            any employee of the controller. The employee of the PoSciDonDAO Foundation
             will arrange the restriction of the processing.{' '}
           </p>
         </li>
@@ -610,7 +610,7 @@ export default function Policy() {
 
           <p>
             In order to assert the right to data portability, the data subject
-            may at any time contact any employee of the PoSciDon DAO LLC.
+            may at any time contact any employee of the PoSciDonDAO Foundation.
           </p>
         </li>
         <li>
@@ -624,7 +624,7 @@ export default function Policy() {
           </p>
 
           <p>
-            The PoSciDon DAO LLC shall no longer process the personal data in
+            The PoSciDonDAO Foundation shall no longer process the personal data in
             the event of the objection, unless we can demonstrate compelling
             legitimate grounds for the processing which override the interests,
             rights and freedoms of the data subject, or for the establishment,
@@ -632,20 +632,20 @@ export default function Policy() {
           </p>
 
           <p>
-            If the PoSciDon DAO LLC processes personal data for direct marketing
+            If the PoSciDonDAO Foundation processes personal data for direct marketing
             purposes, the data subject shall have the right to object at any
             time to processing of personal data concerning him or her for such
             marketing. This applies to profiling to the extent that it is
             related to such direct marketing. If the data subject objects to the
-            PoSciDon DAO LLC to the processing for direct marketing purposes,
-            the PoSciDon DAO LLC will no longer process the personal data for
+            PoSciDonDAO Foundation to the processing for direct marketing purposes,
+            the PoSciDonDAO Foundation will no longer process the personal data for
             these purposes.
           </p>
 
           <p>
             In addition, the data subject has the right, on grounds relating to
             his or her particular situation, to object to processing of personal
-            data concerning him or her by the PoSciDon DAO LLC for scientific or
+            data concerning him or her by the PoSciDonDAO Foundation for scientific or
             historical research purposes, or for statistical purposes pursuant
             to Article 89(1) of the GDPR, unless the processing is necessary for
             the performance of a task carried out for reasons of public
@@ -654,7 +654,7 @@ export default function Policy() {
 
           <p>
             In order to exercise the right to object, the data subject may
-            contact any employee of the PoSciDon DAO LLC. In addition, the data
+            contact any employee of the PoSciDonDAO Foundation. In addition, the data
             subject is free in the context of the use of information society
             services, and notwithstanding Directive 2002/58/EC, to use his or
             her right to object by automated means using technical
@@ -681,7 +681,7 @@ export default function Policy() {
             If the decision (1) is necessary for entering into, or the
             performance of, a contract between the data subject and a data
             controller, or (2) it is based on the data subject's explicit
-            consent, the PoSciDon DAO LLC shall implement suitable measures to
+            consent, the PoSciDonDAO Foundation shall implement suitable measures to
             safeguard the data subject's rights and freedoms and legitimate
             interests, at least the right to obtain human intervention on the
             part of the controller, to express his or her point of view and
@@ -691,7 +691,7 @@ export default function Policy() {
           <p>
             If the data subject wishes to exercise the rights concerning
             automated individual decision-making, he or she may, at any time,
-            contact any employee of the PoSciDon DAO LLC.
+            contact any employee of the PoSciDonDAO Foundation.
           </p>
         </li>
         <li>
@@ -705,7 +705,7 @@ export default function Policy() {
           <p>
             If the data subject wishes to exercise the right to withdraw the
             consent, he or she may, at any time, contact any employee of the
-            PoSciDon DAO LLC.
+            PoSciDonDAO Foundation.
           </p>
         </li>
       </ul>
