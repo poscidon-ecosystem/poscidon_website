@@ -125,6 +125,23 @@ export default function SciTokenPage() {
             election of scientific experts that review personalized medicine
             research projects.
           </p>
+          <div className="flex flex-row gap-4">
+            <Button
+              link={true}
+              type={'button'}
+            target={'_blank'}
+            href={'https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x25E0A7767d03461EaF88b47cd9853722Fe05DFD3'}
+            onClick={() => {}}
+            text={'Buy SCI tokens'}
+            icon={
+              <FontAwesomeIcon
+                icon={faCoins}
+                className="pr-2"
+                style={{ color: '#FDFDFD' }}
+              />
+            }
+            style={styles.primary}
+          />
           <Button
             link={true}
             type={'button'}
@@ -139,8 +156,9 @@ export default function SciTokenPage() {
                 style={{ color: '#FDFDFD' }}
               />
             }
-            style={styles.primary}
-          />
+              style={styles.tertiary}
+            />
+          </div>
         </div>
       </header>
       <Divider />
