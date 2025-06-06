@@ -28,8 +28,19 @@ export function TokenCard({ name, description, features, isPrimary }: TokenCardP
               className="text-white"
             >
               <circle cx="12" cy="12" r="10"></circle>
-              <path d="m8 14 2.5-2.5 2.5 2.5 4-4"></path>
-              <path d="M14 10v4h-4"></path>
+              <text
+                x="50%"
+                y="50%"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                fill="currentColor"
+                fontSize="8"
+                fontFamily="sans-serif"
+                stroke="none"
+                dy=".1em"
+              >
+                SCI
+              </text>
             </svg>
           ) : (
             <svg
@@ -44,11 +55,20 @@ export function TokenCard({ name, description, features, isPrimary }: TokenCardP
               strokeLinejoin="round"
               className="text-white"
             >
-              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-              <path d="M7 7h.01"></path>
-              <path d="M17 7h.01"></path>
-              <path d="M7 17h.01"></path>
-              <path d="M17 17h.01"></path>
+              <circle cx="12" cy="12" r="10"></circle>
+              <text
+                x="50%"
+                y="50%"
+                dominantBaseline="middle"
+                textAnchor="middle"
+                fill="currentColor"
+                fontSize="8"
+                fontFamily="sans-serif"
+                stroke="none"
+                dy=".1em"
+              >
+                PO
+              </text>
             </svg>
           )}
         </div>

@@ -10,15 +10,15 @@ export default function SciTokenPage() {
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">SCI Token</h1>
           <p className="text-xl text-white/80">
-            The governance token that powers the Poscidon ecosystem and grants voting rights in the DAO.
+            The token that powers the Poscidon ecosystem and grants voting rights in the DAO.
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2} className="max-w-4xl mx-auto bg-white/10 rounded-xl p-8 mb-12">
           <h2 className="text-2xl font-semibold mb-4 text-center">Explore SCI</h2>
           <p className="text-white/80 mb-6 text-center">
-            The SCI token is the backbone of the PoSciDonDAO ecosystem, allowing holders to vote on proposals regarding
-            DAO operations and the election of scientific experts that review personalized medicine research projects.
+            The SCI token is the backbone of the Poscidon ecosystem, allowing holders to vote on proposals regarding
+            DAO operations and the election of scientific experts that review personalized medicine research projects through Spark. Additionally, SCI is required to obtain licenses for the Spark IP pools.
           </p>
           <div className="flex justify-center">
             <a
@@ -74,13 +74,11 @@ export default function SciTokenPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 8v4l2 2"></path>
-                  <path d="M18.42 9A4 4 0 0 0 19 12"></path>
-                  <path d="M12 2a2 2 0 0 1 2 2"></path>
-                  <path d="M20 12a2 2 0 0 1-2 2"></path>
-                  <path d="M12 22a2 2 0 0 1-2-2"></path>
-                  <path d="M4 12a2 2 0 0 1 2-2"></path>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10,9 9,9 8,9"></polyline>
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Stake in IP</h3>
@@ -130,13 +128,12 @@ export default function SciTokenPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
-                  <path d="M12 2v6.5"></path>
-                  <path d="M18.4 6.5 13.5 9"></path>
-                  <path d="M13.5 15 18.4 17.5"></path>
-                  <path d="M12 15.5V22"></path>
-                  <path d="M5.6 17.5 10.5 15"></path>
-                  <path d="M10.5 9 5.6 6.5"></path>
-                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M8 21h8" />
+                  <path d="M12 17v4" />
+                  <path d="M7 4h10" />
+                  <path d="M17 4v8a5 5 0 0 1-10 0V4" />
+                  <path d="M5 9H3" />
+                  <path d="M19 9h2" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Rewards</h3>

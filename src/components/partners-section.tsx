@@ -1,3 +1,4 @@
+"use client";
 import { AnimatedSection } from "@/components/animated-section"
 // import Image from "next/image" // Keep this commented out if 'Cannot find module' persists
 // For now, let's use a standard img tag if next/image is problematic
@@ -5,14 +6,14 @@ const Image = (props: any) => <img {...props} />;
 
 export function PartnersSection() {
   const partners = [
-    { name: "AxonDAO", logo: "/logos_axondao.svg" },
-    { name: "Boost VC", logo: "/logos_boostvc.svg" },
-    { name: "Cyberscope", logo: "/logos_Cyberscope.svg" },
-    { name: "Human.tech", logo: "/logos_human.tech.svg" },
-    { name: "Lilypad", logo: "/logos_lilypad.svg" },
-    { name: "QuillAudits", logo: "/logos_quillaudits.svg" },
-    { name: "Rare Compute", logo: "/logos_rarecompute.svg" },
-  ]
+    { name: "Boost VC", logo: "/logo_boostvc.svg", url: "https://www.boost.vc/" },
+    { name: "Cyberscope", logo: "/logo_cyberscope.svg", url: "https://www.cyberscope.io/" },
+    { name: "Human.tech", logo: "/logo_humantech.svg", url: "https://humans.tech/en/" },
+    { name: "AxonDAO", logo: "/logo_axondao.svg", url: "https://axondao.io/" },
+    { name: "Lilypad", logo: "/logo_lilypad.svg", url: "https://lilypad.tech/" },
+    { name: "QuillAudits", logo: "/logo_quillaudits.svg", url: "https://www.quillaudits.com/" },
+    { name: "Rare Compute", logo: "/logo_rarecompute.svg", url: "https://www.rarecompute.io/" },
+  ];
 
   return (
     <section className="py-16 px-4 md:px-8 bg-[#010737]/80 backdrop-blur-sm relative overflow-hidden">
@@ -40,26 +41,28 @@ export function PartnersSection() {
         <AnimatedSection delay={0.2} triggerOnce={true} direction="up" duration={0.5}>
           {/* Content for the second AnimatedSection starts here */}
           <div
-            className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+            className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group"
           >
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll group-hover:paused">
                 {partners.map((partner, index) => (
                   <li key={`${partner.name}-${index}`}>
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className="h-32 w-auto object-contain"
+                      className="h-12 w-auto object-contain cursor-pointer"
+                      onClick={() => window.open(partner.url, '_blank')}
                     />
                   </li>
                 ))}
             </ul>
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll group-hover:paused" aria-hidden="true">
                 {partners.map((partner, index) => (
                   <li key={`${partner.name}-${index}-duplicate`}>
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
-                      className="h-32 w-auto object-contain"
+                      className="h-12 w-auto object-contain cursor-pointer"
+                      onClick={() => window.open(partner.url, '_blank')}
                     />
                   </li>
                 ))}

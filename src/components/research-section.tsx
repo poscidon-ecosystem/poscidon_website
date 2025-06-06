@@ -18,7 +18,7 @@ export function ResearchSection() {
             <ResearchCard
               title="Genomic Diagnostics"
               description="Advanced sequencing and analysis of individual genetic profiles to identify disease markers and treatment targets."
-              icon="genomics"
+              icon="genomic-diagnostics"
             />
           </AnimatedSection>
 
@@ -26,7 +26,7 @@ export function ResearchSection() {
             <ResearchCard
               title="Gene-Based Therapy"
               description="Developing targeted gene editing and delivery systems to correct genetic abnormalities at their source."
-              icon="dna"
+              icon="gene-therapy"
             />
           </AnimatedSection>
 
@@ -34,7 +34,7 @@ export function ResearchSection() {
             <ResearchCard
               title="AI-Driven Drug Discovery"
               description="Leveraging artificial intelligence to accelerate the identification and development of personalized therapeutic compounds."
-              icon="ai"
+              icon="ai-drug-discovery"
             />
           </AnimatedSection>
 
@@ -42,7 +42,7 @@ export function ResearchSection() {
             <ResearchCard
               title="Biomarker Development"
               description="Identifying and validating molecular indicators that predict disease progression and treatment response."
-              icon="biomarker"
+              icon="biomarker-development"
             />
           </AnimatedSection>
         </div>

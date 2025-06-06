@@ -3,6 +3,61 @@ import { AnimatedSection } from "@/components/animated-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
+const projects = [
+  {
+    id: 1,
+    title: "Rare Compute Foundation",
+    description: "This project aims to use next-generation AI-driven BioML agents and a wet-dry feedback loop to fast-track the discovery of novel personalized therapeutics (small molecules, peptides, and binders) for rare diseases.",
+    funding: "$115,000",
+    readMoreLink: "https://dao.poscidon.com/governance/on-chain/proposals/0",
+    tags: ["Artificial Intelligence", "Drug Discovery", "Rare Diseases"],
+    gradientColors: {
+      from: "#2E8ED7",
+      to: "#78DFEC"
+    },
+    iconPaths: [
+      { type: "rect", props: { width: "20", height: "14", x: "2", y: "3", rx: "2" } },
+      { type: "line", props: { x1: "2", x2: "22", y1: "7", y2: "7" } },
+      { type: "line", props: { x1: "8", x2: "16", y1: "21", y2: "21" } },
+      { type: "line", props: { x1: "12", x2: "12", y1: "17", y2: "21" } }
+    ]
+  },
+  {
+    id: 2,
+    title: "weCURA: Predictive Personalized Cancer Therapy Tool",
+    description: "This AI tool will allow clinicians to predict which cancer patients need existing anti-cancer treatments.",
+    funding: null,
+    readMoreLink: "/wecura-whitepaper.pdf",
+    tags: ["Artificial Intelligence", "Cancer"],
+    gradientColors: {
+      from: "#22D6C4",
+      to: "#A1ECD6"
+    },
+    iconPaths: [
+      {
+        type: "path",
+        props: {
+          d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+        }
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Spark: On-chain Intellectual Property Framework",
+    description: "Spark is an on-chain idea commitment engine built to outcompete closed innovation ecosystems, unlocking unstoppable collaboration, crypto-powered incentives, and shared upside for every contributor. It helps inventors bring bold ideas to life by connecting them with the people, tools, and capital they need to succeed.",
+    funding: null,
+    tags: ["Intellectual Property", "On-chain", "Collaboration"],
+    gradientColors: {
+      from: "#FF8C42",
+      to: "#FFB84D"
+    },
+    iconPaths: [
+      { type: "path", props: { d: "M15 2L6 13h4l-1 9 9-12h-4l1-8z", fill: "currentColor", stroke: "none" } }
+    ]
+  }
+]
+
 export default function ProjectsPage() {
   return (
     <PageLayout>
@@ -16,85 +71,68 @@ export default function ProjectsPage() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2} className="max-w-4xl mx-auto mb-16">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
-            <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className="h-24 w-24 bg-gradient-to-br from-[#2E8ED7] to-[#78DFEC] rounded-full flex items-center justify-center shrink-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white"
-                >
-                  <rect width="20" height="14" x="2" y="3" rx="2"></rect>
-                  <line x1="2" x2="22" y1="7" y2="7"></line>
-                  <line x1="8" x2="16" y1="21" y2="21"></line>
-                  <line x1="12" x2="12" y1="17" y2="21"></line>
-                </svg>
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                  <h2 className="text-2xl font-semibold">Rare Compute Foundation</h2>
-                  <div className="bg-white/20 rounded-full px-4 py-1 text-sm">Funding: $115,000</div>
+          {projects.map((project, index) => (
+            <div key={project.id} className={`bg-white/10 backdrop-blur-sm rounded-xl p-8 ${index < projects.length - 1 ? 'mb-8' : ''}`}>
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className={`h-24 w-24 bg-gradient-to-br rounded-full flex items-center justify-center shrink-0`} style={{ background: `linear-gradient(to bottom right, ${project.gradientColors.from}, ${project.gradientColors.to})` }}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-white"
+                  >
+                                         {project.iconPaths.map((path, pathIndex) => {
+                       if (path.type === 'rect') {
+                         return <rect key={pathIndex} {...path.props} />
+                       } else if (path.type === 'line') {
+                         return <line key={pathIndex} {...path.props} />
+                       } else if (path.type === 'path') {
+                         return <path key={pathIndex} {...path.props} />
+                       }
+                       return null
+                     })}
+                  </svg>
                 </div>
-                <p className="text-white/80 mb-4">
-                  This project aims to use next-generation AI-driven BioML agents and a wet-dry feedback loop to
-                  fast-track the discovery of novel personalized therapeutics (small molecules, peptides, and binders)
-                  for rare diseases.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-white/10 rounded-full px-3 py-1 text-sm">Artificial Intelligence</span>
-                  <span className="bg-white/10 rounded-full px-3 py-1 text-sm">Drug Discovery</span>
-                  <span className="bg-white/10 rounded-full px-3 py-1 text-sm">Rare Diseases</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-            <div className="flex flex-col md:flex-row gap-6 items-center">
-              <div className="h-24 w-24 bg-gradient-to-br from-[#22D6C4] to-[#A1ECD6] rounded-full flex items-center justify-center shrink-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white"
-                >
-                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-                  <path d="M7 7h10"></path>
-                  <path d="M10 16V7"></path>
-                  <path d="M14 16V7"></path>
-                  <path d="M17 12h-3"></path>
-                  <path d="M7 12h3"></path>
-                  <path d="M7 16h10"></path>
-                </svg>
-              </div>
-              <div className="flex-1">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                  <h2 className="text-2xl font-semibold">weCURA: Personalized Cancer Therapy Tool</h2>
-                </div>
-                <p className="text-white/80 mb-4">
-                  This AI tool will allow clinicians to predict which cancer patients need existing anti-cancer
-                  treatments.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-white/10 rounded-full px-3 py-1 text-sm">Artificial Intelligence</span>
-                  <span className="bg-white/10 rounded-full px-3 py-1 text-sm">Cancer</span>
+                <div className="flex-1">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                    <h2 className="text-2xl font-semibold">{project.title}</h2>
+                    {project.funding && (
+                      <div className="bg-white/20 rounded-full px-4 py-1 text-sm">Funding: {project.funding}</div>
+                    )}
+                  </div>
+                  <p className="text-white/80 mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="bg-white/10 rounded-full px-3 py-1 text-sm">{tag}</span>
+                    ))}
+                  </div>
+                  {(project as any).readMoreLink && (
+                    <div className="mt-4">
+                      <Link href={(project as any).readMoreLink} target="_blank" rel="noopener noreferrer">
+                        <Button
+                          size="sm"
+                          className="font-semibold text-white transition-opacity hover:opacity-90"
+                          style={{
+                            background: `linear-gradient(to right, ${project.gradientColors.from}, ${project.gradientColors.to})`,
+                          }}
+                        >
+                          Read More
+                        </Button>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </AnimatedSection>
 
         <AnimatedSection delay={0.3} className="text-center">

@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
+  'https://poscidon.com',
   'https://poscidondao.com',
   'https://www.poscidondao.com',
   'https://www.poscidon.com',
@@ -40,7 +41,7 @@ export async function middleware(req: NextRequest) {
         `object-src 'none';`,
         `base-uri 'self';`,
         `frame-ancestors 'self' https://poscidondao.notion.site;`,
-        `manifest-src 'self' https://www.poscidondao.com;`,
+        `manifest-src 'self' https://www.poscidon.com https://www.poscidondao.com;`,
         `media-src 'self' https: http:;`,
       ].join(' ').trim()
     : // Production CSP - more restrictive

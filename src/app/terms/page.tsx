@@ -1,6 +1,8 @@
+import { PageLayout } from "@/components/page-layout"
+
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-[#010737] text-white py-24 px-4">
+    <PageLayout>
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Website Terms of Service</h1>
 
@@ -84,6 +86,6 @@ export default function TermsOfService() {
           </section>
         </div>
       </div>
-    </div>
+    </PageLayout>
   )
 }

@@ -4,9 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-
-// For now, let's use a standard img tag if next/image is problematic
-const Image = (props: any) => <img {...props} />;
+import { PoscidonLogo } from "./PoscidonLogo"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,7 +33,7 @@ export function Header() {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <Image src="/newlogofont1.svg" alt="Poscidon Logo" className="h-12" />
+          <PoscidonLogo className="w-32 text-white hover:text-seaBlue-700 transition-colors duration-300" />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
@@ -52,20 +50,20 @@ export function Header() {
             <Link href="/get-involved" className="text-white/80 hover:text-white transition-colors">
               Get Involved
             </Link>
-            <a
-              href="https://protocol.poscidondao.com/donate"
+            <Link
+              href="https://dao.poscidon.com/donate"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/80 hover:text-white transition-colors"
             >
               Donate
-            </a>
+            </Link>
           </nav>
 
           <Button className="bg-white text-[#010737] hover:bg-white/90">
-            <a href="https://protocol.poscidondao.com/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://dao.poscidon.com/" target="_blank" rel="noopener noreferrer">
               Visit dApp
-            </a>
+            </Link>
           </Button>
         </div>
 

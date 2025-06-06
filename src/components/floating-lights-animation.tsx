@@ -15,42 +15,44 @@ export function FloatingLightsAnimation() {
   }, [])
 
   return (
-    <div className="animation-container">
-      {/* Animated text headers */}
-      <p id="head1" className="header">
-        Accelerating Personalized Medicine Research
-      </p>
-      <p id="head2" className="header">
-        Decentralized
-      </p>
-      <p id="head3" className="header">
-        Transparent
-      </p>
-      <p id="head4" className="header">
-        Funding research for life-altering diseases
-      </p>
-      <p id="head5" className="header">
-        Welcome to Poscidon
-      </p>
+    <div className="animation-wrapper">
+      <div className="animation-container">
+        {/* Animated text headers */}
+        <p id="head1" className="header">
+          Accelerating Personalized Medicine Research
+        </p>
+        <p id="head2" className="header">
+          Decentralized
+        </p>
+        <p id="head3" className="header">
+          Transparent
+        </p>
+        <p id="head4" className="header">
+          Funding research for life-altering diseases
+        </p>
+        <p id="head5" className="header">
+          Welcome to Poscidon
+        </p>
 
-      <div className="button-wrapper">
-        <Link href="/apply-for-funding" className="animation-button z-20">
-            Apply for Funding
-        </Link>
-      </div>
-
-      {/* Floating light particles */}
-      <div className="light x1"></div>
-      <div className="light x2"></div>
-      <div className="light x3"></div>
-      <div className="light x4"></div>
-      <div className="light x5"></div>
-      <div className="light x6"></div>
-      <div className="light x7"></div>
-      <div className="light x8"></div>
-      <div className="light x9"></div>
+        {/* Floating light particles */}
+        <div className="light x1"></div>
+        <div className="light x2"></div>
+        <div className="light x3"></div>
+        <div className="light x4"></div>
+        <div className="light x5"></div>
+        <div className="light x6"></div>
+        <div className="light x7"></div>
+        <div className="light x8"></div>
+        <div className="light x9"></div>
+      </div>  
 
       <style jsx>{`
+        .animation-wrapper {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+        }
+
         .animation-container {
           position: absolute;
           top: 0;
@@ -60,46 +62,6 @@ export function FloatingLightsAnimation() {
           overflow: hidden;
           background: radial-gradient(#010737, #020a4f);
           animation: fadeIn 1s ease-out;
-        }
-
-        .button-wrapper {
-          position: absolute;
-          top: 55%;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 100;
-          pointer-events: auto;
-        }
-
-        .animation-button {
-          display: inline-block;
-          border: 2px solid white;
-          background: transparent;
-          color: white;
-          width: 300px;
-          height: 60px;
-          font-size: 1.3em;
-          border-radius: 5px;
-          opacity: .5;
-          transition: .3s;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0 20px;
-          white-space: nowrap;
-          cursor: pointer;
-          pointer-events: auto;
-          text-decoration: none;
-        }
-
-        .animation-button:hover {
-          border: 2px solid #ffffff;
-          background-color: rgba(255, 255, 255, 0.2);
-          cursor: pointer;
-          color: #ffffff;
-          opacity: .8;
-          transition: .3s;
-          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
 
         .light {
@@ -198,7 +160,7 @@ export function FloatingLightsAnimation() {
           transform: translate(-50%, -50%);
           font-weight: 200;
           color: white;
-          font-size: 2em;
+          font-size: 3.5em;
           width: 100%;
           text-align: center;
           opacity: 0;
@@ -280,6 +242,66 @@ export function FloatingLightsAnimation() {
             font-size: 1.1em;
             height: 50px;
           }
+        }
+
+        @media (max-width: 480px) {
+          .header {
+            font-size: 2em;
+            width: 95%;
+          }
+          
+          .animation-button {
+            width: 280px;
+            font-size: 1.2em;
+            height: 55px;
+            padding: 0 15px;
+          }
+
+          .external-button {
+            width: 280px;
+            font-size: 1.2em;
+            height: 55px;
+            padding: 0 15px;
+          }
+        }
+
+        .external-button-container {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 10000;
+          pointer-events: auto;
+        }
+
+        .external-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 3px solid rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          color: white;
+          width: 350px;
+          height: 70px;
+          font-size: 1.5em;
+          font-weight: 600;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+          padding: 0 30px;
+          white-space: nowrap;
+          cursor: pointer;
+          text-decoration: none;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+          pointer-events: auto;
+        }
+
+        .external-button:hover {
+          border: 3px solid #ffffff;
+          background: rgba(255, 255, 255, 0.25);
+          color: #ffffff;
+          transform: translateY(-2px);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
       `}</style>
     </div>

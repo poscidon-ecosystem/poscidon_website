@@ -356,24 +356,33 @@ export function ProjectForm() {
         const selectedSource = referralSources.find((s) => s.value === referralSource)
         const sourceLabel = selectedSource ? selectedSource.label : referralSource
 
-        // For now, we'll just show success message since we don't have the API endpoints
-        // In a real implementation, you would make the API calls here
-        console.log("Form data:", {
-          title,
-          stage: stageLabel,
-          description,
-          strategy,
-          country,
-          address,
-          funds,
-          name,
-          email,
-          phone,
-          telegram,
-          referralSource: sourceLabel,
-          referrerName,
-          referrerEmail,
+        const res = await fetch("/api/project", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            txId: "N/A",
+            title,
+            stage: stageLabel,
+            description,
+            strategy,
+            country,
+            address,
+            funds,
+            name,
+            email,
+            phone,
+            telegram,
+            referralSource: sourceLabel,
+            referrerName,
+            referrerEmail,
+          }),
         })
+
+        if (!res.ok) {
+          throw new Error("Project submission failed")
+        }
 
         setShowSuccessMessage(true)
         setShowFailureMessage(false)
