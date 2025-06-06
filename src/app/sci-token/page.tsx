@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { TokenCard } from "@/components/token-card"
 import { Metadata } from "next"
 import Head from "next/head"
+import { Scale } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "SCI Token | Poscidon",
@@ -98,23 +99,7 @@ export default function SciTokenPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white/10 rounded-xl p-6">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white"
-                >
-                  <title>Governance Icon</title>
-                  <path d="m18 16 4-4-4-4"></path>
-                  <path d="m6 8-4 4 4 4"></path>
-                  <path d="m14.5 4-5 16"></path>
-                </svg>
+                <Scale className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Governance</h3>
               <p className="text-white/70">
@@ -346,7 +331,7 @@ export default function SciTokenPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <TokenCard
               name="SCI Token"
-              description="The tradable governance token that grants voting rights in the DAO. Lock SCI tokens to participate in governance decisions."
+              description="The tradable governance token that grants voting rights in the DAO. Lock SCI tokens in the governance dApp to participate in governance decisions."
               features={[
                 "Tradable on exchanges",
                 "Governance voting power",
