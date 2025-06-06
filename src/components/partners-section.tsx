@@ -1,8 +1,6 @@
 "use client";
 import { AnimatedSection } from "@/components/animated-section"
-// import Image from "next/image" // Keep this commented out if 'Cannot find module' persists
-// For now, let's use a standard img tag if next/image is problematic
-const Image = (props: any) => <img {...props} />;
+import Image from "next/image"
 
 export function PartnersSection() {
   const partners = [
@@ -49,6 +47,8 @@ export function PartnersSection() {
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
+                      width={150}
+                      height={50}
                       className="h-12 w-auto object-contain cursor-pointer"
                       onClick={() => window.open(partner.url, '_blank')}
                     />
@@ -61,6 +61,8 @@ export function PartnersSection() {
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
+                      width={150}
+                      height={50}
                       className="h-12 w-auto object-contain cursor-pointer"
                       onClick={() => window.open(partner.url, '_blank')}
                     />

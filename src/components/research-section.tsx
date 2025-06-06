@@ -6,10 +6,9 @@ export function ResearchSection() {
     <section id="research" className="py-20 px-4 md:px-8">
       <div className="container mx-auto">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Research Focus</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Poscidon's DeSci Research Focus in Biotech</h2>
           <p className="text-white/80">
-            Poscidon focuses on funding cutting-edge techniques in personalized medicine research, enabling treatments
-            tailored to patients' unique genetic profiles.
+            Poscidon's research funding is directed towards cutting-edge techniques in personalized medicine and biotech, enabling treatments tailored to patients' unique genetic profiles.
           </p>
         </AnimatedSection>
 

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Poscidon | Revolutionizing Personalized Medicine Research Funding",
     description: "The first-ever decentralized biotech organization dedicated to funding personalized medicine research for life-altering diseases.",
-    images: ["https://poscidon.com/psdlogo_white.png"],
+    images: ["https://poscidon.com/twitter-card.png"],
     creator: "@PoSciDonDAO",
   },
 }

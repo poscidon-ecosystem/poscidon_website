@@ -71,17 +71,16 @@ export default function SciTokenPage() {
       </Head>
       <div className="container mx-auto py-16 px-4">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">SCI Token</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">The SCI Token: Powering a DeSci Revolution</h1>
           <p className="text-xl text-white/80">
-            The token that powers the Poscidon ecosystem and grants voting rights in the DAO.
+            The SCI token is the utility and governance token that powers the Poscidon ecosystem, granting voting rights in the DAO and shaping the future of decentralized science.
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2} className="max-w-4xl mx-auto bg-white/10 rounded-xl p-8 mb-12">
-          <h2 className="text-2xl font-semibold mb-4 text-center">Explore SCI</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-center">Explore the SCI Utility Token</h2>
           <p className="text-white/80 mb-6 text-center">
-            The SCI token is the backbone of the Poscidon ecosystem, allowing holders to vote on proposals regarding
-            DAO operations and the election of scientific experts that review personalized medicine research projects through Spark. Additionally, SCI is required to obtain licenses for the Spark IP pools.
+            The SCI utility token is the backbone of the Poscidon DeSci ecosystem. It allows holders to vote on proposals regarding DAO operations and the election of scientific experts who review personalized medicine research projects. Additionally, the SCI token is required to obtain licenses for the Spark IP pools.
           </p>
           <div className="flex justify-center">
             <a
@@ -103,8 +102,7 @@ export default function SciTokenPage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Governance</h3>
               <p className="text-white/70">
-                After locking SCI tokens, members receive governance rights over Poscidon's treasury, its operations,
-                the election of scientific experts, and over the management of the personalized medicine IP portfolio.
+                By locking the SCI governance token, members receive voting rights over Poscidon's treasury, its DeSci operations, the election of scientific experts, and the management of the personalized medicine IP portfolio.
               </p>
             </div>
 
@@ -321,11 +319,10 @@ export default function SciTokenPage() {
           </div>
         </AnimatedSection>
 
-        {/* Dual-Token Economy Section moved to after Token Allocation */}
         <AnimatedSection delay={0.5} className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Dual-Token Economy</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">A Dual-Token Economy for DeSci Innovation</h2>
           <p className="text-white/80 text-center mb-8">
-            Poscidon features a unique dual-token model designed to incentivize participation and long-term engagement.
+            Poscidon's unique dual-token economy incentivizes participation, long-term engagement, and innovation in decentralized science.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">

@@ -7,10 +7,9 @@ export function AboutSection() {
     <section id="about" className="pt-24 pb-20 px-4 md:px-8 bg-[#010737]/80 backdrop-blur-sm">
       <div className="container mx-auto">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Transforming Scientific Research Funding</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Pioneering the Future of DeSci Research Funding</h2>
           <p className="text-white/80">
-            We're addressing the challenges in personalized medicine research through blockchain technology and
-            decentralized governance.
+            Poscidon is a DeSci platform addressing the challenges in personalized medicine and biotech research through blockchain technology and decentralized governance.
           </p>
         </AnimatedSection>
 
@@ -68,8 +67,7 @@ export function AboutSection() {
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Decentralization</h3>
             <p className="text-white/70">
-              Our DAO governance model allows community members to have a say in which research projects receive
-              funding.
+              Our DAO governance model empowers the DeSci community to decide which biotech research projects receive funding, ensuring a democratic and transparent process.
             </p>
           </AnimatedSection>
 
@@ -96,7 +94,7 @@ export function AboutSection() {
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Incentivization</h3>
             <p className="text-white/70">
-              Our dual-token model incentivizes participation in governance and long-term engagement with the ecosystem.
+              Our dual-token model incentivizes participation in DAO governance and long-term engagement with the DeSci ecosystem, rewarding contributions to biotech innovation.
             </p>
           </AnimatedSection>
         </div>

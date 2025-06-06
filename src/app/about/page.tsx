@@ -56,10 +56,10 @@ export default function About() {
       <div className="container relative mx-auto py-16 px-4 z-10">
         <AnimatedSection className="mb-20">
           <div className="flex flex-col items-center">
-            <div className="inline-block mb-6 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm">
+            {/* <div className="inline-block mb-6 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm">
               <span className="text-sm font-medium text-white/80">POSCIDON</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-white via-[#78DFEC] to-white">
+            </div> */}
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center text-white">
               About Poscidon
             </h1>
             <div className="h-1 w-20 bg-gradient-to-r from-[#2E8ED7] to-[#22D6C4] rounded-full mb-8"></div>

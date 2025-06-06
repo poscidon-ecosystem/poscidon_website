@@ -6,10 +6,9 @@ export function CommunitySection() {
     <section id="community" className="py-20 px-4 md:px-8">
       <div className="container mx-auto">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Join Our Community</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Join Our DeSci Community</h2>
           <p className="text-white/80">
-            Be part of the revolution in personalized medicine research funding. Join scientists, entrepreneurs,
-            investors, and decentralized science enthusiasts.
+            Be part of the DeSci revolution in personalized medicine and biotech research funding. Join scientists, entrepreneurs, investors, and fellow decentralized science enthusiasts in our organisation.
           </p>
         </AnimatedSection>
 
