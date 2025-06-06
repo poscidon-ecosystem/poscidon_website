@@ -1,5 +1,44 @@
 import { PageLayout } from "@/components/page-layout"
 import { AnimatedSection } from "@/components/animated-section"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About | Poscidon",
+  description:
+    "Learn more about Poscidon's mission to revolutionize personalized medicine research funding through decentralized science (DeSci).",
+  keywords: [
+    "About Poscidon",
+    "Poscidon mission",
+    "decentralized science",
+    "DeSci",
+    "biotech funding",
+    "personalized medicine research",
+  ],
+  openGraph: {
+    title: "About | Poscidon",
+    description:
+      "Learn more about Poscidon's mission to revolutionize personalized medicine research funding through decentralized science (DeSci).",
+    url: "https://poscidon.com/about",
+    siteName: "Poscidon",
+    images: [
+      {
+        url: "https://poscidon.com/og-image-about.png",
+        width: 1200,
+        height: 630,
+        alt: "About Poscidon",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Poscidon",
+    description:
+      "Learn more about Poscidon's mission to revolutionize personalized medicine research funding through decentralized science (DeSci).",
+    images: ["https://poscidon.com/twitter-image-about.png"],
+  },
+};
 
 export default function About() {
   return (
@@ -18,7 +57,7 @@ export default function About() {
         <AnimatedSection className="mb-20">
           <div className="flex flex-col items-center">
             <div className="inline-block mb-6 px-4 py-2 border border-white/20 rounded-full bg-white/5 backdrop-blur-sm">
-              <span className="text-sm font-medium text-white/80">POSCIDON DAO</span>
+              <span className="text-sm font-medium text-white/80">POSCIDON</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-white via-[#78DFEC] to-white">
               About Poscidon
@@ -36,6 +75,7 @@ export default function About() {
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#2E8ED7] to-[#78DFEC] flex items-center justify-center mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <title>Our Mission Icon</title>
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -61,6 +101,7 @@ export default function About() {
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#22D6C4] to-[#A1ECD6] flex items-center justify-center mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <title>Our Approach Icon</title>
                     <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
                   </svg>
                 </div>
@@ -88,6 +129,7 @@ export default function About() {
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0b1dee] to-[#2E8ED7] flex items-center justify-center mr-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <title>Why Decentralization Matters Icon</title>
                     <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd" />
                   </svg>
                 </div>

@@ -16,7 +16,7 @@ export function ResearchSection() {
         <div className="grid md:grid-cols-2 gap-8">
           <AnimatedSection delay={0.2}>
             <ResearchCard
-              title="Genomic Diagnostics"
+              title="Genetic Screening"
               description="Advanced sequencing and analysis of individual genetic profiles to identify disease markers and treatment targets."
               icon="genomic-diagnostics"
             />

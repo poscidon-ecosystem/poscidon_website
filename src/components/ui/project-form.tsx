@@ -8,6 +8,8 @@ import { AnimatedSection } from "@/components/animated-section"
 import { ChevronLeft, ChevronRight, Save, Trash2, Send, Info } from "lucide-react"
 import * as countries from "i18n-iso-countries"
 import enLocale from "i18n-iso-countries/langs/en.json"
+import { ConfirmationModal } from "./confirmation-modal"
+import { InfoModal } from "./info-modal"
 
 interface FormData {
   title: string
@@ -49,6 +51,8 @@ export function ProjectForm() {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const [showFailureMessage, setShowFailureMessage] = useState(false)
   const [showSaveMessage, setShowSaveMessage] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false)
 
   const [errors, setErrors] = useState({
     title: false,
@@ -248,12 +252,12 @@ export function ProjectForm() {
         }
         break
       case 2:
-        if (!title || !stage || !description || !country) {
+        if (!title || !stage || !description || !strategy) {
           isValid = false
         }
         break
       case 3:
-        if (!strategy || !funds || Number(funds) <= 0) {
+        if (!funds || Number(funds) <= 0 || !country) {
           isValid = false
         }
         break
@@ -275,20 +279,22 @@ export function ProjectForm() {
     return null
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    if (currentStep === totalSteps) {
-      const firstErrorStep = findFirstErrorStep()
-      if (firstErrorStep) {
-        setErrorStep(firstErrorStep)
-        setErrorMessage(`Please complete all required fields in step ${firstErrorStep}`)
-        return
-      }
 
-      const isValidForm = handleValidation()
-      if (isValidForm && window.confirm("Are you sure you want to submit your project?")) {
-        upload(e)
-      }
+    // Safeguard to ensure this only runs on the last step
+    if (currentStep !== totalSteps) return
+
+    const firstErrorStep = findFirstErrorStep()
+    if (firstErrorStep) {
+      setErrorStep(firstErrorStep)
+      setErrorMessage(`Please complete all required fields in step ${firstErrorStep}`)
+      return
+    }
+
+    const isValidForm = handleValidation()
+    if (isValidForm) {
+      setIsModalOpen(true)
     }
   }
 
@@ -339,9 +345,33 @@ export function ProjectForm() {
     }
   }, [currentStep, errorStep])
 
-  async function upload(e: React.FormEvent) {
-    e.preventDefault()
+  const handleSuccessModalClose = () => {
+    setIsSuccessModalOpen(false)
+    // Reset form fields
+    setTitle("")
+    setStage("")
+    setDescription("")
+    setStrategy("")
+    setCountry("")
+    setAddress("")
+    setFunds("")
+    setName("")
+    setEmail("")
+    setPhone("")
+    setTelegram("")
+    setReferralSource("")
+    setReferrerName("")
+    setReferrerEmail("")
 
+    // Reset to first step after successful submission
+    setCurrentStep(1)
+
+    // Clear localStorage
+    localStorage.removeItem("projectFormData")
+    setSavedData(null)
+  }
+
+  async function upload() {
     const isValidForm = handleValidation()
 
     if (isValidForm) {
@@ -384,32 +414,9 @@ export function ProjectForm() {
           throw new Error("Project submission failed")
         }
 
-        setShowSuccessMessage(true)
+        setIsSuccessModalOpen(true)
         setShowFailureMessage(false)
         setButtonText("Submit")
-
-        // Reset form fields
-        setTitle("")
-        setStage("")
-        setDescription("")
-        setStrategy("")
-        setCountry("")
-        setAddress("")
-        setFunds("")
-        setName("")
-        setEmail("")
-        setPhone("")
-        setTelegram("")
-        setReferralSource("")
-        setReferrerName("")
-        setReferrerEmail("")
-
-        // Reset to first step after successful submission
-        setCurrentStep(1)
-
-        // Clear localStorage
-        localStorage.removeItem("projectFormData")
-        setSavedData(null)
       } catch (error) {
         console.error("Error:", error)
         setShowSuccessMessage(false)
@@ -514,8 +521,8 @@ export function ProjectForm() {
         <div className="mt-2 flex justify-between text-xs sm:text-sm text-white/70">
           <span>Contact Info</span>
           <span>Project Details</span>
-          <span>Strategy</span>
-          <span>Technical</span>
+          <span>Funding</span>
+          <span>Address</span>
         </div>
       </div>
     )
@@ -534,341 +541,252 @@ export function ProjectForm() {
     switch (currentStep) {
       case 1: // Contact Information
         return (
-          <>
-            <div className="space-y-6">
+          <div className="space-y-6">
+            <div className="text-center">
+              <p className="text-2xl font-semibold">Contact Information</p>
+              <p className="text-sm text-gray-500">
+                Please provide your contact information.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                  Project Leader Full Name<span className="text-red-400 ml-1">*</span>
-                </label>
+                <label htmlFor="name" className="block text-sm font-medium mb-1">Name *</label>
                 <input
+                  id="name"
                   type="text"
+                  placeholder="Your name"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Your full name"
-                  name="name"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  onChange={e => setName(e.target.value)}
+                  className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                    errors.name ? "border-red-500" : "border-white/20"
+                  } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
                 />
-                {errors?.name && <p className="mt-2 text-red-400 text-sm">Name cannot be empty.</p>}
               </div>
-
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                  Email Address<span className="text-red-400 ml-1">*</span>
-                </label>
+                <label htmlFor="email" className="block text-sm font-medium mb-1">Email *</label>
                 <input
+                  id="email"
                   type="email"
+                  placeholder="Your email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your.email@example.com"
-                  name="email"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  onChange={e => setEmail(e.target.value)}
+                  className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                    errors.email ? "border-red-500" : "border-white/20"
+                  } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
                 />
-                {errors?.email && <p className="mt-2 text-red-400 text-sm">Please enter a valid email address.</p>}
               </div>
-
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
-                  Phone Number<span className="text-red-400 ml-1">*</span>
-                </label>
+                <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone *</label>
                 <input
+                  id="phone"
                   type="tel"
+                  placeholder="Your phone number"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+1234567890"
-                  name="phone"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  onChange={e => setPhone(e.target.value)}
+                  className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                    errors.phone ? "border-red-500" : "border-white/20"
+                  } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
                 />
-                {errors?.phone && <p className="mt-2 text-red-400 text-sm">Phone number cannot be empty.</p>}
               </div>
-
               <div>
-                <label htmlFor="telegram" className="block text-sm font-medium text-white mb-2">
-                  Telegram Handle<span className="text-red-400 ml-1">*</span>
-                </label>
+                <label htmlFor="telegram" className="block text-sm font-medium mb-1">Telegram *</label>
                 <input
+                  id="telegram"
                   type="text"
+                  placeholder="Your Telegram username"
                   value={telegram}
-                  onChange={(e) => setTelegram(e.target.value)}
-                  placeholder="@yourtelegramhandle"
-                  name="telegram"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  onChange={e => setTelegram(e.target.value)}
+                  className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                    errors.telegram ? "border-red-500" : "border-white/20"
+                  } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
                 />
-                {errors?.telegram && <p className="mt-2 text-red-400 text-sm">Telegram handle cannot be empty.</p>}
-              </div>
-
-              <div>
-                <label htmlFor="referralSource" className="block text-sm font-medium text-white mb-2">
-                  How did you hear about us?<span className="text-red-400 ml-1">*</span>
-                </label>
-                <select
-                  value={referralSource}
-                  onChange={(e) => {
-                    setReferralSource(e.target.value)
-                    if (e.target.value !== "reference") {
-                      setReferrerName("")
-                      setReferrerEmail("")
-                    }
-                  }}
-                  name="referralSource"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                >
-                  <option value="" className="bg-[#010737] text-white">
-                    Select Source...
-                  </option>
-                  {referralSources.map(({ value, label }) => (
-                    <option key={value} value={value} className="bg-[#010737] text-white">
-                      {label}
-                    </option>
-                  ))}
-                </select>
-                {errors?.referralSource && (
-                  <p className="mt-2 text-red-400 text-sm">Please select how you heard about us.</p>
-                )}
-              </div>
-
-              {referralSource === "reference" && (
-                <>
-                  <div>
-                    <label htmlFor="referrerName" className="block text-sm font-medium text-white mb-2">
-                      Reference Person's Name<span className="text-red-400 ml-1">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={referrerName}
-                      onChange={(e) => setReferrerName(e.target.value)}
-                      placeholder="Enter the name of the person who referred you"
-                      name="referrerName"
-                      className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    />
-                    {errors?.referrerName && (
-                      <p className="mt-2 text-red-400 text-sm">Reference person's name cannot be empty.</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="referrerEmail" className="block text-sm font-medium text-white mb-2">
-                      Reference Person's Email<span className="text-red-400 ml-1">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      value={referrerEmail}
-                      onChange={(e) => setReferrerEmail(e.target.value)}
-                      placeholder="Enter the email of the person who referred you"
-                      name="referrerEmail"
-                      className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    />
-                    {errors?.referrerEmail && (
-                      <p className="mt-2 text-red-400 text-sm">
-                        Please enter a valid email address for the reference person.
-                      </p>
-                    )}
-                  </div>
-                </>
-              )}
-
-              <div className="rounded-lg border border-red-400/50 bg-red-400/10 p-4 text-sm text-red-400">
-                <p className="font-semibold">Important Notice:</p>
-                <p>
-                  Please ensure all contact information is accurate and up-to-date. We will use these details to
-                  communicate about your project. If we are unable to contact you through the provided information, your
-                  project cannot be considered for funding.
-                </p>
               </div>
             </div>
-          </>
+            <div>
+              <label htmlFor="referralSource" className="block text-sm font-medium mb-1">How did you hear about us? *</label>
+              <select
+                id="referralSource"
+                value={referralSource}
+                onChange={e => setReferralSource(e.target.value)}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.referralSource ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              >
+                <option value="" disabled>Select an option</option>
+                {referralSources.map(source => (
+                  <option key={source.value} value={source.value} className="bg-[#010737]">{source.label}</option>
+                ))}
+              </select>
+            </div>
+            {referralSource === "reference" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="referrerName" className="block text-sm font-medium mb-1">Reference Person's Name *</label>
+                  <input
+                    id="referrerName"
+                    type="text"
+                    placeholder="Reference person's name"
+                    value={referrerName}
+                    onChange={e => setReferrerName(e.target.value)}
+                    className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                      errors.referrerName ? "border-red-500" : "border-white/20"
+                    } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="referrerEmail" className="block text-sm font-medium mb-1">Reference Person's Email *</label>
+                  <input
+                    id="referrerEmail"
+                    type="email"
+                    placeholder="Reference person's email"
+                    value={referrerEmail}
+                    onChange={e => setReferrerEmail(e.target.value)}
+                    className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                      errors.referrerEmail ? "border-red-500" : "border-white/20"
+                    } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
         )
-
       case 2: // Project Details
         return (
-          <>
-            <div className="space-y-6">
-              <div>
-                <label htmlFor="title" className="block text-sm font-medium text-white mb-2">
-                  Project Title<span className="text-red-400 ml-1">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  placeholder="Your project title"
-                  name="title"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                {errors?.title && <p className="mt-2 text-red-400 text-sm">Title cannot be empty.</p>}
-              </div>
-
-              <div>
-                <label htmlFor="stage" className="block text-sm font-medium text-white mb-2">
-                  Project Stage<span className="text-red-400 ml-1">*</span>
-                </label>
-                <select
-                  value={stage}
-                  onChange={(e) => setStage(e.target.value)}
-                  name="stage"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                >
-                  <option value="" className="bg-[#010737] text-white">
-                    Select Project Stage...
-                  </option>
-                  {projectStages.map(({ value, label }) => (
-                    <option key={value} value={value} className="bg-[#010737] text-white">
-                      {label}
-                    </option>
-                  ))}
-                </select>
-                {errors?.stage && <p className="mt-2 text-red-400 text-sm">Please select a project stage.</p>}
-              </div>
-
-              <div>
-                <label htmlFor="description" className="block text-sm font-medium text-white mb-2">
-                  Project Description<span className="text-red-400 ml-1">*</span>
-                  <p className="mt-1 text-sm font-normal text-white/70">
-                    Please include: (1) Scientific foundation and background, (2) Detailed methodology/approach, (3) Key
-                    milestones and deliverables, and (4) Expected impact on personalized medicine.
-                  </p>
-                </label>
-                <textarea
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  placeholder="Example: Our project addresses the challenge of chemotherapy resistance in renal carcinoma.
-
-Scientific Foundation:
-- Recent studies show 40% of patients develop resistance
-- Genetic markers (ABCB1, ABCG2) strongly correlate with treatment outcomes
-- Preliminary data suggests personalized dosing could improve response rates
-
-Methodology:
-- Patient cohort analysis (n=200) using next-generation sequencing
-- Machine learning model development for treatment response prediction
-- Validation studies in patient-derived cell lines
-
-Key Milestones:
-1. Month 3: Complete genetic profiling of patient cohort
-2. Month 6: Develop preliminary prediction algorithm
-3. Month 9: Validate in vitro model
-4. Month 12: Clinical validation study
-
-Expected Impact:
-Develop a genetic screening tool to predict optimal chemotherapy dosing, potentially improving treatment success rates by 30%."
-                  name="description"
-                  rows={12}
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                {errors?.description && <p className="mt-2 text-red-400 text-sm">Description cannot be empty.</p>}
-              </div>
-
-              <div>
-                <label htmlFor="country" className="block text-sm font-medium text-white mb-2">
-                  Research Country<span className="text-red-400 ml-1">*</span>
-                </label>
-                <select
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                  name="country"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                >
-                  <option value="" className="bg-[#010737] text-white">
-                    Select Country...
-                  </option>
-                  {arr.map(({ label, value }) => (
-                    <option key={value} value={label} className="bg-[#010737] text-white">
-                      {label}
-                    </option>
-                  ))}
-                </select>
-                {errors?.country && <p className="mt-2 text-red-400 text-sm">A country must be selected.</p>}
-              </div>
+          <div className="space-y-6">
+            <div className="text-center">
+              <p className="text-2xl font-semibold">Project Details</p>
+              <p className="text-sm text-gray-500">
+                Tell us more about your project.
+              </p>
             </div>
-          </>
+            <div>
+              <label htmlFor="title" className="block text-sm font-medium mb-1">Project Title *</label>
+              <input
+                id="title"
+                type="text"
+                placeholder="Project title"
+                value={title}
+                onChange={e => setTitle(e.target.value)}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.title ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              />
+            </div>
+            <div>
+              <label htmlFor="stage" className="block text-sm font-medium mb-1">Project Stage *</label>
+              <select
+                id="stage"
+                value={stage}
+                onChange={e => setStage(e.target.value)}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.stage ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              >
+                <option value="" disabled>Select a stage</option>
+                {projectStages.map(stage => (
+                  <option key={stage.value} value={stage.value} className="bg-[#010737]">{stage.label}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="description" className="block text-sm font-medium mb-1">Project Description *</label>
+              <textarea
+                id="description"
+                placeholder="A brief description of your project"
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+                rows={5}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.description ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              />
+            </div>
+            <div>
+              <label htmlFor="strategy" className="block text-sm font-medium mb-1">IP Strategy *</label>
+              <textarea
+                id="strategy"
+                placeholder="Your intellectual property strategy"
+                value={strategy}
+                onChange={e => setStrategy(e.target.value)}
+                rows={5}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.strategy ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              />
+            </div>
+          </div>
         )
-
-      case 3: // Strategy
+      case 3: // Funding
         return (
-          <>
-            <div className="space-y-6">
-              <div>
-                <label htmlFor="strategy" className="block text-sm font-medium text-white mb-2">
-                  Commercialization Strategy<span className="text-red-400 ml-1">*</span>
-                </label>
-                <textarea
-                  value={strategy}
-                  onChange={(e) => setStrategy(e.target.value)}
-                  placeholder="Describe here how you expect to generate assets such as data and intellectual property and how to commercialize them. It does not have to be final."
-                  name="strategy"
-                  rows={6}
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                {errors?.strategy && <p className="mt-2 text-red-400 text-sm">Strategy cannot be empty.</p>}
-              </div>
-
-              <div>
-                <label htmlFor="funds" className="block text-sm font-medium text-white mb-2">
-                  Proposed Funding Amount (in USD)<span className="text-red-400 ml-1">*</span>
-                </label>
-                <input
-                  type="number"
-                  value={funds}
-                  onChange={(e) => {
-                    const value = Math.max(0, Number(e.target.value))
-                    setFunds(value.toString())
-                  }}
-                  min="0"
-                  step="1"
-                  placeholder="Fill in the amount of USD you need to fund your project..."
-                  name="funds"
-                  className="w-full rounded-lg bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
-                {errors?.funds && (
-                  <p className="mt-2 text-red-400 text-sm">
-                    {funds === "" ? "Funding amount cannot be empty." : "Funding amount must be greater than 0."}
-                  </p>
-                )}
-              </div>
+          <div className="space-y-6">
+            <div className="text-center">
+              <p className="text-2xl font-semibold">Funding and Location</p>
+              <p className="text-sm text-gray-500">
+                Provide funding and location details.
+              </p>
             </div>
-          </>
+            <div>
+              <label htmlFor="funds" className="block text-sm font-medium mb-1">Requested Funds (USD) *</label>
+              <input
+                id="funds"
+                type="number"
+                placeholder="Amount in USD"
+                value={funds}
+                onChange={e => setFunds(e.target.value)}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.funds ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              />
+            </div>
+            <div>
+              <label htmlFor="country" className="block text-sm font-medium mb-1">Country *</label>
+              <select
+                id="country"
+                value={country}
+                onChange={e => setCountry(e.target.value)}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.country ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              >
+                <option value="" disabled>Select a country</option>
+                {arr.map(c => (
+                  <option key={c.value} value={c.value} className="bg-[#010737]">{c.label}</option>
+                ))}
+              </select>
+            </div>
+          </div>
         )
-
-      case 4: // Technical
+      case 4: // Address
         return (
-          <>
-            <div className="space-y-6">
-              <div>
-                <label htmlFor="address" className="flex items-center gap-2 text-sm font-medium text-white mb-2">
-                  Ethereum Address (optional)
-                  <InfoTooltip
-                    message={`Once your project has been accepted, your funds will be sent to this Ethereum blockchain address.
-
-Using blockchain technology we can ensure transparency, decentralization and reduced bias in the funding process. 
-You can create a digital wallet at https://app.safe.global or at https://metamask.io
-
-It is not yet required to have a wallet at this point. 
-Our Due Diligence crew will help you setup a wallet.`}
-                  />
-                </label>
-                <input
-                  type="text"
-                  value={address}
-                  onChange={(e) => {
-                    const value = e.target.value
-                    setAddress(value)
-                    validateEthereumAddress(value)
-                  }}
-                  placeholder="0x0000000000000000000000000000000000000000"
-                  name="address"
-                  className={`w-full rounded-lg bg-white/10 border p-4 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 ${
-                    addressError ? "border-red-400" : "border-white/20"
-                  }`}
-                />
-                {(errors?.address || addressError) && (
-                  <p className="mt-2 text-red-400 text-sm">
-                    {addressError || "Please enter a valid Ethereum address."}
-                  </p>
-                )}
-              </div>
+          <div className="space-y-6">
+            <div className="text-center">
+              <p className="text-2xl font-semibold">Ethereum Address</p>
+              <p className="text-sm text-gray-500">
+                Provide your Ethereum address for receiving funds.
+              </p>
             </div>
-          </>
+            <div>
+              <label htmlFor="address" className="block text-sm font-medium mb-1">
+                Your Ethereum wallet address (optional)
+                <InfoTooltip message="Provide an Ethereum address if you want to receive a digital receipt for your application." />
+              </label>
+              <input
+                id="address"
+                type="text"
+                placeholder="0x..."
+                value={address}
+                onChange={e => {
+                  setAddress(e.target.value);
+                  validateEthereumAddress(e.target.value);
+                }}
+                className={`w-full p-3 rounded-lg bg-white/10 border transition-all duration-300 ${
+                  errors.address || addressError ? "border-red-500" : "border-white/20"
+                } focus:outline-none focus:ring-2 focus:ring-[#78DFEC]`}
+              />
+              {addressError && <p className="text-red-500 text-sm mt-1">{addressError}</p>}
+            </div>
+          </div>
         )
-
       default:
         return null
     }
@@ -886,7 +804,7 @@ Our Due Diligence crew will help you setup a wallet.`}
         </div>
 
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-8" noValidate>
+          <form className="space-y-8" noValidate>
             {renderProgressBar()}
 
             {renderFormStep()}
@@ -931,7 +849,11 @@ Our Due Diligence crew will help you setup a wallet.`}
                     <ChevronRight className="w-4 h-4 ml-2" />
                   </Button>
                 ) : (
-                  <Button type="submit" className="bg-white text-[#010737] hover:bg-white/90">
+                  <Button
+                    type="button"
+                    onClick={handleSubmit}
+                    className="bg-white text-[#010737] hover:bg-white/90"
+                  >
                     <Send className="w-4 h-4 mr-2" />
                     {buttonText}
                   </Button>
@@ -963,6 +885,21 @@ Our Due Diligence crew will help you setup a wallet.`}
           </form>
         </div>
       </AnimatedSection>
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={upload}
+        title="Confirm Submission"
+        message="Are you sure you want to submit your project? This action cannot be undone."
+        confirmText="Submit Project"
+      />
+      <InfoModal
+        isOpen={isSuccessModalOpen}
+        onClose={handleSuccessModalClose}
+        title="Project Submitted!"
+        message="Thank you for your submission. Our team will review your project and get back to you soon."
+        buttonText="Done"
+      />
     </div>
   )
 }

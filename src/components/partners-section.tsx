@@ -9,7 +9,7 @@ export function PartnersSection() {
     { name: "Boost VC", logo: "/logo_boostvc.svg", url: "https://www.boost.vc/" },
     { name: "Cyberscope", logo: "/logo_cyberscope.svg", url: "https://www.cyberscope.io/" },
     { name: "Human.tech", logo: "/logo_humantech.svg", url: "https://humans.tech/en/" },
-    { name: "AxonDAO", logo: "/logo_axondao.svg", url: "https://axondao.io/" },
+    // { name: "AxonDAO", logo: "/logo_axondao.svg", url: "https://axondao.io/" },
     { name: "Lilypad", logo: "/logo_lilypad.svg", url: "https://lilypad.tech/" },
     { name: "QuillAudits", logo: "/logo_quillaudits.svg", url: "https://www.quillaudits.com/" },
     { name: "Rare Compute", logo: "/logo_rarecompute.svg", url: "https://www.rarecompute.io/" },
@@ -26,8 +26,8 @@ export function PartnersSection() {
         </div>
       </div>
 
-      <div className="container mx-auto relative z-10">
-        <AnimatedSection className="text-center mb-10" triggerOnce={true} direction="down" duration={0.5}>
+      <div className="container mx-auto relative z-10 mb-16">
+        <AnimatedSection className="text-center mb-16" triggerOnce={true} direction="down" duration={0.5}>
           {/* Content for the first AnimatedSection starts here */}
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#78DFEC] to-white">Our Partners</h2>

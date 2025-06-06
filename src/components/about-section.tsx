@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
+import Link from "next/link"
 
 export function AboutSection() {
   return (
@@ -31,6 +32,7 @@ export function AboutSection() {
                 strokeLinejoin="round"
                 className="text-white"
               >
+                <title>Transparency Icon</title>
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
               </svg>
             </div>
@@ -58,8 +60,10 @@ export function AboutSection() {
                 strokeLinejoin="round"
                 className="text-white"
               >
+                <title>Decentralization Icon</title>
                 <circle cx="12" cy="12" r="10"></circle>
-                <path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">Decentralization</h3>
@@ -86,6 +90,7 @@ export function AboutSection() {
                 strokeLinejoin="round"
                 className="text-white"
               >
+                <title>Incentivization Icon</title>
                 <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
               </svg>
             </div>
@@ -97,9 +102,9 @@ export function AboutSection() {
         </div>
 
         <AnimatedSection className="mt-16 text-center" delay={0.5}>
-          <a href="https://www.poscidondao.com/Whitepaper.pdf" target="_blank" rel="noopener noreferrer">
+          <Link href="/poscidon-whitepaper.pdf" target="_blank" rel="noopener noreferrer">
             <Button className="bg-white text-[#010737] hover:bg-white/90">Read Whitepaper</Button>
-          </a>
+          </Link>
         </AnimatedSection>
       </div>
     </section>

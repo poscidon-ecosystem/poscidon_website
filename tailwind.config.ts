@@ -20,7 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-roboto)"],
+        acumin: ["var(--font-acumin)"],
       },
       colors: {
         seaBlue: {

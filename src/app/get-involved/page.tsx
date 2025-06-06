@@ -1,16 +1,77 @@
 import { PageLayout } from "@/components/page-layout"
 import { AnimatedSection } from "@/components/animated-section"
 import { Button } from "@/components/ui/button"
+import { Metadata } from "next"
+import Head from "next/head"
+
+export const metadata: Metadata = {
+  title: "Get Involved | Poscidon",
+  description:
+    "Join the Poscidon community and help revolutionize personalized medicine research funding. Apply to a crew, join our Discord, and contribute to the future of DeSci.",
+  keywords: [
+    "Get involved with Poscidon",
+    "Poscidon community",
+    "DeSci community",
+    "DAO contribution",
+    "biotech research",
+    "personalized medicine",
+  ],
+  openGraph: {
+    title: "Get Involved | Poscidon",
+    description:
+      "Join the Poscidon community and help revolutionize personalized medicine research funding. Apply to a crew, join our Discord, and contribute to the future of DeSci.",
+    url: "https://poscidon.com/get-involved",
+    siteName: "Poscidon",
+    images: [
+      {
+        url: "https://poscidon.com/og-image-get-involved.png",
+        width: 1200,
+        height: 630,
+        alt: "Get Involved with Poscidon",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get Involved | Poscidon",
+    description:
+      "Join the Poscidon community and help revolutionize personalized medicine research funding. Apply to a crew, join our Discord, and contribute to the future of DeSci.",
+    images: ["https://poscidon.com/twitter-image-get-involved.png"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://poscidon.com"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Get Involved",
+    "item": "https://poscidon.com/get-involved"
+  }]
+};
 
 export default function GetInvolvedPage() {
   return (
     <PageLayout>
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Head>
       <div className="container mx-auto py-16 px-4">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Get Involved</h1>
           <p className="text-xl text-white/80 mb-8">
             Join the Poscidon community and help revolutionize personalized medicine research funding. There are many
-            ways to participate in our ecosystem. The PoSciDonDAO community consists of many expert scientists,
+            ways to participate in our ecosystem. The Poscidon community consists of many expert scientists,
             bioentrepreneurs and decentralized science enthusiasts. They collectively help the organisation and one
             another flourish. The DAO is managed by a core team with expertise in science, web3 and entrepreneurship.
           </p>
@@ -43,6 +104,7 @@ export default function GetInvolvedPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
+                  <title>Operations Icon</title>
                   <path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
                   <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
                 </svg>
@@ -69,6 +131,7 @@ export default function GetInvolvedPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
+                  <title>Due Diligence Icon</title>
                   <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
                   <path d="M9 15v-2"></path>

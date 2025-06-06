@@ -19,7 +19,7 @@ export function FaqSection() {
                 A DAO is an organisation where its members work towards one common goal and that is governed by programs
                 run on blockchain technology. These programs are also called smart contracts. Using this technology, the
                 organisation can be governed in an objective, transparent, decentralized and borderless way.
-                PoSciDonDAO's smart contracts create a tamper-proof, verifiable, and trustless proposal and voting
+                Poscidon's smart contracts create a tamper-proof, verifiable, and trustless proposal and voting
                 mechanism.
               </AccordionContent>
             </AccordionItem>

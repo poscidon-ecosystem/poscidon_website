@@ -2,10 +2,72 @@ import { PageLayout } from "@/components/page-layout"
 import { AnimatedSection } from "@/components/animated-section"
 import { Button } from "@/components/ui/button"
 import { TokenCard } from "@/components/token-card"
+import { Metadata } from "next"
+import Head from "next/head"
+
+export const metadata: Metadata = {
+  title: "SCI Token | Poscidon",
+  description:
+    "Learn about the SCI token, the utility and governance token of the Poscidon ecosystem. Discover tokenomics, how to acquire SCI, and its role in funding research.",
+  keywords: [
+    "SCI token",
+    "Poscidon token",
+    "DeSci token",
+    "governance token",
+    "utility token",
+    "tokenomics",
+    "buy SCI",
+  ],
+  openGraph: {
+    title: "SCI Token | Poscidon",
+    description:
+      "Learn about the SCI token, the utility and governance token of the Poscidon ecosystem. Discover tokenomics, how to acquire SCI, and its role in funding research.",
+    url: "https://poscidon.com/sci-token",
+    siteName: "Poscidon",
+    images: [
+      {
+        url: "https://poscidon.com/og-image-sci-token.png",
+        width: 1200,
+        height: 630,
+        alt: "Poscidon SCI Token",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SCI Token | Poscidon",
+    description:
+      "Learn about the SCI token, the utility and governance token of the Poscidon ecosystem. Discover tokenomics, how to acquire SCI, and its role in funding research.",
+    images: ["https://poscidon.com/twitter-image-sci-token.png"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://poscidon.com"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "SCI Token",
+    "item": "https://poscidon.com/sci-token"
+  }]
+};
 
 export default function SciTokenPage() {
   return (
     <PageLayout>
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Head>
       <div className="container mx-auto py-16 px-4">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">SCI Token</h1>
@@ -48,6 +110,7 @@ export default function SciTokenPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
+                  <title>Governance Icon</title>
                   <path d="m18 16 4-4-4-4"></path>
                   <path d="m6 8-4 4 4 4"></path>
                   <path d="m14.5 4-5 16"></path>
@@ -55,7 +118,7 @@ export default function SciTokenPage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Governance</h3>
               <p className="text-white/70">
-                After locking SCI tokens, members receive governance rights over PoSciDonDAO's treasury, its operations,
+                After locking SCI tokens, members receive governance rights over Poscidon's treasury, its operations,
                 the election of scientific experts, and over the management of the personalized medicine IP portfolio.
               </p>
             </div>
@@ -74,6 +137,7 @@ export default function SciTokenPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
+                  <title>Stake in IP Icon</title>
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14,2 14,8 20,8"></polyline>
                   <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -103,13 +167,14 @@ export default function SciTokenPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
+                  <title>Incentives Icon</title>
                   <circle cx="12" cy="8" r="6"></circle>
                   <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Incentives</h3>
               <p className="text-white/70">
-                SCI is used to attract and incentivise talent and experts to support the development of PoSciDonDAO's
+                SCI is used to attract and incentivise talent and experts to support the development of Poscidon's
                 funded personalized medicine research projects.
               </p>
             </div>
@@ -128,6 +193,7 @@ export default function SciTokenPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
+                  <title>Rewards Icon</title>
                   <path d="M8 21h8" />
                   <path d="M12 17v4" />
                   <path d="M7 4h10" />
@@ -153,6 +219,8 @@ export default function SciTokenPage() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
               <div className="relative w-64 h-64">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
+                  <title>SCI Token Allocation Chart</title>
+                  <desc>A donut chart showing the allocation of SCI tokens: Foundation 37%, Community 32.456%, DAO Operators 15%, Public Sale 11.17%, and Private Sale 4.374%.</desc>
                   {/* Foundation - 37% */}
                   <circle
                     cx="50"

@@ -2,6 +2,62 @@ import { PageLayout } from "@/components/page-layout"
 import { AnimatedSection } from "@/components/animated-section"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { Metadata } from "next"
+import Head from "next/head"
+
+export const metadata: Metadata = {
+  title: "Projects | Poscidon",
+  description:
+    "Explore the innovative personalized medicine and DeSci research projects funded by Poscidon. See how we are advancing science through decentralized funding.",
+  keywords: [
+    "Poscidon projects",
+    "research projects",
+    "funded projects",
+    "personalized medicine",
+    "DeSci projects",
+    "biotech innovation",
+  ],
+  openGraph: {
+    title: "Projects | Poscidon",
+    description:
+      "Explore the innovative personalized medicine and DeSci research projects funded by Poscidon. See how we are advancing science through decentralized funding.",
+    url: "https://poscidon.com/projects",
+    siteName: "Poscidon",
+    images: [
+      {
+        url: "https://poscidon.com/og-image-projects.png",
+        width: 1200,
+        height: 630,
+        alt: "Poscidon Projects",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Poscidon",
+    description:
+      "Explore the innovative personalized medicine and DeSci research projects funded by Poscidon. See how we are advancing science through decentralized funding.",
+    images: ["https://poscidon.com/twitter-image-projects.png"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://poscidon.com"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Projects",
+    "item": "https://poscidon.com/projects"
+  }]
+};
 
 const projects = [
   {
@@ -61,6 +117,11 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <PageLayout>
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Head>
       <div className="container mx-auto py-16 px-4">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Projects</h1>
@@ -87,7 +148,8 @@ export default function ProjectsPage() {
                     strokeLinejoin="round"
                     className="text-white"
                   >
-                                         {project.iconPaths.map((path, pathIndex) => {
+                    <title>{project.title} Icon</title>
+                    {project.iconPaths.map((path, pathIndex) => {
                        if (path.type === 'rect') {
                          return <rect key={pathIndex} {...path.props} />
                        } else if (path.type === 'line') {

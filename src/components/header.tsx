@@ -78,43 +78,43 @@ export function Header() {
           <nav className="flex flex-col space-y-4">
             <Link
               href="/about"
-              className="text-white/80 hover:text-white transition-colors py-2"
+              className="text-lg text-white/80 hover:text-white transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/sci-token"
-              className="text-white/80 hover:text-white transition-colors py-2"
+              className="text-lg text-white/80 hover:text-white transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               SCI Token
             </Link>
             <Link
               href="/projects"
-              className="text-white/80 hover:text-white transition-colors py-2"
+              className="text-lg text-white/80 hover:text-white transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </Link>
             <Link
               href="/get-involved"
-              className="text-white/80 hover:text-white transition-colors py-2"
+              className="text-lg text-white/80 hover:text-white transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Get Involved
             </Link>
             <a
-              href="https://protocol.poscidondao.com/donate"
+              href="https://dao.poscidon.com/donate"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/80 hover:text-white transition-colors py-2"
+              className="text-lg text-white/80 hover:text-white transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Donate
             </a>
-            <Button className="bg-white text-[#010737] hover:bg-white/90 w-full">
-              <a href="https://protocol.poscidondao.com/" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-white text-[#010737] hover:bg-white/90 w-full text-lg">
+              <a href="https://dao.poscidon.com/" target="_blank" rel="noopener noreferrer">
                 Visit dApp
               </a>
             </Button>
