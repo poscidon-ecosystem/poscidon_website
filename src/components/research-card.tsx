@@ -1,20 +1,20 @@
 interface ResearchCardProps {
   title: string
   description: string
-  icon: "tumor" | "blood" | "brain" | "diabetes"
+  icon: "dna" | "biomarker" | "genomics" | "ai"
 }
 
 export function ResearchCard({ title, description, icon }: ResearchCardProps) {
   // Define gradient backgrounds based on icon type
   const getGradientClass = () => {
     switch (icon) {
-      case "tumor":
+      case "dna":
         return "bg-gradient-to-br from-[#2E8ED7] to-[#78DFEC]"
-      case "blood":
+      case "biomarker":
         return "bg-gradient-to-br from-[#22D6C4] to-[#A1ECD6]"
-      case "brain":
+      case "genomics":
         return "bg-gradient-to-br from-[#0b1dee] to-[#2E8ED7]"
-      case "diabetes":
+      case "ai":
         return "bg-gradient-to-br from-[#78DFEC] to-[#22D6C4]"
       default:
         return "bg-gradient-to-br from-[#2E8ED7] to-[#78DFEC]"
@@ -24,7 +24,7 @@ export function ResearchCard({ title, description, icon }: ResearchCardProps) {
   return (
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/15 transition-colors">
       <div className={`w-12 h-12 ${getGradientClass()} rounded-full flex items-center justify-center mb-4`}>
-        {icon === "tumor" && (
+        {icon === "dna" && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -37,10 +37,14 @@ export function ResearchCard({ title, description, icon }: ResearchCardProps) {
             strokeLinejoin="round"
             className="text-white"
           >
-            <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"></path>
+            <path d="M2 15c6.667-6 13.333 0 20-6"></path>
+            <path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"></path>
+            <path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"></path>
+            <path d="M17 6c-2.5 1.5-5 3-7 3s-4.5-1.5-7-3"></path>
+            <path d="M14 18c-1-1-2-2-3-2s-2 1-3 2"></path>
           </svg>
         )}
-        {icon === "blood" && (
+        {icon === "biomarker" && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -53,13 +57,16 @@ export function ResearchCard({ title, description, icon }: ResearchCardProps) {
             strokeLinejoin="round"
             className="text-white"
           >
-            <path d="M2 12h20"></path>
-            <path d="M2 12a10 10 0 0 1 20 0"></path>
-            <path d="M2 12a10 10 0 0 0 20 0"></path>
-            <path d="M12 2v20"></path>
+            <path d="M19 2H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3Z"></path>
+            <path d="M12 8v8"></path>
+            <path d="M8 12h8"></path>
+            <path d="M9 16H6"></path>
+            <path d="M18 16h-3"></path>
+            <path d="M9 8H6"></path>
+            <path d="M18 8h-3"></path>
           </svg>
         )}
-        {icon === "brain" && (
+        {icon === "genomics" && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -72,11 +79,14 @@ export function ResearchCard({ title, description, icon }: ResearchCardProps) {
             strokeLinejoin="round"
             className="text-white"
           >
-            <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1"></path>
-            <path d="M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"></path>
+            <path d="M3 9h18M3 15h18"></path>
+            <path d="M3 5v14"></path>
+            <path d="M21 5v14"></path>
+            <path d="M9 5v14"></path>
+            <path d="M15 5v14"></path>
           </svg>
         )}
-        {icon === "diabetes" && (
+        {icon === "ai" && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -89,13 +99,13 @@ export function ResearchCard({ title, description, icon }: ResearchCardProps) {
             strokeLinejoin="round"
             className="text-white"
           >
-            <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"></path>
-            <path d="M8 16h.01"></path>
-            <path d="M8 20h.01"></path>
-            <path d="M12 18h.01"></path>
-            <path d="M12 22h.01"></path>
-            <path d="M16 16h.01"></path>
-            <path d="M16 20h.01"></path>
+            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+            <path d="M7 7h10"></path>
+            <path d="M10 16V7"></path>
+            <path d="M14 16V7"></path>
+            <path d="M17 12h-3"></path>
+            <path d="M7 12h3"></path>
+            <path d="M7 16h10"></path>
           </svg>
         )}
       </div>

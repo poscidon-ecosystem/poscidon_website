@@ -5,6 +5,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
+// For now, let's use a standard img tag if next/image is problematic
+const Image = (props: any) => <img {...props} />;
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,9 +35,7 @@ export function Header() {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <span className="text-2xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">
-            Poscidon
-          </span>
+          <Image src="/newlogofont1.svg" alt="Poscidon Logo" className="h-12" />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">

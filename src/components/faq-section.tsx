@@ -26,10 +26,10 @@ export function FaqSection() {
 
             <AccordionItem value="item-2" className="border-white/20 rounded-lg bg-white/10 px-6">
               <AccordionTrigger className="text-lg font-medium py-4 hover:no-underline">
-                What kind of research does PoSciDonDAO fund?
+                What kind of research does Poscidon fund?
               </AccordionTrigger>
               <AccordionContent className="text-white/80 pb-4">
-                PoSciDonDAO funds research that focuses on identifying biomarkers that can predict treatment response or
+                Poscidon funds research that focuses on identifying biomarkers that can predict treatment response or
                 on developing personalized therapies for life-altering diseases, including but not limited to, cancer,
                 Alzheimer's disease and diabetes.
               </AccordionContent>
@@ -37,10 +37,10 @@ export function FaqSection() {
 
             <AccordionItem value="item-3" className="border-white/20 rounded-lg bg-white/10 px-6">
               <AccordionTrigger className="text-lg font-medium py-4 hover:no-underline">
-                How can PoSciDonDAO support my research?
+                How can Poscidon support my research?
               </AccordionTrigger>
               <AccordionContent className="text-white/80 pb-4">
-                Besides funding your research project, PoSciDonDAO can provide scientific and commercial support for
+                Besides funding your research project, Poscidon can provide scientific and commercial support for
                 your research output. We are a diverse community with a broad range of expertise in the personalized
                 medicine field. We will leverage our network in any way we can to support and uplift your inventions.
               </AccordionContent>
@@ -48,7 +48,7 @@ export function FaqSection() {
 
             <AccordionItem value="item-4" className="border-white/20 rounded-lg bg-white/10 px-6">
               <AccordionTrigger className="text-lg font-medium py-4 hover:no-underline">
-                Who is part of the PoSciDonDAO community?
+                Who is part of the Poscidon community?
               </AccordionTrigger>
               <AccordionContent className="text-white/80 pb-4">
                 Our community consists of academic researchers, bioentrepreneurs, physicians, decentralized science

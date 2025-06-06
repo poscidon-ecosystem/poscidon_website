@@ -31,11 +31,10 @@ export default function ProjectsPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
-                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-                  <path d="M7 7h.01"></path>
-                  <path d="M17 7h.01"></path>
-                  <path d="M7 17h.01"></path>
-                  <path d="M17 17h.01"></path>
+                  <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                  <line x1="2" x2="22" y1="7" y2="7"></line>
+                  <line x1="8" x2="16" y1="21" y2="21"></line>
+                  <line x1="12" x2="12" y1="17" y2="21"></line>
                 </svg>
               </div>
               <div className="flex-1">
@@ -72,13 +71,13 @@ export default function ProjectsPage() {
                   strokeLinejoin="round"
                   className="text-white"
                 >
-                  <path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"></path>
-                  <path d="M8 16h.01"></path>
-                  <path d="M8 20h.01"></path>
-                  <path d="M12 18h.01"></path>
-                  <path d="M12 22h.01"></path>
-                  <path d="M16 16h.01"></path>
-                  <path d="M16 20h.01"></path>
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M7 7h10"></path>
+                  <path d="M10 16V7"></path>
+                  <path d="M14 16V7"></path>
+                  <path d="M17 12h-3"></path>
+                  <path d="M7 12h3"></path>
+                  <path d="M7 16h10"></path>
                 </svg>
               </div>
               <div className="flex-1">
