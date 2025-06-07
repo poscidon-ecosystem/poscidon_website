@@ -10,6 +10,7 @@ import * as countries from "i18n-iso-countries"
 import enLocale from "i18n-iso-countries/langs/en.json"
 import { ConfirmationModal } from "./confirmation-modal"
 import { InfoModal } from "./info-modal"
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 interface FormData {
   title: string
@@ -77,6 +78,9 @@ export function ProjectForm() {
 
   const [errorMessage, setErrorMessage] = useState("")
   const [errorStep, setErrorStep] = useState<number | null>(null)
+  const [isGeneratingToken, setIsGeneratingToken] = useState(false)
+  
+  const { executeRecaptcha } = useGoogleReCaptcha()
 
   // Initialize countries
   countries.registerLocale(enLocale)
@@ -338,6 +342,27 @@ export function ProjectForm() {
     }
   }
 
+  // Generate reCAPTCHA token for project submission
+  const generateRecaptchaToken = async (): Promise<string | null> => {
+    if (!executeRecaptcha) {
+      console.warn('[ProjectForm] reCAPTCHA not yet available');
+      return null;
+    }
+
+    setIsGeneratingToken(true);
+    try {
+      console.log('[ProjectForm] Generating reCAPTCHA token for project submission');
+      const token = await executeRecaptcha('submit_project');
+      console.log('[ProjectForm] reCAPTCHA token generated');
+      return token;
+    } catch (error) {
+      console.error('[ProjectForm] Error generating reCAPTCHA token:', error);
+      return null;
+    } finally {
+      setIsGeneratingToken(false);
+    }
+  };
+
   useEffect(() => {
     if (currentStep === errorStep) {
       setErrorMessage("")
@@ -376,6 +401,16 @@ export function ProjectForm() {
 
     if (isValidForm) {
       try {
+        setButtonText("Verifying...")
+
+        // Generate reCAPTCHA token
+        const captchaToken = await generateRecaptchaToken()
+        if (!captchaToken) {
+          setShowFailureMessage(true)
+          setButtonText("Submit")
+          return
+        }
+
         setButtonText("Submitting...")
 
         // Get the label for the selected stage
@@ -407,6 +442,7 @@ export function ProjectForm() {
             referralSource: sourceLabel,
             referrerName,
             referrerEmail,
+            captchaToken,
           }),
         })
 
@@ -772,8 +808,8 @@ export function ProjectForm() {
             </div>
             <div>
               <label htmlFor="address" className="block text-sm font-medium mb-1">
-                Your Ethereum wallet address (optional)
-                <InfoTooltip message="Provide an Ethereum address if you want to receive a digital receipt for your application." />
+                Your Ethereum wallet address (optional)&nbsp;
+                <InfoTooltip message="Provide the Ethereum address of the wallet you want to receive the funds to." />
               </label>
               <input
                 id="address"
@@ -857,7 +893,8 @@ export function ProjectForm() {
                   <Button
                     type="button"
                     onClick={handleSubmit}
-                    className="bg-white text-[#010737] hover:bg-white/90"
+                    disabled={isGeneratingToken}
+                    className="bg-white text-[#010737] hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     <Send className="w-4 h-4 mr-2" />
                     {buttonText}

@@ -10,7 +10,7 @@ export function FloatingLightsAnimation() {
     headers.forEach((header, index) => {
       setTimeout(() => {
         header.classList.add("visible")
-      }, index * 6000) // Stagger the animations
+      }, index * 3500)
     })
   }, [])
 
@@ -168,28 +168,28 @@ export function FloatingLightsAnimation() {
         }
 
         #head1 {
-          animation: fadeOut 5s ease-in;
+          animation: fadeOut 3s ease-in;
         }
 
         #head2 {
-          animation: fadeOut 5s ease-in;
-          animation-delay: 6s;
+          animation: fadeOut 3s ease-in;
+          animation-delay: 3.5s;
         }
 
         #head3 {
-          animation: fadeOut 5s ease-in;
-          animation-delay: 12s;
+          animation: fadeOut 3s ease-in;
+          animation-delay: 7s;
         }
 
         #head4 {
-          animation: fadeOut 5s ease-in;
-          animation-delay: 17s;
+          animation: fadeOut 3s ease-in;
+          animation-delay: 10.5s;
         }
 
         #head5 {
-          animation: finalFade 5s ease-in;
+          animation: finalFade 3s ease-in;
           animation-fill-mode: forwards;
-          animation-delay: 22s;
+          animation-delay: 14s;
         }
 
         @keyframes fadeIn {

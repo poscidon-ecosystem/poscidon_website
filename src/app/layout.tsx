@@ -3,7 +3,10 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import localFont from 'next/font/local'
-
+import { headers } from "next/headers"
+import Script from "next/script"
+import RecaptchaProvider from '@/components/recaptcha-provider';
+import MinimalCaptchaBadge from '@/components/minimal-captcha-badge';
 
 const acumin = localFont({
   src: './AcuminProMedium.otf',
@@ -40,15 +43,38 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+const GMT_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ?? '';
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
+  const nonce = (await headers()).get('x-content-nonce') || undefined;
+  
   return (
     <html lang="en" className={acumin.className}>
-      <body>
-        <script
+      <head>
+      <Script
+          nonce={nonce}
+          id="anti-clickjacking script"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (window.top !== window.self) {
+                window.top.location = window.self.location;
+              }
+            `,
+          }}
+        />
+      {GMT_ID && (
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GMT_ID}`}
+            strategy="afterInteractive"
+            nonce={nonce}
+          />
+        )}
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -66,8 +92,13 @@ export default function RootLayout({
             })
           }}
         />
+      </head>
+      <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <RecaptchaProvider>
+          <MinimalCaptchaBadge />
           {children}
+        </RecaptchaProvider>
         </ThemeProvider>
       </body>
     </html>
