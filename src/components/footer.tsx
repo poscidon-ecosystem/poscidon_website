@@ -134,12 +134,12 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/poscidon-whitepaper.pdf"
+                  href="/poscidondao-whitepaper.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  Whitepaper
+                  DAO Whitepaper
                 </Link>
               </li>
               <li>
@@ -149,7 +149,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-white transition-colors"
                 >
-                  Litepaper
+                  DAO Litepaper
                 </Link>
               </li>
               <li>

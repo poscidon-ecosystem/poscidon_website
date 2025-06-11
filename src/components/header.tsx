@@ -47,6 +47,9 @@ export function Header() {
             <Link href="/projects" className="text-white/80 hover:text-white transition-colors">
               Projects
             </Link>
+            <Link href="/ecosystem" className="text-white/80 hover:text-white transition-colors">
+              Ecosystem
+            </Link>
             <Link href="/get-involved" className="text-white/80 hover:text-white transition-colors">
               Get Involved
             </Link>
@@ -96,6 +99,13 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
+            </Link>
+            <Link
+              href="/ecosystem"
+              className="text-lg text-white/80 hover:text-white transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Ecosystem
             </Link>
             <Link
               href="/get-involved"

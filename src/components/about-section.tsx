@@ -100,7 +100,7 @@ export function AboutSection() {
         </div>
 
         <AnimatedSection className="mt-16 text-center" delay={0.5}>
-          <Link href="/poscidon-whitepaper.pdf" target="_blank" rel="noopener noreferrer">
+          <Link href="/poscidondao-whitepaper.pdf" target="_blank" rel="noopener noreferrer">
             <Button className="bg-white text-[#010737] hover:bg-white/90">Read Whitepaper</Button>
           </Link>
         </AnimatedSection>

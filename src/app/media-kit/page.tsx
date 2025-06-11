@@ -82,7 +82,7 @@ export default function MediaKitPage() {
               representation of our brand.
             </p>
             <div className="flex justify-center">
-              <a href="https://www.poscidon.com/brand-guidelines.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/brand-guidelines.pdf" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-white text-[#010737] hover:bg-white/90">Download Brand Guidelines</Button>
               </a>
             </div>
