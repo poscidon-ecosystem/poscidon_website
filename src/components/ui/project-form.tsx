@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import React from "react"
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
@@ -10,6 +10,7 @@ import * as countries from "i18n-iso-countries"
 import enLocale from "i18n-iso-countries/langs/en.json"
 import { ConfirmationModal } from "./confirmation-modal"
 import { InfoModal } from "./info-modal"
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 interface FormData {
   title: string
@@ -77,6 +78,9 @@ export function ProjectForm() {
 
   const [errorMessage, setErrorMessage] = useState("")
   const [errorStep, setErrorStep] = useState<number | null>(null)
+  const [isGeneratingToken, setIsGeneratingToken] = useState(false)
+  
+  const { executeRecaptcha } = useGoogleReCaptcha()
 
   // Initialize countries
   countries.registerLocale(enLocale)
@@ -338,6 +342,27 @@ export function ProjectForm() {
     }
   }
 
+  // Generate reCAPTCHA token for project submission
+  const generateRecaptchaToken = async (): Promise<string | null> => {
+    if (!executeRecaptcha) {
+      console.warn('[ProjectForm] reCAPTCHA not yet available');
+      return null;
+    }
+
+    setIsGeneratingToken(true);
+    try {
+      console.log('[ProjectForm] Generating reCAPTCHA token for project submission');
+      const token = await executeRecaptcha('submit_project');
+      console.log('[ProjectForm] reCAPTCHA token generated');
+      return token;
+    } catch (error) {
+      console.error('[ProjectForm] Error generating reCAPTCHA token:', error);
+      return null;
+    } finally {
+      setIsGeneratingToken(false);
+    }
+  };
+
   useEffect(() => {
     if (currentStep === errorStep) {
       setErrorMessage("")
@@ -376,6 +401,16 @@ export function ProjectForm() {
 
     if (isValidForm) {
       try {
+        setButtonText("Verifying...")
+
+        // Generate reCAPTCHA token
+        const captchaToken = await generateRecaptchaToken()
+        if (!captchaToken) {
+          setShowFailureMessage(true)
+          setButtonText("Submit")
+          return
+        }
+
         setButtonText("Submitting...")
 
         // Get the label for the selected stage
@@ -407,6 +442,7 @@ export function ProjectForm() {
             referralSource: sourceLabel,
             referrerName,
             referrerEmail,
+            captchaToken,
           }),
         })
 
@@ -500,29 +536,34 @@ export function ProjectForm() {
   }
 
   const renderProgressBar = () => {
+    const stepTitles = ["Contact Info", "Project Details", "Funding", "Address"]
     return (
       <div className="mb-8 w-full">
-        <div className="flex justify-between">
-          {[...Array(totalSteps)].map((_, index) => (
-            <div key={index} className={`flex items-center ${index < totalSteps - 1 ? "w-full" : ""}`}>
-              <div
-                className={`h-8 w-8 rounded-full ${
-                  index + 1 <= currentStep ? "bg-white text-[#010737]" : "bg-white/20 text-white/50"
-                } flex items-center justify-center text-sm font-bold`}
-              >
-                {index + 1}
+        <div className="flex w-full items-start">
+          {stepTitles.map((title, index) => (
+            <React.Fragment key={index}>
+              <div className="flex flex-col items-center text-center">
+                <div
+                  className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors duration-300 ${
+                    index + 1 <= currentStep ? "bg-white text-[#010737]" : "bg-white/20 text-white/50"
+                  }`}
+                >
+                  {index + 1}
+                </div>
+                <p className="mt-2 w-24 text-center text-xs text-white/70 sm:text-sm">{title}</p>
               </div>
-              {index < totalSteps - 1 && (
-                <div className={`h-1 w-full ${index + 1 < currentStep ? "bg-white" : "bg-white/20"}`} />
+
+              {index < stepTitles.length - 1 && (
+                <div className="mx-2 mt-3.5 h-1 w-full flex-grow">
+                  <div
+                    className={`h-full w-full transition-colors duration-300 ${
+                      index + 1 < currentStep ? "bg-white" : "bg-white/20"
+                    }`}
+                  />
+                </div>
               )}
-            </div>
+            </React.Fragment>
           ))}
-        </div>
-        <div className="mt-2 flex justify-between text-xs sm:text-sm text-white/70">
-          <span>Contact Info</span>
-          <span>Project Details</span>
-          <span>Funding</span>
-          <span>Address</span>
         </div>
       </div>
     )
@@ -702,10 +743,10 @@ export function ProjectForm() {
               />
             </div>
             <div>
-              <label htmlFor="strategy" className="block text-sm font-medium mb-1">IP Strategy *</label>
+              <label htmlFor="strategy" className="block text-sm font-medium mb-1">Commercialization Strategy *</label>
               <textarea
                 id="strategy"
-                placeholder="Your intellectual property strategy"
+                placeholder="Your commercialization strategy"
                 value={strategy}
                 onChange={e => setStrategy(e.target.value)}
                 rows={5}
@@ -767,8 +808,8 @@ export function ProjectForm() {
             </div>
             <div>
               <label htmlFor="address" className="block text-sm font-medium mb-1">
-                Your Ethereum wallet address (optional)
-                <InfoTooltip message="Provide an Ethereum address if you want to receive a digital receipt for your application." />
+                Your Ethereum wallet address (optional)&nbsp;
+                <InfoTooltip message="Provide the Ethereum address of the wallet you want to receive the funds to." />
               </label>
               <input
                 id="address"
@@ -852,7 +893,8 @@ export function ProjectForm() {
                   <Button
                     type="button"
                     onClick={handleSubmit}
-                    className="bg-white text-[#010737] hover:bg-white/90"
+                    disabled={isGeneratingToken}
+                    className="bg-white text-[#010737] hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     <Send className="w-4 h-4 mr-2" />
                     {buttonText}

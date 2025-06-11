@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { PoscidonLogo } from "./PoscidonLogo"
+import { PoscidonLogo } from "./poscidon-logo"
 
 export function Footer() {
   return (
