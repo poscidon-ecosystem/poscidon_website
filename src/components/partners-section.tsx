@@ -7,7 +7,7 @@ export function PartnersSection() {
     { name: "Boost VC", logo: "/logo_boostvc.svg", url: "https://www.boost.vc/" },
     { name: "Cyberscope", logo: "/logo_cyberscope.svg", url: "https://www.cyberscope.io/" },
     { name: "Human.tech", logo: "/logo_humantech.svg", url: "https://human.tech/" },
-    // { name: "AxonDAO", logo: "/logo_axondao.svg", url: "https://axondao.io/" },
+    { name: "AxonDAO", logo: "/logo_axondao.svg", url: "https://axondao.io/" },
     { name: "Lilypad", logo: "/logo_lilypad.svg", url: "https://lilypad.tech/" },
     { name: "QuillAudits", logo: "/logo_quillaudits.svg", url: "https://www.quillaudits.com/" },
     { name: "Rare Compute", logo: "/logo_rarecompute.svg", url: "https://www.rarecompute.io/" },

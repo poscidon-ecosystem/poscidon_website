@@ -18,6 +18,21 @@ export const metadata: Metadata = {
   title: "Poscidon | Revolutionizing Personalized Medicine Research Funding",
   description:
     "The first-ever decentralized biotech organization dedicated to funding personalized medicine research for life-altering diseases.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [
+      { url: "/apple-icon-180x180.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "icon", url: "/favicon.ico" },
+      { rel: "apple-touch-icon", url: "/apple-icon-180x180.png" },
+    ],
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Poscidon | Revolutionizing Personalized Medicine Research Funding",
     description: "The first-ever decentralized biotech organization dedicated to funding personalized medicine research for life-altering diseases.",

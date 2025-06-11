@@ -11,7 +11,7 @@ export function Footer() {
               <PoscidonLogo className="w-32 mb-4 text-white hover:text-seaBlue-700 transition-colors duration-300" />
             </Link>
             <p className="text-white/70 mb-4">
-              Revolutionizing personalized medicine research funding through decentralized governance.
+            Funding and commercializing personalized medicine research.           
             </p>
             <div className="flex space-x-4">
               <Link
@@ -150,6 +150,16 @@ export function Footer() {
                   className="text-white/70 hover:text-white transition-colors"
                 >
                   DAO Litepaper
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/wecura-whitepaper.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  weCURA Whitepaper
                 </Link>
               </li>
               <li>

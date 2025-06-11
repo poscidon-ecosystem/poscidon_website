@@ -65,7 +65,7 @@ export function Header() {
 
           <Button className="bg-white text-[#010737] hover:bg-white/90">
             <Link href="https://dao.poscidon.com/" target="_blank" rel="noopener noreferrer">
-              Visit dApp
+              Visit DAO dApp
             </Link>
           </Button>
         </div>
@@ -125,7 +125,7 @@ export function Header() {
             </a>
             <Button className="bg-white text-[#010737] hover:bg-white/90 w-full text-lg">
               <a href="https://dao.poscidon.com/" target="_blank" rel="noopener noreferrer">
-                Visit dApp
+                Visit DAO dApp
               </a>
             </Button>
           </nav>

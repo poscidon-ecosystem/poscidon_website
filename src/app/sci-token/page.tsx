@@ -328,7 +328,7 @@ export default function SciTokenPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <TokenCard
               name="SCI Token"
-              description="The tradable governance token that grants voting rights in the DAO. Lock SCI tokens in the governance dApp to participate in governance decisions."
+              description="The tradable governance token that grants voting rights in the DAO. Lock SCI tokens in the DAO dApp to participate in governance decisions."
               features={[
                 "Tradable on exchanges",
                 "Governance voting power",

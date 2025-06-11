@@ -93,6 +93,24 @@ const config = {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px) translateX(0px)",
+            opacity: "0.7",
+          },
+          "25%": {
+            transform: "translateY(-20px) translateX(10px)",
+            opacity: "1",
+          },
+          "50%": {
+            transform: "translateY(-10px) translateX(-5px)",
+            opacity: "0.8",
+          },
+          "75%": {
+            transform: "translateY(-30px) translateX(15px)",
+            opacity: "0.9",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
