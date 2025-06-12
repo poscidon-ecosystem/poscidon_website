@@ -10,7 +10,7 @@ export function PartnersSection() {
     { name: "AxonDAO", logo: "/logo_axondao.svg", url: "https://axondao.io/" },
     { name: "Lilypad", logo: "/logo_lilypad.svg", url: "https://lilypad.tech/" },
     { name: "QuillAudits", logo: "/logo_quillaudits.svg", url: "https://www.quillaudits.com/" },
-    { name: "Rare Compute", logo: "/logo_rarecompute.svg", url: "https://www.rarecompute.io/" },
+    { name: "Rare Compute", logo: "/RCLOGO2.svg", url: "https://www.rarecompute.io/" },
   ];
 
   return (

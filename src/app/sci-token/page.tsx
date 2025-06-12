@@ -97,7 +97,7 @@ export default function SciTokenPage() {
           <h2 className="text-2xl font-semibold mb-6 text-center">SCI Utility</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white/10 rounded-xl p-6">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2E8ED7] to-[#78DFEC] rounded-full flex items-center justify-center mb-4">
                 <Scale className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Governance</h3>
@@ -107,7 +107,7 @@ export default function SciTokenPage() {
             </div>
 
             <div className="bg-white/10 rounded-xl p-6">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#22D6C4] to-[#A1ECD6] rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -137,7 +137,7 @@ export default function SciTokenPage() {
             </div>
 
             <div className="bg-white/10 rounded-xl p-6">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#0b1dee] to-[#2E8ED7] rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -163,7 +163,7 @@ export default function SciTokenPage() {
             </div>
 
             <div className="bg-white/10 rounded-xl p-6">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#2E8ED7] to-[#78DFEC] rounded-full flex items-center justify-center mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
