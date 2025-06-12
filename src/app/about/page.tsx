@@ -1,6 +1,7 @@
 import { PageLayout } from "@/components/page-layout"
 import { AnimatedSection } from "@/components/animated-section"
 import { Lightbulb, Target, Network, AlertTriangle } from "lucide-react"
+import Link from "next/link"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -131,9 +132,9 @@ export default function About() {
               democratic and unbiased ecosystem that redefines the funding process of personalized medicine research.
             </p>
             
-            <button className="px-8 py-3 bg-gradient-to-r from-[#2E8ED7] to-[#22D6C4] rounded-lg text-white font-medium hover:shadow-lg hover:shadow-[#78DFEC]/20 transition-all duration-300 transform hover:-translate-y-1">
+            <Link href="https://dao.poscidon.com" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-gradient-to-r from-[#2E8ED7] to-[#22D6C4] rounded-lg text-white font-medium hover:shadow-lg hover:shadow-[#78DFEC]/20 transition-all duration-300 transform hover:-translate-y-1">
               Join the DAO
-            </button>
+            </Link>
           </div>
         </AnimatedSection>
       </div>

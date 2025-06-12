@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function TokenSection() {
   return (
-    <section id="tokens" className="py-20 px-4 md:px-8 bg-white/5 backdrop-blur-sm">
+    <section id="tokens" className="py-20 sm:px-4 md:px-8 bg-white/5 backdrop-blur-sm">
       <div className="container mx-auto">
         <AnimatedSection className="max-w-3xl mx-auto text-center my-8 flex flex-col items-center justify-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">The SCI Governance and Utility Token</h2>

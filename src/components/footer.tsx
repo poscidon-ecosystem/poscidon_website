@@ -3,7 +3,7 @@ import { PoscidonLogo } from "./poscidon-logo"
 
 export function Footer() {
   return (
-    <footer className="py-12 px-4 md:px-8 border-t border-white/10">
+    <footer className="py-12 border-t border-white/10">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-4 gap-8">
           <div>

@@ -550,11 +550,11 @@ export function ProjectForm() {
                 >
                   {index + 1}
                 </div>
-                <p className="mt-2 w-24 text-center text-xs text-white/70 sm:text-sm">{title}</p>
+                <p className="mt-2 w-16 text-center text-xs text-white/70 sm:w-24 sm:text-sm">{title}</p>
               </div>
 
               {index < stepTitles.length - 1 && (
-                <div className="mx-2 mt-3.5 h-1 w-full flex-grow">
+                <div className="mx-1 mt-3.5 h-1 w-full flex-grow sm:mx-2">
                   <div
                     className={`h-full w-full transition-colors duration-300 ${
                       index + 1 < currentStep ? "bg-white" : "bg-white/20"

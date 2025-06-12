@@ -14,8 +14,7 @@ export function PartnersSection() {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-[#010737]/80 backdrop-blur-sm relative overflow-hidden">
-      {/* Hexagon background pattern - web3 style */}
+    <section className="py-16 sm:px-4 md:px-8 bg-[#010737]/80 backdrop-blur-sm relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute w-full h-full bg-[url('/hexagon-grid.svg')] bg-repeat opacity-5"></div>
         <div className="absolute top-0 left-0 w-full h-full">
@@ -26,51 +25,45 @@ export function PartnersSection() {
 
       <div className="container mx-auto relative z-10 mb-16">
         <AnimatedSection className="text-center mb-16" triggerOnce={true} direction="down" duration={0.5}>
-          {/* Content for the first AnimatedSection starts here */}
-
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-[#78DFEC] to-white">Our Partners</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-[#2E8ED7] to-[#22D6C4] rounded-full mb-8 mx-auto"></div>
           <p className="text-white/80 max-w-2xl mx-auto">
             We collaborate with leading organizations in blockchain, science, and technology to advance personalized medicine research.
           </p>
-          {/* Content for the first AnimatedSection ends here */}
         </AnimatedSection>
-
         <AnimatedSection delay={0.2} triggerOnce={true} direction="up" duration={0.5}>
-          {/* Content for the second AnimatedSection starts here */}
           <div
             className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] group"
           >
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll group-hover:paused">
+            <ul className="flex items-center justify-center md:justify-start [&_img]:max-w-none animate-infinite-scroll group-hover:paused">
                 {partners.map((partner, index) => (
-                  <li key={`${partner.name}-${index}`}>
+                  <li key={`${partner.name}-${index}`} className="mx-4 sm:mx-8">
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
                       width={150}
                       height={50}
-                      className="h-12 w-auto object-contain cursor-pointer"
+                      className="h-8 sm:h-12 w-auto object-contain cursor-pointer"
                       onClick={() => window.open(partner.url, '_blank')}
                     />
                   </li>
                 ))}
             </ul>
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll group-hover:paused" aria-hidden="true">
+            <ul className="flex items-center justify-center md:justify-start [&_img]:max-w-none animate-infinite-scroll group-hover:paused" aria-hidden="true">
                 {partners.map((partner, index) => (
-                  <li key={`${partner.name}-${index}-duplicate`}>
+                  <li key={`${partner.name}-${index}-duplicate`} className="mx-4 sm:mx-8">
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
                       width={150}
                       height={50}
-                      className="h-12 w-auto object-contain cursor-pointer"
+                      className="h-8 sm:h-12 w-auto object-contain cursor-pointer"
                       onClick={() => window.open(partner.url, '_blank')}
                     />
                   </li>
                 ))}
             </ul>
           </div>
-          {/* Content for the second AnimatedSection ends here */}
         </AnimatedSection>
       </div>
     </section>

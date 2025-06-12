@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function AboutSection() {
   return (
-    <section id="about" className="pt-24 pb-20 px-4 md:px-8 bg-[#010737]/80 backdrop-blur-sm">
+    <section id="about" className="pt-24 pb-20 sm:px-4 md:px-8 bg-[#010737]/80 backdrop-blur-sm">
       <div className="container mx-auto">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Pioneering the Future of DeSci Research Funding</h2>

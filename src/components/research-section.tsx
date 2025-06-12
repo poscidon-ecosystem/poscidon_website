@@ -3,7 +3,7 @@ import { AnimatedSection } from "@/components/animated-section"
 
 export function ResearchSection() {
   return (
-    <section id="research" className="py-20 px-4 md:px-8">
+    <section id="research" className="py-20 sm:px-4 md:px-8">
       <div className="container mx-auto">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Poscidon's DeSci Research Focus in Biotech</h2>

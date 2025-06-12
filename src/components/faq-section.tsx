@@ -3,7 +3,7 @@ import { AnimatedSection } from "@/components/animated-section"
 
 export function FaqSection() {
   return (
-    <section id="faq" className="py-20 px-4 md:px-8 bg-white/5 backdrop-blur-sm">
+    <section id="faq" className="py-20 sm:px-4 md:px-8 bg-white/5 backdrop-blur-sm">
       <div className="container mx-auto">
         <AnimatedSection className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
@@ -12,7 +12,7 @@ export function FaqSection() {
         <AnimatedSection delay={0.2} className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="border-white/20 rounded-lg bg-white/10 px-6">
-              <AccordionTrigger className="text-lg font-medium py-4 hover:no-underline">
+              <AccordionTrigger className="flex w-full justify-between text-left text-lg font-medium py-4 hover:no-underline">
                 What is a decentralized autonomous organisation (DAO)?
               </AccordionTrigger>
               <AccordionContent className="text-white/80 pb-4">
@@ -25,7 +25,7 @@ export function FaqSection() {
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border-white/20 rounded-lg bg-white/10 px-6">
-              <AccordionTrigger className="text-lg font-medium py-4 hover:no-underline">
+              <AccordionTrigger className="flex w-full justify-between text-left text-lg font-medium py-4 hover:no-underline">
                 What kind of research does Poscidon fund?
               </AccordionTrigger>
               <AccordionContent className="text-white/80 pb-4">
@@ -36,7 +36,7 @@ export function FaqSection() {
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border-white/20 rounded-lg bg-white/10 px-6">
-              <AccordionTrigger className="text-lg font-medium py-4 hover:no-underline">
+              <AccordionTrigger className="flex w-full justify-between text-left text-lg font-medium py-4 hover:no-underline">
                 How can Poscidon support my research?
               </AccordionTrigger>
               <AccordionContent className="text-white/80 pb-4">
@@ -47,7 +47,7 @@ export function FaqSection() {
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border-white/20 rounded-lg bg-white/10 px-6">
-              <AccordionTrigger className="text-lg font-medium py-4 hover:no-underline">
+              <AccordionTrigger className="flex w-full justify-between text-left text-lg font-medium py-4 hover:no-underline">
                 Who is part of the Poscidon community?
               </AccordionTrigger>
               <AccordionContent className="text-white/80 pb-4">
