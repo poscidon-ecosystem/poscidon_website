@@ -301,6 +301,17 @@ export default function SciTokenPage() {
                 </div>
               </div>
             </div>
+            <div className="flex justify-center mt-8">
+              <a
+                href="https://poscidondao.gitbook.io/litepaper/about-poscidondao/sci-tokenomics"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-white text-[#010737] hover:bg-white/90 px-8">
+                  Learn More About SCI Tokenomics
+                </Button>
+              </a>
+            </div>
           </div>
         </AnimatedSection>
 
