@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { Metadata } from "next"
-import { Users, Zap, HelpCircle } from "lucide-react"
+import { Users, Zap, HelpCircle, Network, Scale, HeartHandshake, Blocks } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Ecosystem | Poscidon - Decentralized Science Platform",
@@ -55,7 +55,7 @@ export default function EcosystemPage() {
           <div className="relative">
             <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 transition-all duration-500 hover:bg-white/10 group">
               <Image
-                src="/EcosystemPoscidon.svg"
+                src="/ecosystem.svg"
                 alt="Poscidon Ecosystem Diagram"
                 width={1839}
                 height={673}
@@ -83,21 +83,7 @@ export default function EcosystemPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/10 rounded-xl p-6">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="currentColor" stroke="none" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="2"/>
-                  <circle cx="12" cy="5" r="1.5"/>
-                  <circle cx="19" cy="12" r="1.5"/>
-                  <circle cx="12" cy="19" r="1.5"/>
-                  <circle cx="5" cy="12" r="1.5"/>
-                  <circle cx="7.5" cy="7.5" r="1.5"/>
-                  <circle cx="16.5" cy="7.5" r="1.5"/>
-                  <line x1="12" y1="10" x2="12" y2="6.5" stroke="currentColor" strokeWidth="1.5"/>
-                  <line x1="14" y1="12" x2="17.5" y2="12" stroke="currentColor" strokeWidth="1.5"/>
-                  <line x1="12" y1="14" x2="12" y2="17.5" stroke="currentColor" strokeWidth="1.5"/>
-                  <line x1="10" y1="12" x2="6.5" y2="12" stroke="currentColor" strokeWidth="1.5"/>
-                  <line x1="10.5" y1="10.5" x2="9" y2="9" stroke="currentColor" strokeWidth="1.5"/>
-                  <line x1="13.5" y1="10.5" x2="15" y2="9" stroke="currentColor" strokeWidth="1.5"/>
-                </svg>
+                <Blocks className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Decentralized Funding</h3>
               <p className="text-white/70">
@@ -107,9 +93,7 @@ export default function EcosystemPage() {
 
             <div className="bg-white/10 rounded-xl p-6">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+                <HeartHandshake className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Global Community</h3>
               <p className="text-white/70">
@@ -119,9 +103,7 @@ export default function EcosystemPage() {
 
             <div className="bg-white/10 rounded-xl p-6">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <Scale className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Transparent Governance</h3>
               <p className="text-white/70">

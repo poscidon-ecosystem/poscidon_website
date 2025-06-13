@@ -46,7 +46,7 @@ export function ConfirmationModal({
             </Dialog.Close>
           </div>
 
-          <div className="mt-4 text-white/80">{message}</div>
+          <Dialog.Description className="mt-4 text-white/80">{message}</Dialog.Description>
 
           <div className="mt-8 flex justify-end gap-4">
             <Button

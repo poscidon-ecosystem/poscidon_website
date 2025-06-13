@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { TokenCard } from "@/components/token-card"
 import { Metadata } from "next"
 import Head from "next/head"
-import { Scale } from "lucide-react"
+import { Scale, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "SCI Token | Poscidon",
@@ -138,22 +138,7 @@ export default function SciTokenPage() {
 
             <div className="bg-white/10 rounded-xl p-6">
               <div className="w-12 h-12 bg-gradient-to-br from-[#0b1dee] to-[#2E8ED7] rounded-full flex items-center justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-white"
-                >
-                  <title>Incentives Icon</title>
-                  <circle cx="12" cy="8" r="6"></circle>
-                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
-                </svg>
+                <Sparkles className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Incentives</h3>
               <p className="text-white/70">
